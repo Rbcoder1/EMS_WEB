@@ -1,0 +1,48 @@
+{% extends "Layout.html"%}
+{% block Title%} Home Page {%endblock Title%}
+
+{% block body%}
+<!-- Default form register -->
+<div class="container my-4"
+    style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <!-- {{error}} -->
+    <form class="text-center border border-light p-5" method="post" action="/register" style="background-color: gray;">
+
+        <p class="h4 mb-4">Sign up</p>
+
+        <div class="form-row mb-4">
+            <div class="col my-3">
+                <!-- First name -->
+                <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="fname" placeholder="First name">
+            </div>
+            <div class="col">
+                <!-- Last name -->
+                <input type="text" id="defaultRegisterFormLastName" class="form-control" name="lname" placeholder="Last name">
+            </div>
+        </div>
+
+        <!-- E-mail -->
+        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" name="email" placeholder="E-mail">
+
+        <!-- Password -->
+        <input type="password" id="defaultRegisterFormPassword" class="form-control" name="password" placeholder="Password"
+            aria-describedby="defaultRegisterFormPasswordHelpBlock">
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+            At least 8 characters and 1 digit
+        </small>
+
+
+        <!-- phone number  -->
+        <input type="text" id="defaultRegisterPhonePassword" class="form-control" name="phone" placeholder="Phone number"
+            aria-describedby="defaultRegisterFormPhoneHelpBlock">
+
+        <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+
+
+        <p>By clicking
+            <em>Sign up</em> you agree to our
+            <a href="" target="_blank">terms of service</a>
+
+    </form>
+</div>
+{% endblock body %}

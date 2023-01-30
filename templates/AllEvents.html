@@ -1,0 +1,35 @@
+{% extends "Layout.html"%}
+{% block Title%} Home Page {%endblock Title%}
+
+
+{% block body%}
+
+<div class="container my-4">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% if event %}
+        {% for item in event %}
+        <div class="col">
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/azure.jfif') }}" class="card-img-top" alt="..."
+                    style="width: 20pc; height: 13pc;">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <p class="card-text">item.desc
+                        content. This content is a little bit longer.</p>
+                    <a href={{item.link}} class="btn btn-primary" target="_blank" rel="noopener noreferrer">more</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {%else%}
+        <div class="d-flex align-item-center" style="margin-left: 15pc; margin-top: 10pc; width: 50pc;">
+            <div class="alert alert-success">
+                <strong>No Event!</strong> There is No Event Is Live Inside The College Currently
+            </div>
+        </div>
+        {% endif%}
+
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,42 @@
+{% extends "Layout.html"%}
+{% block Title%} Home Page {%endblock Title%}
+
+{% block body%}
+
+
+<!-- Default form login -->
+<div class="container my-4" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    {{user}}
+    <form class="text-center border border-light p-5" method="post" action="/login" style="width:500px; background-color: gray;">
+        <p class="h4 mb-4">Sign in</p>
+        <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" name="email" placeholder="E-mail">
+        <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" name="password" placeholder="Password">\
+        <div class="d-flex justify-content-around">
+            <div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                    <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                </div>
+            </div>
+            <div>
+                <a href="">Forgot password?</a>
+            </div>
+        </div>
+
+        <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+        <p>Not a member?
+            <a href="/register">Register</a>
+        </p>
+
+        <p>or sign in with:</p>
+
+        <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+        <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
+        <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
+        <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
+
+    </form>
+</div>
+<!-- Default form login -->
+{% endblock body %}
