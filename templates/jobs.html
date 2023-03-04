@@ -1,0 +1,27 @@
+{% extends "Layout.html"%}
+{% block Title%} {{id}} {%endblock Title%}
+
+{% block body%}
+
+<div class="container">
+    <h1 class="text-center my-4 mt-4">Jobs</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% if jobs %}
+        {% for item in jobs %}
+        <div class="col">
+            <div class="card">
+                <img src={{item.thumbnail}} class="card-img-top"
+                    alt="Skyscrapers" />
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <p class="card-text">
+                        {{item.description[:200]}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {%endif%}
+    </div>
+</div>
+{% endblock body %}

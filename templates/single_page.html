@@ -1,0 +1,312 @@
+{% extends "Layout.html"%}
+{% block Title%} {{id}} {%endblock Title%}
+
+{% block body%}
+{{err}}
+{%if msg%}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success</strong> {{msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{%elif error%}
+<div class="alert alert-danger" role="alert">
+    {{error}}
+    {{err}}
+</div>
+{%else%}
+{%endif%}
+
+<div class="container my-4 d-flex align-item-center justify-content-center flex-column">
+    <div class="container d-flex align-item-center justify-content-center">
+        <img src="https://source.unsplash.com/1200x350/?hackathon" class="img-fluid" alt="Responsive image"
+            style="border: 1px solid; border-radius: 15px;">
+    </div>
+    <div class="container-md my-4">
+        <div class="row hack-details">
+            <div class="col-sm-2">
+                <picture>
+                    <img class="rounded-circle shadow-sm" src="https://source.unsplash.com/200x180/?blockchain  "
+                        alt="hackthewinter">
+                </picture>
+                <div class="d-block d-md-none float-right">
+                    <h6 class="text-uppercase">
+                        Submission Deadline
+                    </h6>
+                    <h4 class="text-uppercase mb-3 font-weight-normal">
+                        <div class="endDate">Thu Feb 23 2023<br> <span style="font-size: x-small; white-space: nowrap;">
+                                (India Standard Time)</span></div>
+                    </h4>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-7">
+                <h1>
+                    {{hack[1]}}
+                    <!-- <span class="badge badge-primary text-uppercase">#hackthewinter</span> -->
+                </h1>
+                <p class="details">
+                    {{hack[2]}} <a href="#about-link" class="text-muted font-weight-bold">view more...</a>
+                </p>
+                <p class="hack-stats">
+                    <span class="mr-3 text-capitalize">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                        offline
+                    </span>
+                    <span class="mr-2 mx-1">
+                        <i class="fa fa-group" aria-hidden="true"></i>
+                        group entry
+                    </span>
+                </p>
+                <!--  -->
+            </div>
+            <div class="col-sm-4 col-md-3 d-none d-md-block">
+                <div class="date-section">
+
+                    <h6 class="text-uppercase">
+                        Submission Deadline
+                    </h6>
+                    <h4 class="text-uppercase mb-3 font-weight-normal">
+                        <div class="endDate">{{hack[3]}}<br> <span style="font-size: x-small; white-space: nowrap;">
+                                (India Standard Time)</span></div>
+                    </h4>
+                    <a name="" id="" class="btn btn-secondary" href="#register" role="button">
+                        Register Now
+                    </a>
+                </div>
+
+                <small class="my-2 d-block text-right" id="idea-sec">
+
+                    Submission Closing in:
+                    <h6 id="countdown_launch" class="text-right ml-auto text-uppercase d-none d-sm-block mt-2">11d 18h
+                        2m 19s </h6>
+
+                </small>
+            </div>
+        </div>
+    </div>
+    {{hack[0]}}
+    <!-- {{id}} -->
+
+    <!-- about session  -->
+
+    <div class="container-md">
+        <h1>About</h1>
+        <p>
+            {{hack[2]}}
+        </p>
+
+        <b>Perk of joining :</b>
+        <ol type="A">
+            <li>Swags</li>
+            <li>Goodies</li>
+            <li>Mentorship</li>
+            <li>Lerning</li>
+        </ol>
+    </div>
+
+    <!-- callenges session starts -->
+    <div class="container">
+        <h1 class="my-4">
+            Challenge :
+        </h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img/ml.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Machine Lerning</h5>
+                        <p class="card-text">Complete Your Project You Machine Learning Algorithms and submit it</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img/datas.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Science</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img/android.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Android</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img/blockchain.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Blockchain</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='img/nlp.jpg.crdownload') }}" class="card-img-top"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">NLP</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-4">
+        <h1>Organisors :</h1>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="card">
+                <img src="https://source.unsplash.com/200x200/?robot" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">R C Patel IMRD</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- schedule of Hackathon  -->
+    <div class="container my-4">
+        <h1 class="my-2">Schedule of Hackathon :</h1>
+        <div class="container bootstrap snippets bootdeys">
+            <div class="col-md-9" style="margin: auto;">
+                <div class="timeline-centered timeline-sm">
+                    <article class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <time datetime="2014-01-10T03:45" class="timeline-time"><span>13 Feb 2023
+                                </span><span>Monday</span></time>
+                            <div class="timeline-icon bg-violet"><i class="fa fa-exclamation"></i></div>
+                            <div class="timeline-label">
+                                <h4 class="timeline-title">Registration Open</h4>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="timeline-entry left-aligned">
+                        <div class="timeline-entry-inner">
+                            <time datetime="2014-01-10T03:45" class="timeline-time"><span>17 Feb 2023
+                                </span><span>Friday</span></time>
+                            <div class="timeline-icon bg-pink"><i class="fa fa-group"></i></div>
+                            <div class="timeline-label bg-pink">
+                                <h4 class="timeline-title">Idea Submission</h4>
+
+                                <!-- <p>Submit your selected idea with problem statement and solution on it.</p> -->
+                            </div>
+                        </div>
+                    </article>
+                    <article class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <time datetime="2014-01-09T13:22" class="timeline-time"><span>20 Feb 2023
+                                </span><span>Monday</span></time>
+                            <!-- <div class="timeline-icon bg-orange"><i class="fa fa-paper-plane"></i></div> -->
+                            <div class="timeline-label">
+                                <h4 class="timeline-title">Registration Closed</h4>
+                                <p></p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="timeline-entry left-aligned">
+                        <div class="timeline-entry-inner">
+                            <time datetime="2014-01-10T03:45" class="timeline-time"><span>21 Feb 2023
+                                </span><span>Tuesday</span></time>
+                            <div class="timeline-icon bg-green"><i class="fa fa-group"></i></div>
+                            <div class="timeline-label bg-green">
+                                <h4 class="timeline-title">Learning Phase</h4>
+
+                                <!-- <p>It's time to make capable to make your project learn technologies needed for project
+                                </p> -->
+                            </div>
+                        </div>
+                    </article>
+                    <article class="timeline-entry">
+                        <div class="timeline-entry-inner">
+                            <time datetime="2014-01-09T13:22" class="timeline-time"><span>31 Feb 2023
+                                </span><span></span></time>
+                            <div class="timeline-icon bg-blue"><i class="fa fa-group"></i></div>
+                            <div class="timeline-label bg-blue">
+                                <h4 class="timeline-title">Development Phase</h4>
+                                <!-- <p>Start Development of your Project </p> -->
+                            </div>
+                        </div>
+                    </article>
+                    <article class="timeline-entry left-aligned">
+                        <div class="timeline-entry-inner">
+                            <time datetime="2014-01-10T03:45" class="timeline-time"><span>15 Mar 2023
+                                </span><span>Tuesday</span></time>
+                            <div class="timeline-icon bg-red"><i class="fa fa-group"></i></div>
+                            <div class="timeline-label bg-red">
+                                <h4 class="timeline-title">Project Submission</h4>
+
+                                <!-- <p>It's Time To Present Your Knowledge ! Submit Your Project
+                                </p> -->
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="container" id="register">
+                    <form class="text-center border border-light p-5" method="post"
+                        action="/hackathon/user_registration/{{hack[0]}}">
+
+                        <p class="h4 mb-4">Hackathon Registration</p>
+
+                        <div class="form-row mb-4">
+                            <div class="col my-3">
+                                <!-- First name -->
+                                <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="tname"
+                                    placeholder="Team Name" required>
+                            </div>
+                            <div class="col my-3">
+                                <!-- last name -->
+                                <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="lname"
+                                    placeholder="Learder Name" required>
+                            </div>
+                            <div class="col my-3">
+                                <!-- member 1 name -->
+                                <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="m1name"
+                                    placeholder="Member1 Name" required>
+                            </div>
+                            <div class="col my-3">
+                                <!-- member 3 name -->
+                                <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="m2name"
+                                    placeholder="Member2 Name" required>
+                            </div>
+                            <div class="col my-3">
+                                <!-- member 3 name -->
+                                <input type="text" id="defaultRegisterFormLastName" class="form-control" name="m3name"
+                                    placeholder="Member3 name" required>
+                            </div>
+                            <div class="col my-3">
+                                <!-- member 4 name -->
+                                <input type="text" id="defaultRegisterFormLastName" class="form-control" name="m4name"
+                                    placeholder="Member4 name" required>
+                            </div>
+                        </div>
+                        <div class="col my-3">
+                            <!-- project name -->
+                            <input type="text" id="defaultRegisterFormLastName" class="form-control" name="pname"
+                                placeholder="Project Idea name" required>
+                        </div>
+
+                        <div class="col my-3">
+                            <!-- project name -->
+                            <input type="text" id="defaultRegisterFormLastName" class="form-control" name="tech"
+                                placeholder="Tech Name like NLP,ML,Blockchain" required>
+                        </div>
+                        <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
