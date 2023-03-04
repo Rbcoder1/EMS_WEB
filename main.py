@@ -13,90 +13,11 @@ app.config['MYSQL_DB'] = 'eventmanage'
 mysql = MySQL(app)
 
 # application data stores in variable
-outside_events = [
-    {
-        "name": "Migrating On-Premises Infrastructure and Data",
-        "desc":
-        "Learn how to assess and evaluate an existing on-premises environment in preparation for a cloud migration—as well as how to monitor and optimize Azure-based workloads to maximize your return on investment.",
-        "link": "https://mktoevents.com/Microsoft+Event/380554/157-GQE-382",
-        # "img": "{{ url_for('static', filename='img/azure.jfif') }}"
-    },
-    {
-        "name": "Digitally Transform with Modern Analytics",
-        "desc":
-        "Learn how to assess and evaluate an existing on-premises environment in preparation for a cloud migration—as well as how to monitor and optimize Azure-based workloads to maximize your return on investment.",
-        "link": "https://mktoevents.com/Microsoft+Event/383567/157-GQE-382",
-        # "img": "{{ url_for('static', filename='img/azure.jfif') }}"
-    },
-    {
-        "name": "Linux OSS DB Migration",
-        "desc":
-        "Learn how to plan, manage, and optimize your migration to maximize your impact and your return on investment. Migrate open-source applications and data workloads at scale to take full advantage of Azure.",
-        "link": "https://mktoevents.com/Microsoft+Event/384868/157-GQE-382",
-        # "img": "{{ url_for('static', filename='img/azure.jfif') }}"
-    },
-    {
-        "name": "Implementing Hybrid Infrastructure",
-        "desc":
-        "Implementing Hybrid InfrastructureLearn how to govern and manage on-premises and cloud resources with a single control plane using Azure Arc—including your Linux and Windows virtual machines (VMs), Kubernetes clusters, and databases.",
-        "link": "https://mktoevents.com/Microsoft+Event/384868/157-GQE-382",
-        # "img": "{{ url_for('static', filename='img/azure.jfif') }}"
-    },
-    {
-        "name": "Modernize .NET Apps",
-        "desc":
-        "Learn how to auto scale apps, protect against threats, and create pipelines to build and deploy solutions faster and more reliably.",
-        "link": "https://mktoevents.com/Microsoft+Event/385016/157-GQE-382",
-        # "img": "{{ url_for('static', filename='img/azure.jfif') }}"
-    }
-]
+outside_events = []
 
 inside_events = []
 osession = []
-allevents = [
-    {
-        "name": "Migrating On-Premises Infrastructure and Data",
-        "desc":
-        "Learn how to assess and evaluate an existing on-premises environment in preparation for a cloud migration—as well as how to monitor and optimize Azure-based workloads to maximize your return on investment.",
-        "link": "https://mktoevents.com/Microsoft+Event/380554/157-GQE-382",
-        # "img": "{{ url_for('static', filename='img/azure.jfif') }}"
-    },
-    {
-        "name": "Digitally Transform with Modern Analytics",
-        "desc":
-        "Learn how to assess and evaluate an existing on-premises environment in preparation for a cloud migration—as well as how to monitor and optimize Azure-based workloads to maximize your return on investment.",
-        "link": "https://mktoevents.com/Microsoft+Event/383567/157-GQE-382",
-        # "img": "{{ url_for('static', filename='img/azure.jfif') }}"
-    },
-    {
-        "name": "Linux OSS DB Migration",
-        "desc":
-        "Learn how to plan, manage, and optimize your migration to maximize your impact and your return on investment. Migrate open-source applications and data workloads at scale to take full advantage of Azure.",
-        "link": "https://mktoevents.com/Microsoft+Event/384868/157-GQE-382",
-        # "img": "{{ url_for('static', filename='img/azure.jfif') }}"
-    },
-    {
-        "name": "Implementing Hybrid Infrastructure",
-        "desc":
-        "Implementing Hybrid InfrastructureLearn how to govern and manage on-premises and cloud resources with a single control plane using Azure Arc—including your Linux and Windows virtual machines (VMs), Kubernetes clusters, and databases.",
-        "link": "https://mktoevents.com/Microsoft+Event/384868/157-GQE-382",
-        # "img": "{{ url_for('static', filename='img/azure.jfif') }}"
-    },
-    {
-        "name": "Modernize .NET Apps",
-        "desc":
-        "Learn how to auto scale apps, protect against threats, and create pipelines to build and deploy solutions faster and more reliably.",
-        "link": "https://mktoevents.com/Microsoft+Event/385016/157-GQE-382",
-        # "img": "{{ url_for('static', filename='img/azure.jfif') }}"
-    },
-    {
-        "name": "HACKATHON 3.0",
-        "desc":
-        "This Hackathon Is Based On AI Tecnologies You have to make project based on AI technologies like NLP,Machine Learning,Computer Vision ,Etc.",
-        "link": "no",
-        "img": "https://source.unsplash.com/300x200/?AI robot"
-    }
-]
+allevents = []
 
 # routes for main pages
 @app.route('/')
@@ -155,7 +76,7 @@ def inside_event():
 def hackathon():
     if 'loggedin' in session:
         cursor = mysql.connection.cursor()
-        cursor.execute('SELECT * FROM hackathons')
+        cursor.execute('SELECT * FROM hackathons WHERE open_close=0')
         hk = cursor.fetchall();
         return render_template('hackathon.html',
                                username=session['username'],
@@ -174,7 +95,13 @@ def sessions():
 @app.route('/closed_event')
 def closedEvent():
     if 'loggedin' in session:
-        return render_template('Allevents.html', username=session['username'])
+
+        cursor = mysql.connection.cursor()
+        cursor.execute('SELECT * FROM hackathons WHERE open_close=1')
+        hk = cursor.fetchall();
+        return render_template('closed.html',
+                               username=session['username'],
+                               event=hk)
 
     return render_template("login.html")
 
@@ -313,40 +240,6 @@ def user_register(name):
 
 # route for api calling 
 
-@app.route('/jobs')
-def JobSession():
-
-    # url = "https://linkedin-jobs-search.p.rapidapi.com/"
-
-    # payload = {
-    #     "search_terms": "python programmer",
-    #     "location": "Chicago, IL",
-    #     "page": "1"
-    # }
-    # headers = {
-    #     "content-type": "application/json",
-    #     "X-RapidAPI-Key": "3c05e5717fmshb9cb14ced90af95p16376fjsn703abfabb9f2",
-    #     "X-RapidAPI-Host": "linkedin-jobs-search.p.rapidapi.com"
-    # }
-
-    # response = requests.request("POST", url, json=payload, headers=headers)
-
-    # # response = jsonify(response.text)
-    # return render_template('jobs.html',jobs=response)
-    from serpapi import GoogleSearch
-
-    params = {
-    "engine": "google_jobs",
-    "q": "barista new york",
-    "hl": "en",
-    "api_key": "25f356d132750d01b7b1c531209efc065322bba1e8df57197a7d0fd0bb585eeb"
-    }
-
-    search = GoogleSearch(params)
-    results = search.get_dict()
-    jobs_results = results["jobs_results"]
-    # t = type(search)
-    return render_template('jobs.html',jobs=jobs_results)
 
 if __name__ == "__main__":
     app.run(debug=True)
