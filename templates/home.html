@@ -41,21 +41,74 @@
 
 <!-- some popular event organization  -->
 <div class="container-xxl py-5">
-    <div style="">
+    <div>
         <h1>Some Popular Organization</h1>
-        <h2>That Arrange Technological Event</h2>
+        <h3>That Arrange Technological Event</h3>
     </div>
     <div class="my-4">
         <div class="row" id="orgCon">
-            
+        </div>
+    </div>
+    <div>
+        <h6>This are some organization that organized many event monthly for help student by provide various
+            opportunities to student by participating in it. Some event give's you a better learning resources free of
+            cost & some give you prices to boost your motivatioin about your carrer</h6>
+    </div>
+
+</div>
+
+<!-- About Video And Headline Section  -->
+<!-- add the intro youtube video 
+put a headline or tagline 
+and getstarted button  -->
+<div class="container-xxl">
+
+</div>
+
+<!-- popular event  -->
+<!-- edit it as per cuvette websie job icon section  -->
+<div class="container-xxl py-4">
+    <div class="my-4">
+        <h3 class="my-3">Some Popular Event's Logo</h3>
+        <div class="row">
+            <div class="col-md - 2 col - sm - 4">
+                <div class="" style=" width: 200px; text-align: center;">
+                    <img src="{{ url_for('static', filename='img/carrerfair.jfif') }}" alt="Photo of sunset"
+                        style="width:200px;  height:100px; border:1px; border-radius:10px;">
+                </div>
+            </div>
+            <div class="col-md - 3 col - sm - 6">
+                <div class="" style=" width: 200px; text-align: center;">
+                    <img src="{{ url_for('static', filename='img/techtalk.jfif') }}" alt="Photo of sunset"
+                        style="width:200px;  height:100px; border:1px; border-radius:10px;">
+                </div>
+            </div>
+            <div class="col-md - 3 col - sm - 6">
+                <div class="" style=" width: 200px; text-align: center;">
+                    <img src="{{ url_for('static', filename='img/summitgcp.jpg') }}" alt="Photo of sunset"
+                        style="width:200px;  height:100px; border:1px; border-radius:10px;">
+                </div>
+            </div>
+            <div class="col-md - 3 col - sm - 6">
+                <div class="" style=" width: 200px; text-align: center;">
+                    <img src="{{ url_for('static', filename='img/workshops.png') }}" alt="Photo of sunset"
+                        style="width:200px;  height:100px; border:1px; border-radius:10px;">
+                </div>
+            </div>
+            <div class="col-md - 3 col - sm - 6">
+                <div class="" style=" width: 200px; text-align: center;">
+                    <img src="{{ url_for('static', filename='img/hackathons.png') }}" alt="Photo of sunset"
+                        style="width:200px;  height:100px; border:1px; border-radius:10px;">
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <!-- Service Start -->
-<div class="container-xxl py-5">
+<div class="container-xxl py-4">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3 my-4">Our Services</h6>
+            <h5 class="section-title bg-white text-center text-primary px-3 my-4">Our Services</h5>
         </div>
         <div class="row g-4">
             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -107,57 +160,9 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s ">
-            <h6 class="section-title bg-white text-center text-primary px-3 my-3">Some Events</h6>
+            <h5 class="section-title bg-white text-center text-primary px-3 my-3">Some Events</h5>
         </div>
-        <div class="row g-4 justify-content-center">
-
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="course-item bg-light">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='img/course-1.jpg') }}" alt="no">
-                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                            <a href="/events" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                style="border-radius: 30px;">Read More</a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 pb-0">
-                        <h5 class="mb-4">Upcomming Events</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="course-item bg-light">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='img/course-1.jpg') }}" alt="no">
-                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                            <a href="/events" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                style="border-radius: 30px;">Read More</a>
-                        </div>
-                    </div>
-                    <div class="text-center p-4 pb-0">
-
-                        <h5 class="mb-4">Trending or Current Events</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="course-item bg-light">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{ url_for('static', filename='img/course-1.jpg') }}" alt="no">
-                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                            <a href="/closed_event" class="flex-shrink-0 btn btn-sm btn-primary px-3 "
-                                style="border-radius: 30px;">Read More</a>
-
-                        </div>
-                    </div>
-                    <div class="text-center p-4 pb-0">
-                        <h5 class="mb-4">Closed Events</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h1>Top Trending Events</h1>
     </div>
 </div>
 <!-- Courses End -->

@@ -8871,10 +8871,24 @@ del {
     margin: 0 auto;
 }
 
-.linkorg{
+.linkorg {
     padding: 5px 10px;
 }
-.linkorg:hover{
+
+.linkorg:hover {
     border-radius: 20px;
     background-color: #b3c6ff;
 }
+
+/* event card css  */
+.eventcard {
+    height: 10vh;
+    width: 50%;
+}
+
+.eventimg {
+    height: 30vh;
+    width: 23vh;
+}
+
+/* slider css  */
