@@ -18,14 +18,24 @@ outside_events = []
 inside_events = []
 osession = []
 allevents = []
+featureEvent=[
+    {
+    "id":"1",
+    "path":"static/img/img2.jpg"
+    },
+     {
+    "id":"1",
+    "path":"static/img/img1.png"
+    }
+]
 
 # routes for main pages
 @app.route('/')
 def home():
     if 'loggedin' in session:
-        return render_template('home.html', username=session['username'])
+        return render_template('home.html', username=session['username'],fe=featureEvent)
 
-    return render_template('home.html')
+    return render_template('home.html',fe=featureEvent)
 
 
 @app.route('/about')

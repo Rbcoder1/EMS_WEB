@@ -8864,3 +8864,17 @@ del {
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p .timeline-img.pull-right {
     margin: 5px 0 0 10px;
 }
+
+.mycontainer {
+    /* margin-right: 100px;
+    margin-left: 100px; */
+    margin: 0 auto;
+}
+
+.linkorg{
+    padding: 5px 10px;
+}
+.linkorg:hover{
+    border-radius: 20px;
+    background-color: #b3c6ff;
+}
