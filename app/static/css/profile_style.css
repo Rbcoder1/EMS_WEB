@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.outerNav {
+    height: 10vh;
+    width: 100%;
+    /* padding: 10px;
+    padding-left: 20rem; */
+    background: gray;
+}
+
+.innerNav {
+    width: 100%;
+    position: fixed;
+    padding-left: 20pc;
+}
+
+.sideNav {
+    padding-top: 10vh;
+    /* background-color: rgb(215, 219, 235); */
+    width: 17%;
+    height: 100vh;
+    position: fixed;
+}
+
+.link-nav-con {
+    display: flex;
+    align-items: center;
+}
+
+.link-nav {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 30px;
+}
+
+.resume-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-nav-link-con {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.side-nav-link {
+    text-align: center;
+    width: 90%;
+    padding: 10px 30px;
+    border: 1px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-decoration: none;
+    color: black;
+    margin-top: 20px;
+    /* transition: all 2s ease-in-out; */
+    /* transform: matrix3d(); */
+    animation: forwards;
+
+}
+
+.side-nav-link:hover {
+    background-color: blueviolet;
+}
+
+.btn-resume {
+    color: #0804e6;
+    padding: 5px 30px;
+    background: linear-gradient(white, rgb(100, 100, 232));
+    transition: 0.2s;
+    border: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+
+.btn-resume:hover {
+    color: black;
+    background: linear-gradient(rgb(87, 87, 199), white);
+    background-blend-mode: lighten;
+}

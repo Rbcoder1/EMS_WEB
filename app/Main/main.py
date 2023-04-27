@@ -1,16 +1,9 @@
-from flask import Flask, render_template, request, session, redirect, jsonify
-import requests
-from flask_mysqldb import MySQL
+from flask import Blueprint, render_template
+from flask import render_template, request, session, redirect
+from app.db import mysql
 
-app = Flask(__name__)
+main = Blueprint("Main", __name__, template_folder="templates")
 
-app.secret_key = "dfdmdsfdzlfld"
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'eventmanage'
-
-mysql = MySQL(app)
 
 # application data stores in variable
 outside_events = []
@@ -18,27 +11,29 @@ outside_events = []
 inside_events = []
 osession = []
 allevents = []
-featureEvent=[
+featureEvent = [
     {
-    "id":"1",
-    "path":"static/img/img2.jpg"
+        "id": "1",
+        "path": "static/img/img2.jpg"
     },
-     {
-    "id":"1",
-    "path":"static/img/img1.png"
+    {
+        "id": "1",
+        "path": "static/img/img1.png"
     }
 ]
 
-# routes for main pages
-@app.route('/')
+
+# route of main blueprint start from here
+
+@main.route('/')
 def home():
     if 'loggedin' in session:
-        return render_template('home.html', username=session['username'],fe=featureEvent)
+        return render_template('home.html', username=session['username'], fe=featureEvent)
 
-    return render_template('home.html',fe=featureEvent)
+    return render_template('home.html', fe=featureEvent)
 
 
-@app.route('/about')
+@main.route('/about')
 def about():
     if 'loggedin' in session:
         return render_template('about.html', username=session['username'])
@@ -46,7 +41,7 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/contact')
+@main.route('/contact')
 def contact():
     if 'loggedin' in session:
         return render_template('contact.html', username=session['username'])
@@ -55,7 +50,7 @@ def contact():
 
 
 # routes for events pages
-@app.route('/events')
+@main.route('/events')
 def all_events():
     if 'loggedin' in session:
         return render_template('all_events.html',
@@ -65,15 +60,15 @@ def all_events():
     return render_template('login.html')
 
 
-@app.route('/outside_event')
+@main.route('/outside_event')
 def outside_event():
     if 'loggedin' in session:
-        return render_template('AllEvents.html', event=outside_events,username=session['username'])
+        return render_template('AllEvents.html', event=outside_events, username=session['username'])
     else:
         return render_template('AllEvents.html', event=outside_events)
 
 
-@app.route('/inside_event')
+@main.route('/inside_event')
 def inside_event():
     if 'loggedin' in session:
         return render_template('AllEvents.html', username=session['username'])
@@ -82,12 +77,12 @@ def inside_event():
 
 
 # route for internal hackathons
-@app.route('/hackathons')
+@main.route('/hackathons')
 def hackathon():
     if 'loggedin' in session:
         cursor = mysql.connection.cursor()
         cursor.execute('SELECT * FROM hackathons WHERE open_close=0')
-        hk = cursor.fetchall();
+        hk = cursor.fetchall()
         return render_template('hackathon.html',
                                username=session['username'],
                                event=hk)
@@ -95,20 +90,20 @@ def hackathon():
     return render_template('login.html')
 
 
-@app.route('/online_session')
+@main.route('/online_session')
 def sessions():
     if 'loggedin' in session:
-        return render_template('AllEvents.html', event=osession,username=session['username'])
+        return render_template('AllEvents.html', event=osession, username=session['username'])
     return render_template('AllEvents.html', event=osession)
 
 
-@app.route('/closed_event')
+@main.route('/closed_event')
 def closedEvent():
     if 'loggedin' in session:
 
         cursor = mysql.connection.cursor()
         cursor.execute('SELECT * FROM hackathons WHERE open_close=1')
-        hk = cursor.fetchall();
+        hk = cursor.fetchall()
         return render_template('closed.html',
                                username=session['username'],
                                event=hk)
@@ -117,36 +112,39 @@ def closedEvent():
 
 
 # routes for authentication register and login
-@app.route('/login', methods=['GET', 'POST'])
+@main.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+    if 'loggedin' in session:
+        return redirect('/')
+    else:
+        if request.method == 'POST':
+            email = request.form['email']
+            password = request.form['password']
 
-        cursor = mysql.connection.cursor()
-        cursor.execute(
-            'SELECT * FROM users WHERE email = %s AND password = %s',
-            (email, password))
+            cursor = mysql.connection.cursor()
+            cursor.execute(
+                'SELECT * FROM users WHERE email = %s AND password = %s',
+                (email, password))
 
-        user = cursor.fetchone()
+            user = cursor.fetchone()
 
-        if user:
-            session['loggedin'] = True
-            session['id'] = user[2]
-            session['username'] = user[0]
+            if user:
+                session['loggedin'] = True
+                session['id'] = user[2]
+                session['username'] = user[0]
 
-            msg = "Successfully login "
-            return render_template('home.html',
-                                   username=user[0],
-                                   session=session,msg=msg)
+                msg = "Successfully login "
+                return render_template('home.html',
+                                    username=user[0],
+                                    session=session, msg=msg)
         else:
             error = "Loggin with correct username and password"
             return render_template('login.html', error=error)
 
-    return render_template('login.html')
+    return "Invalid URL"
 
 
-@app.route('/register', methods=['GET', 'POST'])
+@main.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
         fname = request.form['fname']
@@ -165,16 +163,16 @@ def register():
             cursor.close()
 
             msg = "Successfully Registered "
-            # returning template after user is successfully inserted 
-            return render_template('login.html',msg = msg )
+            # returning template after user is successfully inserted
+            return render_template('login.html', msg=msg)
         except Exception as e:
             error = "Please fill form properly"
-            return render_template('register.html', error=error,err=e)
- 
+            return render_template('register.html', error=error, err=e)
+
     return render_template('register.html')
 
 
-@app.route('/logout')
+@main.route('/logout')
 def logout():
     session.pop('loggedin', None)
     session.pop('id', None)
@@ -182,33 +180,27 @@ def logout():
     return redirect('/login')
 
 
-@app.route('/profile')
-def profile():
-    if 'loggedin' in session:
-        return render_template("profile.html", username=session['username'])
-
-    return redirect("/")
-
-
 # single pages for inside events and hackathon
-@app.route('/single_page/<name>', methods=['GET', 'POST'])
+@main.route('/single_page/<name>', methods=['GET', 'POST'])
 def single_page(name):
     if 'loggedin' in session:
         try:
-            # fetching event from event table in database 
+            # fetching event from event table in database
             cursor = mysql.connection.cursor()
-            cursor.execute('SELECT * FROM hackathons WHERE event_id= %s',(name))
+            cursor.execute(
+                'SELECT * FROM hackathons WHERE event_id= %s', (name))
             hk = cursor.fetchone()
 
-            # rendering template after successfully event is fetch 
-            return render_template('single_page.html', hack=hk,username=session['username'])
-            
+            # rendering template after successfully event is fetch
+            return render_template('single_page.html', hack=hk, username=session['username'])
+
         except Exception as e:
-            return render_template('error.html', err=e,username=session['username'])
+            return render_template('error.html', err=e, username=session['username'])
     else:
         return redirect('/login')
 
-@app.route("/hackathon/user_registration/<name>" , methods=['GET', 'POST'])
+
+@main.route("/hackathon/user_registration/<name>", methods=['GET', 'POST'])
 def user_register(name):
     if 'loggedin' in session:
 
@@ -223,33 +215,28 @@ def user_register(name):
             pname = request.form['pname']
 
             try:
-                # inserting user data into database 
+                # inserting user data into database
                 cursor = mysql.connection.cursor()
-                cursor.execute('INSERT INTO event_registration(id,team_name, leader_name, memeber1_name,memeber2_name,memeber3_name,memeber4_name,techonology_used,project_name) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s);',(name,tname,lname,m1name,m2name,m3name,m4name,tech,pname))
+                cursor.execute('INSERT INTO event_registration(id,team_name, leader_name, memeber1_name,memeber2_name,memeber3_name,memeber4_name,techonology_used,project_name) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s);', (
+                    name, tname, lname, m1name, m2name, m3name, m4name, tech, pname))
                 mysql.connection.commit()
                 msg = "Event Registration Successfull"
 
                 # fetching event from database with event_id
-                cursor.execute('SELECT * FROM hackathons WHERE event_id= %s',(name))
+                cursor.execute(
+                    'SELECT * FROM hackathons WHERE event_id= %s', (name))
                 hk = cursor.fetchone()
 
-                # cursor close 
+                # cursor close
                 cursor.close()
 
-                # rendering template after successfully register with message and event 
-                return render_template('single_page.html',hack=hk,msg=msg,username=session['username'])
+                # rendering template after successfully register with message and event
+                return render_template('single_page.html', hack=hk, msg=msg, username=session['username'])
 
             except Exception as e:
                 error = "Please Check Value in Fields"
-                return render_template('single_page.html',hack=hk,error=error,err=e,username=session['username'])
+                return render_template('single_page.html', hack=hk, error=error, err=e, username=session['username'])
 
         return "please Post the request"
     else:
         return redirect('/login')
-
-
-# route for api calling 
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
