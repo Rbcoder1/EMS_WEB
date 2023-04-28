@@ -27,6 +27,11 @@
     outline: none
 }
 
+*{
+    padding: 0;
+    margin: 0;
+}
+
 body {
     font-family: "Mulish", sans-serif;
     font-weight: normal;
@@ -91,9 +96,9 @@ a {
     color: #635c5c
 }
 
-a:hover {
+/* a:hover {
     color: #fff
-}
+} */
 
 a:focus,
 a:hover {
@@ -106,13 +111,13 @@ button {
     outline: medium none
 }
 
-button:focus,
+/* button:focus,
 input:focus,
 input:focus,
 textarea,
 textarea:focus {
     outline: 0
-}
+} */
 
 input:focus::-moz-placeholder {
     opacity: 0;
@@ -171,7 +176,24 @@ li {
     font-weight: bold;
     border-radius: 30px;
 }
+.btn-resume {
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #0804e6;
+    padding: 5px 50px;
+    background: linear-gradient(rgb(172, 159, 230), rgb(164, 174, 228));
+    transition: 0.2s;
+    border: 1px;
+    box-shadow: 5px 5px rgb(157, 157, 245);
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
 
+
+.btn-resume:hover {
+    color: black;
+    background: linear-gradient(rgb(87, 87, 199), white);
+}
 .btncs:hover {
     /* border: 1px solid; */
     background-color: white;

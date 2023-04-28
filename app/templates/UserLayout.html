@@ -23,20 +23,21 @@
     <header>
         <nav class="navbar bg-body-tertiary fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"><i class="fa fa-book me-3"></i>EMS </a>
+                <a class="navbar-brand Nav-icon" href="/"><i class="fa fa-book me-3"></i>EMS </a>
                 <div class="link-nav-con">
-                    <button class="navbar-toggler dots link-nav" type="button" data-bs-toggle="offcanvas" style="padding: 0;"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                    <button class="navbar-toggler dots link-nav" type="button" data-bs-toggle="offcanvas"
+                        style="padding: 0;" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
                         aria-label="Toggle navigation">
                         <i class="fa-solid fa-bars"></i>
                     </button>
-                    <a href="" class="link-nav"><img class="profile-pic" src="{{ url_for('static', filename='img/azure.png') }}" alt="profile"></a>
+                    <a href="" class="link-nav"><img class="profile-pic"
+                            src="{{ url_for('static', filename='img/azure.png') }}" alt="profile"></a>
                 </div>
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <a class="navbar-brand" href="/"><i class="fa fa-book me-3"></i>EMS </a>
+                        <a class="navbar-brand" href="/"><i class="fa fa-book me-3"></i>EMS</a>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -79,10 +80,26 @@
                 </button>
             </div>
             <div class="side-nav-link-con">
-                <a href="" class="side-nav-link">Profile</a>
-                <a href="" class="side-nav-link">Progress</a>
-                <a href="" class="side-nav-link">Jobs</a>
-                <a href="" class="side-nav-link">Learning</a>
+                <a href="" class="side-nav-link nav-active"><i class="fa-regular fa-user mx-2"></i>Profile</a>
+                <a href="" class="side-nav-link"><i class="fa-solid fa-bars-progress mx-2"></i>Progress</a>
+                <a href="" class="side-nav-link"><i class="fa-regular fa-thumbs-up mx-2"></i>Jobs<span
+                        class="badge badge-success mx-2">New</span></a>
+                <a href="" class="side-nav-link"><i class="fa-solid fa-chalkboard mx-2"></i>Learning</a>
+                <a href="" class="side-nav-link"><i class="fa-solid fa-recycle mx-2"></i>Recent</a>
+                <a href="" class="side-nav-link"><i class="fa-brands fa-rocketchat mx-2"></i>Help Room<span
+                        class="badge badge-success mx-2">New</span></a>
+            </div>
+            <hr>
+            <div class="side-nav-social-con">
+                <a href="" class="side-nav-social-link"><i class="fa-brands fa-whatsapp mx-3"
+                        style="color: green; font-weight: bolder;"></i>Join Now</a>
+                <a href="" class="side-nav-social-link"><i class="fa-solid fa-envelope mx-3"></i>Mail Us</a>
+                <a href="" class="side-nav-social-link"><i class="fa-brands fa-linkedin mx-3"></i>Connect Us</a>
+            </div>
+            <hr>
+            <div class="side-nav-social-con">
+                <a href="" class="side-nav-social-link-youtube"><i class="fa-brands fa-youtube mx-3"
+                        style="color: red; font-weight: bolder; font-size: larger;"></i>Subscribe Us</a>
             </div>
         </div>
     </div>

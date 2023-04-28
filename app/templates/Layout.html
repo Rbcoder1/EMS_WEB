@@ -42,9 +42,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-3">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top py-2">
         <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0" style="color:#9080FC;"><i class="fa fa-book me-3"></i>EMS</h2>
+            <i class="fa fa-book me-3"></i>EMS
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -62,18 +62,16 @@
                 </div>
                 <a href="/contact" class="nav-item nav-link disabled">Contact</a>
                 {% if username%}
-                <a href="/profile" class="nav-item nav-link">{{username}}</a>
+                <a href="/user" class="nav-item nav-link">{{username}}</a>
                 {% endif %}
 
-                <div class="mx-4">
-                    {% if username %}
-                    <a href="/logout" class="btncs py-4 px-4 d-flex align-items-center justify-content-center"
-                        style="height: 20px; width: 150px;">logout<i class="fa fa-arrow-right ms-3"></i></a>
-                    {% else %}
-                    <a href="/login" class="btncs py-4 px-4 d-flex align-items-center justify-content-center"
-                        style="height: 20px; width: 130px;">Sign Up</a>
-                    {% endif %}
-                </div>
+            </div>
+            <div class="mx-4">
+                {% if username %}
+                <a href="/logout" class="btn-resume">logout<i class="fa fa-arrow-right ms-3"></i></a>
+                {% else %}
+                <a href="/login" class="btn-resume">Sign Up</a>
+                {% endif %}
             </div>
         </div>
 

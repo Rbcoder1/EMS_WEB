@@ -1,9 +1,55 @@
 {% extends "UserLayout.html"%}
-{% block Title%} About Page {%endblock Title%}
+{% block Title%} Profile | EMS {%endblock Title%}
 
 
 {% block body%}
-<!-- <h1>Profile</h1>
-<h2>hello {{username}}</h2>
-{{user}} -->
+
+<section class="common-user-section">
+    <div class="container my-4 px-4 py-4">
+        <div class="profile-session-con card mb-3" style="background-color: rgb(227, 227, 240);">
+            <div class="row g-0">
+                <div class="col-md-2 profile-session-pic-con">
+                    <img src="{{ url_for('static', filename='img/azure.png') }}" class="img-fluid profile-session-pic"
+                        alt={{username}}>
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <h4 class="card-title profile-title">{{username}}</h4>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="col-md-3 profile-edit-btn-con">
+                    <button class="btn-resume">Edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="profile-progress ">
+            {%if ph>60%}
+            <h5 class="profile-heading mx-2 my-3" style="color: green;">Your Profile Health <i
+                    class="fa-solid fa-face-smile"></i></h5>
+            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-primary" style="width: {{ph}}%">{{ph}}</div>
+            </div>
+            {%elif ph > 40%}
+            <h5 class="profile-heading mx-2 my-3" style="color: orange;">Your Profile Health <i
+                    class="fa-solid fa-face-smile-beam"></i></h5>
+            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-warning" style="width: {{ph}}%">{{ph}}</div>
+            </div>
+            {%else%}
+            <h5 class="profile-heading mx-2 my-3" style="color: red;">Your Profile Health <i
+                    class="fa-solid fa-face-frown"></i></h5>
+            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-danger" style="width: {{ph}}%">{{ph}}</div>
+            </div>
+            {%endif%}
+        </div>
+    </div>
+</section>
+
 {%endblock body%}
