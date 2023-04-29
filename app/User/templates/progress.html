@@ -1,0 +1,56 @@
+{% extends "UserLayout.html"%}
+{% block Title%} Profile | EMS {%endblock Title%}
+
+
+{% block body%}
+
+<section class="common-user-section">
+    <div class="container py-3">
+        <div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card progress-shor-card" style="border-radius: 20px; padding:0px;">
+                        <div class="card-body inner-progress-card">
+                            <h5 class="card-title">Total Events</h5>
+                            <h6>233</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card progress-shor-card" style="border-radius: 20px; padding:0px;">
+                        <div class="card-body inner-progress-card">
+                            <h5 class="card-title">You Participate</h5>
+                            <h6>33</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card progress-shor-card" style="border-radius: 20px; padding:0px;">
+                        <div class="card-body inner-progress-card">
+                            <h5 class="card-title">You Miss</h5>
+                            <h6>200</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card progress-shor-card" style="border-radius: 20px; padding:0px;">
+                        <div class="card-body inner-progress-card">
+                            <h5 class="card-title">Your Portfolio</h5>
+                            <h6>30%</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-4">
+            <h3 class="progress-heading">Event Participation Graph</h3>
+            <div class="problem-graph">
+                <canvas id="myChart" style="width:70%;max-width:700px"></canvas>
+                <div style="width: 100%;">
+                    <canvas id="myDoughnut" style="width:30%;max-width:700px; " height="0"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock body%}

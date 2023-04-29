@@ -162,39 +162,37 @@ nav {
 
 /* profile session start here  */
 
-.profile-session-con {
+
+.card {
+    border-radius: 20px;
+}
+
+.progress-shor-card {
+    padding: 0px 5px;
+}
+
+.inner-progress-card {
+    border-radius: 20px;
+    display: flex;
+    background-color: rgb(235, 224, 224);
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.inner-progress-card h5 {
+    font-weight: bold;
+    color: rgb(81, 80, 82);
+    font-family: 'Roboto Slab', serif;
+}
+
+.inner-progress-card h6 {
+    font-weight: bolder;
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+}
+
+.problem-graph{
     padding: 20px 5px;
-    border: 1px solid rgb(142, 142, 145);
-    border-radius: 10px;
-    background-color: rgb(150, 150, 156);
-}
-
-.profile-session-pic-con {
-    padding: 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.profile-session-pic {
-    border: 1px solid rgb(142, 142, 145);
-    border-radius: 200px;
-    width: 100px;
-    height: 100px;
-}
-
-.profile-edit-btn-con {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.profile-title {
-    font-weight: bold;
-    text-transform: capitalize;
-}
-
-.profile-heading {
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
 }

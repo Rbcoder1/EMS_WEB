@@ -189,7 +189,13 @@ li {
     transition: all 1s ease-in-out;
 }
 
-
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 30px;
+}
+ 
 .btn-resume:hover {
     color: black;
     background: linear-gradient(rgb(87, 87, 199), white);

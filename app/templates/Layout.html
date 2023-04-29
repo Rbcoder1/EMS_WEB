@@ -61,14 +61,22 @@
                     </div>
                 </div>
                 <a href="/contact" class="nav-item nav-link disabled">Contact</a>
-                {% if username%}
+                <!-- {% if username%}
                 <a href="/user" class="nav-item nav-link">{{username}}</a>
-                {% endif %}
+                {% endif %} -->
 
             </div>
             <div class="mx-4">
                 {% if username %}
-                <a href="/logout" class="btn-resume">logout<i class="fa fa-arrow-right ms-3"></i></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle link-nav" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img class="profile-pic" src="{{ url_for('static', filename='img/azure.png') }}" alt="profile">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/user" style="padding: 5px 15px;" class="nav-link">Profile</a></li>
+                    </ul>
+                </li>
                 {% else %}
                 <a href="/login" class="btn-resume">Sign Up</a>
                 {% endif %}
