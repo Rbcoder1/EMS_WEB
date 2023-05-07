@@ -9,11 +9,11 @@
         {% for item in event %}
         <div class="col">
             <div class="card">
-                <img src="{{ url_for('static', filename='img/azure.jfif') }}" class="card-img-top" alt="..."
+                <img src={{item.img}} class="card-img-top" alt="..."
                     style="width: 20pc; height: 13pc;">
                 <div class="card-body">
-                    <h5 class="card-title">{{item.name}}</h5>
-                    <p class="card-text"> {{item.desc}} </p>
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <p class="card-text"> {{item.desc[0:200]+'.....'}} </p>
                     <a href={{item.link}} class="btn btn-primary" target="_blank" rel="noopener noreferrer">more</a>
                 </div>
             </div>
