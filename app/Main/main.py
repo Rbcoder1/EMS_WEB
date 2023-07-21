@@ -114,8 +114,6 @@ def sessions():
     if 'loggedin' in session:
         return render_template('AllEvents.html',  username=session['username'])
     return render_template('AllEvents.html')
-        return render_template('AllEvents.html',  username=session['username'])
-    return render_template('AllEvents.html')
 
 
 @main.route('/closed_event')
@@ -156,8 +154,6 @@ def login():
 
                 msg = "Successfully login "
                 return render_template('home.html',
-                                       username=user[0],
-                                       session=session, msg=msg)
                                        username=user[0],
                                        session=session, msg=msg)
         else:
