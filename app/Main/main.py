@@ -1,6 +1,9 @@
 from flask import Blueprint, render_template
 from flask import render_template, request, session, redirect
 from app.db import mysql
+from data import loadH2SEvets,LoadGoogleEvent
+import json
+
 from data import loadH2SEvets, LoadGoogleEvent
 import json
 
@@ -15,7 +18,9 @@ Hack2Skill = loadH2SEvets()
 
 all_Events = google + Hack2Skill
 
+all_Events = google + Hack2Skill
 inside_events = []
+
 
 featureEvent = [
     {
@@ -32,7 +37,11 @@ featureEvent = [
 def Fetch_events():
     pass
 
+def Fetch_events():
+    pass
+
 # route of main blueprint start from here
+
 
 
 @main.route('/')
@@ -105,6 +114,8 @@ def sessions():
     if 'loggedin' in session:
         return render_template('AllEvents.html',  username=session['username'])
     return render_template('AllEvents.html')
+        return render_template('AllEvents.html',  username=session['username'])
+    return render_template('AllEvents.html')
 
 
 @main.route('/closed_event')
@@ -145,6 +156,8 @@ def login():
 
                 msg = "Successfully login "
                 return render_template('home.html',
+                                       username=user[0],
+                                       session=session, msg=msg)
                                        username=user[0],
                                        session=session, msg=msg)
         else:
