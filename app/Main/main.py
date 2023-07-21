@@ -1,16 +1,22 @@
 from flask import Blueprint, render_template
 from flask import render_template, request, session, redirect
 from app.db import mysql
+from data import loadH2SEvets, LoadGoogleEvent
+import json
+
 
 main = Blueprint("Main", __name__, template_folder="templates")
 
 
-# application data stores in variable
-outside_events = []
+# Loading Json Files Of Events
+
+google = LoadGoogleEvent()
+Hack2Skill = loadH2SEvets()
+
+all_Events = google + Hack2Skill
 
 inside_events = []
-osession = []
-allevents = []
+
 featureEvent = [
     {
         "id": "1",
@@ -23,7 +29,11 @@ featureEvent = [
 ]
 
 
+def Fetch_events():
+    pass
+
 # route of main blueprint start from here
+
 
 @main.route('/')
 def home():
@@ -55,17 +65,17 @@ def all_events():
     if 'loggedin' in session:
         return render_template('all_events.html',
                                username=session['username'],
-                               event=allevents)
-
+                               event=all_Events)
     return render_template('login.html')
 
 
-@main.route('/outside_event')
+@main.route('/past_events')
 def outside_event():
-    if 'loggedin' in session:
-        return render_template('AllEvents.html', event=outside_events, username=session['username'])
-    else:
-        return render_template('AllEvents.html', event=outside_events)
+    cursor = mysql.connection.cursor()
+    cursor.execute('SELECT * FROM hackathons WHERE open_close=1')
+    past_events = cursor.fetchall()
+
+    return render_template('AllEvents.html',past_events = past_events,username=session['username'])
 
 
 @main.route('/inside_event')
@@ -93,8 +103,8 @@ def hackathon():
 @main.route('/online_session')
 def sessions():
     if 'loggedin' in session:
-        return render_template('AllEvents.html', event=osession, username=session['username'])
-    return render_template('AllEvents.html', event=osession)
+        return render_template('AllEvents.html',  username=session['username'])
+    return render_template('AllEvents.html')
 
 
 @main.route('/closed_event')
@@ -135,8 +145,8 @@ def login():
 
                 msg = "Successfully login "
                 return render_template('home.html',
-                                    username=user[0],
-                                    session=session, msg=msg)
+                                       username=user[0],
+                                       session=session, msg=msg)
         else:
             error = "Loggin with correct username and password"
             return render_template('login.html', error=error)

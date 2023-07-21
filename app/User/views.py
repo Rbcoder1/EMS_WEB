@@ -1,21 +1,24 @@
-from flask import Blueprint, render_template, session
+from flask import Blueprint, render_template, session,redirect
 from app.db import mysql
 
 user = Blueprint("User", __name__, url_prefix="/user",
                  template_folder="templates")
 
-profileHealth = 10
+profileHealth = 100
 
 
 @user.route('/')
 def home():
-    username = session['username']
-    cursor = mysql.connection.cursor()
+    if 'loggedin' in session:
+        username = session['username']
+        cursor = mysql.connection.cursor()
 
-    cursor.execute('SELECT * FROM users WHERE fname= %s ', [username])
+        cursor.execute('SELECT * FROM users WHERE fname= %s ', [username])
 
-    user = cursor.fetchone()
-    return render_template("profile.html", username=username, user=user, ph=profileHealth)
+        user = cursor.fetchone()
+        return render_template("profile.html", username=username, user=user, ph=profileHealth)
+    else:
+        return redirect('/login')
 
 
 @user.route('/progress')
@@ -31,5 +34,3 @@ def user_learning():
 @user.route('/recent')
 def user_recent():
     return render_template('recent.html')
-
-

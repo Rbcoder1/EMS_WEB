@@ -1,0 +1,796 @@
+{
+    "allEvents": [
+        {
+            "title": "Snap AR India presents India Summer Lensathon",
+            "desc": "The India Summer Lensathon (ISL) is a Lens creation challenge presented by Snap AR India and powered by Hack2skill.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-20T10%3A39%3A05.870Z-HOEMPAGE%20SNAP.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Submission Ends :\n                                                        Sun May 07 2023",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/snapin-summer-lensathon-2023?utm_source=homepage&utm_medium=h2s"
+        },
+        {
+            "title": "Intel\u00ae oneAPI Hackathon",
+            "desc": "The Intel\u00ae oneAPI Hackathon is a 30-hour offline hackathon that challenges developers to showcase their expertise in building innovative solutions for the social good through heterogeneous computing, using Intel\u00ae oneAPI as the primary programming model.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-04-04T10%3A57%3A37.079Z-homepage%20creative%20intel-min.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Submissions end:\n                                                        Sun May 07 2023",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://hack2skill.com/intel-oneapi-hackathon-2023?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "INSTINCT 3.0 - Innovation Challenge & Hackathon",
+            "desc": "INSTINCT 3.0 is the latest edition of IntelliSmart\u2019s annual series of Innovation, Challenge & Hackathon. It is the ideal opportunity for all skilled individuals who want to contribute to digitising the Power Distribution Sector.  \n\nAfter the dynamic success of INSTINCT 2.0 last year, Intellismart is back with new challenges associated with the digitalization of the power sector. We urge the participants to ponder upon innovations in smart metering and come up with innovative ideations for the recent problem statements.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-20T08%3A36%3A02.529Z-HOEMPAGE%20INSTINCT.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on :\n                                                        Wed May 10 2023",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/instinct2023"
+        },
+        {
+            "title": "NASA Space Apps - Recruiting Team Member",
+            "desc": "As a volunteer for NASA Space Apps Noida 2023, you will have the opportunity to work with some of the brightest minds in the field of space exploration and Earth science. You will also receive a certificate from NASA, recognition for your hard work, and of course, plenty of goodies and swag!",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-05-02T14%3A50%3A55.867Z-HOEMPAGE%20NASA-min.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations end:\n                                                        Sat May 06 2023",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://bit.ly/nasaTeam"
+        },
+        {
+            "title": "Google Developer Student Clubs",
+            "desc": "Become a leader at your university!\r\nApplications for GDSC Lead are open now.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-24T08%3A46%3A31.208Z-gdsc%20social%201%20%281%29.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Last date to apply:\n                                                        Sun Apr 09 2023",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://goo.gle/gdsc-india-app "
+        },
+        {
+            "title": "Electhon - 2023",
+            "desc": "To address critical issues in the electoral process, specifically the registration of new voters in the electoral roll and enhancing the participation of urban and youth voters in elections, the Election Commission of India is organising Electhon 2023.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-10T16%3A44%3A21.457Z-election_homepage.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations end:\n                                                        Fri Mar 31 2023",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://hack2skill.com/hack/electhon2023?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Hack_a_NEST\u00ae",
+            "desc": "Join us for an exciting event of tech & innovation, where you would explore the potential of the NEST\u00ae\u2019s blockchain technology. Whether you are a seasoned developer or new to the world of blockchain, all are welcomed. You'll be able to test out your own ideas and prototype the applications using cutting-edge technologies of NEST\u00ae During the hackathon, participants will have the opportunity to work with our blockchain platforms and tools, like SDK (Software Development Kit), Smart Contract Libraries L1 Dag Blockchain, etc.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-01-31T07%3A26%3A15.439Z-Hack_A_NEST.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations end:\n                                                        Sun Feb 26 2023",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/hackanest?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "ICC NIUM 'NEXT-IN' HACKATHON",
+            "desc": "A </ Global Hackathon > challenging you to enhance the Digital Cricket Fan Experience",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-01-27T11%3A08%3A35.639Z-homepage_icc_updated.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations ends:\n                                                        Mon Feb 20 2023",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hackathon.icc-cricket.com?utm_source=hack2skill&utm_medium=listing"
+        },
+        {
+            "title": "Plutope Unconnect - Delhi NCR, powered by Hack2skill",
+            "desc": "Plutope presents for the first time ever, an event to promote decentralized finance. Plutope Unconnect, powered by Hack2skill is an offline meetup in Delhi NCR to connect with crypto users and \u2018unconnect\u2019 with centralized exchanges (CEXs) to promote self-custody of funds.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-01-20T12%3A46%3A52.618Z-Homepage%20Card.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations Close :\n                                                        Thu Jan 26 2023",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://hack2skill.com/hack/plutope-unconnect-delhi?utm_HP&utm_medium=h2s"
+        },
+        {
+            "title": "Police Hackathon",
+            "desc": "36-hour Offline Hackathon will be happening at IIIT Bengaluru and is the ideal chance for you to help revolutionize the policing landscape in India.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-12-08T11%3A41%3A05.656Z-home_page_KSPH_2.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations ends: :\n                                                        Sat Jan 21 2023",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://hack2skill.com/hack/police-hackathon-karnataka?utm_source=homepage&utm_medium=promotion"
+        },
+        {
+            "title": "Cloud Tech Camp  Presented by Google Cloud",
+            "desc": "Initiate your journey to becoming a Google Cloud Certified with Cloud Digital Leader in Hack2skill x Google Developer Cloud Tech Camp presented by Google Cloud",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-09-14T12%3A09%3A13.831Z-website_homepage_asset.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ending on:\n                                                        Sat Dec 31 2022",
+            "Mode": "Mode : \n                                                                Hybrid",
+            "link": "https://hack2skill.com/google-cloud-tech-camp"
+        },
+        {
+            "title": "Healthathon",
+            "desc": "A Holistic Approach for the Health Sector \u2728",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-19T14%3A40%3A25.953Z-home%20pag.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations ends: :\n                                                        Fri Nov 18 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/healthathondatathon?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "BUIDL",
+            "desc": "The #BUIDL for Web3 Hack (2022) is a hackathon designed by Lumos Metaverse to open up access to the Web3 space for #BUIDLers like you. We invite you to choose a track featured by a Web3 platform that best suits your project.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-10T10%3A11%3A56.952Z-homepage%20lumos.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sun Oct 30 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/lumos?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "H2STC OPENSOURCE",
+            "desc": "Hack2skill presents for the first time \"H2STC - Open Source: The offline edition of our free flagship Tech Camp with the spice of Hacktoberfest in it! \ud83e\udd29",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-21T08%3A24%3A56.076Z-h2stc%20opensource%20home%20page.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations Close :\n                                                        Tue Oct 25 2022",
+            "Mode": "Mode : \n                                                                Hybrid",
+            "link": "https://hack2skill.com/hack/hackooctober-h2stc?utm_source=hp&utm_medium=h2s"
+        },
+        {
+            "title": "ENCRYPT 2022",
+            "desc": "Encrypt 2022, powered by Hack2skill is a 48-hour online hackathon where the most popular names in the world of coding and blockchain will come together through live streams, presentations, fireside chats, & panel discussions, and will stream on topics such as Web 3.0, Entrepreneurship & Investing.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-09-15T13%3A22%3A45.182Z-new%20408x337.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations ends::\n                                                        Mon Oct 10 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/encrypt2022?utm_source=homepage&utm_medium=promotion"
+        },
+        {
+            "title": "Kimberly-Clark | UNLOKC'22",
+            "desc": "Get Ready to experience 30-Hours of Geekiest, Sleepless, Innovative HACKATHON. Gear up for this OFFLINE HACKATHON and perform the BEST VERSION of you!",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-08-19T08%3A31%3A05.859Z-kcc_402x335.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations end::\n                                                        Sun Sep 25 2022",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://hack2skill.com/hack/unlokc22?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "The Developer Conference for for the Era of AI and the Metaverse",
+            "desc": "NVIDIA GTC is a digital conference where developers, researchers, business leaders, creators, IT decision-makers, and students gather to learn how to shape our world with the power of AI, computer graphics, data science, and more.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-09-16T10%3A48%3A27.971Z-NVIDIA%20HOMEPAGE.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Event Date :\n                                                        Mon Sep 19 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://www.nvidia.com/gtc/?ncid=GTC-NVTESTES"
+        },
+        {
+            "title": "Substrate Saturday By Polkadot",
+            "desc": "An interactive workshop and boot camp by leading mentors, deep diving into Substrate, Rust and everything Blockchain!",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-05-03T09%3A16%3A03.484Z-406X%20337%20SUBSTRATE%20SATURDAY%283may%29.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sat Sep 17 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://bit.ly/Hack2skillCommunity"
+        },
+        {
+            "title": "Re-imagining Markets Datathon",
+            "desc": "FCC & PCI presents Re-Imagining Markets Datathon @ GFF in collaboration with SEBI, a hybrid Datathon organised as a part of the Global Fintech Fest which focuses on finding insights in market related data through innovative analysis using modern technologies such as artificial intelligence, machine learning and big data visualisation.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-09-02T14%3A08%3A11.627Z-402%20X%20335%20SEBI.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Idea Submission End:\n                                                        Wed Sep 14 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/globalfintechfest-hackathon?utm_source=homepage&utm_medium=promotions"
+        },
+        {
+            "title": "H2S Tech Camp Blockchain",
+            "desc": "Blockchain enthusiasts will get a chance to build the product according to the problem statement of the event. These hackathons help participants to gain knowledge and deploy their learnings to solve real-life problems.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-08-16T08%3A27%3A29.480Z-BLOCKCHAIN.jpeg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sun Sep 11 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/h2stc-blockchain"
+        },
+        {
+            "title": "Opportunities for Developers w",
+            "desc": "XR Experts will be revealing the application development ideas that\r\nwe can use  in real-life and provide XR developers with a space to create and\r\nmonetize a   variety of projects.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-07-21T06%3A44%3A03.288Z-Jio_XR_Image.jpeg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sat Jul 23 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": ""
+        },
+        {
+            "title": "How to get placed in?",
+            "desc": "Hack2skill is coming up with an initiative of How to Get Placed In?\r\n Where mentors coming from top-tier companies will be sharing their success stories of getting placed in their dream companies.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-06-20T07%3A32%3A34.523Z-HTGPI_Home%28406x337%29.jpeg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sun Jul 10 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/htgpi?utm_source=homepage&utm_medium=website"
+        },
+        {
+            "title": "Hack2skill AR/VR Meetup-Delhi",
+            "desc": "Hack2Skill is planning its first-ever \u201cOffline Meetup\u201d in Delhi on 25th June 2022 from 4:00-6:00 pm. All the tech enthusiasts, come and join us to explore, and learn AR/VR technology.",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-06-14T07%3A48%3A16.222Z-406x337%20ARVR%20Delhi%20Meetup.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Fri Jul 01 2022",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://hack2skill.com/hack/arvrmeetupdelhi?utm_source=homepage&utm_medium=website"
+        },
+        {
+            "title": "Game Of Codes Python",
+            "desc": "Game of Codes Python is a coding competition based on Python problem statements.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-06-18T07%3A29%3A19.157Z-GOC%203%20HOME%20406x337.jpeg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Thu Jun 30 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/goc3?utm_source=homepage&utm_medium=website"
+        },
+        {
+            "title": "Advance Gaming and P2E Program",
+            "desc": "f you feel like developing a P2E game OR know more about it OR want to create it too but do not know where to start, we have got you covered,  Join us at Advance Gaming and P2E session on 24th June, 5:00 P.M.",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-06-13T10%3A12%3A50.910Z-406x337%20advanced%20gaming%20and%20p2e.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Fri Jun 24 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://lu.ma/df_june?tk=sfXpWW"
+        },
+        {
+            "title": "RPA Developer Kickstarter Program",
+            "desc": "Live training sessions series to onset a hands-on journey in RPA with UiPath.",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-05-24T11%3A55%3A32.910Z-406_X_337_RPA_DEVELOPER_KICKSTARTER.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sun May 29 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://bit.ly/Developer-Kickoff-UiPathD"
+        },
+        {
+            "title": "UiPath Integration Services- Delhi Meet-up",
+            "desc": "A community meet & greet event in the capital city to interact with MVPs and an amazing networking opportunity for all.",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-05-24T11%3A40%3A27.100Z-406_X_337_UIPATH_COMMUNITY.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sat May 28 2022",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://community.uipath.com/events/details/uipath-delhi-ncr-presents-uipath-integration-services-with-servicenow-in-person-meetup/"
+        },
+        {
+            "title": "DotFriday by Polkadot India",
+            "desc": "NFTs have been a Web3 trend that has not only endured the test of time but are now also a critical element in the next big deal, the Metaverse!",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-05-03T08%3A46%3A08.931Z-406X%20337%20POLKADOT%20NFT.jpeg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Fri May 27 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://lu.ma/df_may?tk=dQNSSn"
+        },
+        {
+            "title": "RPA Reboot - Industry Training Program",
+            "desc": "A tailored learning program to get started with the basics of Automation...",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-04-26T09%3A30%3A52.392Z-homepage406x337%20%E2%80%93%20ui%20path%20academy%20black%20logo.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sat Apr 30 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://bit.ly/3rAJVVk"
+        },
+        {
+            "title": "Career Prospects In Automation & Related Field",
+            "desc": "Get insights into what the RPA industry holds in terms of employment opportunities from Industry experts",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-04-26T10%3A40%3A32.396Z-406X337%20THREE%20SPEAKERS%20FOR%20CAREER%20PROSPECTS.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sat Apr 30 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://community.uipath.com/e/mmgwds/"
+        },
+        {
+            "title": "Robotics Process Automation Developer Camp",
+            "desc": "Get exquisite learning experience about RPA from experienced and seasoned speakers with RPADC, a right-from-scratch Bootcamp for students, working professionals and freelancers.",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-04-02T06%3A20%3A33.173Z-ui_path_home.jpeg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sat Apr 30 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "http://hack2skill.com/rpa-developer-camp"
+        },
+        {
+            "title": "Game of Codes 2.0",
+            "desc": "Hack2Skill is here with a coding competition to test your knowledge of coding languages. Game of Codes is a coding competition based on DS/Algo problem statements.",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-04-15T05%3A29%3A48.820Z-GOC%20homepage406x337.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sat Apr 23 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/goc2?utm_source=website&utm_medium=homepage"
+        },
+        {
+            "title": "DotFriday by Polkadot India",
+            "desc": "\u200bBlockchain-based gaming protocols have turned into quite the trending topic in crypto land. After learning the insights about these topics individually in our previous DotFridays, here were are back with more ignited conversations about this community-oriented trend in the web3 world - \"Gaming Guilds\".",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-04-15T10%3A18%3A54.586Z-homepage406x337.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Fri Apr 22 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://lu.ma/df_apr?tk=Cqdk36"
+        },
+        {
+            "title": "Chennai Hacks",
+            "desc": "\u200bChennai being a massive technology hub, and Scaler being a destination for techies\r\nto upskill, an intersection was bound to happen. And we are done waiting.",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-03-17T10%3A10%3A26.715Z-scaler-homePage-min.webp",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sun Mar 27 2022",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://hack2skill.com/hack/chennaihackathon?utm_source=H2S&utm_medium=homepage"
+        },
+        {
+            "title": "International Women's Day Lensathon",
+            "desc": "A lens creation challenge presented by Snap AR India and powered by Hack2skill.",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-03-01T09%3A16%3A25.283Z-snap_IWD_home.jpeg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sun Mar 27 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/snapin-iwd2022?utm_source=Hack2skill&utm_medium=Website"
+        },
+        {
+            "title": "INSTINCT 2.0 - Innovation Challenge & Hackathon",
+            "desc": "IntelliSmart towards innovation.",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-03-04T08%3A02%3A34.927Z-instinct-home-min.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Sun Mar 20 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/instinct2022"
+        },
+        {
+            "title": "30 Hacks West",
+            "desc": "30Hacks is GlobalLogic\u2019s innovation platform to showcase transformative ideas, unleashing tech\u2019s true potential and deriving tangible results for the business.",
+            "img": "https://s3bucket-incpro.s3.eu-north-1.amazonaws.com/2022-03-04T08%3A01%3A16.547Z-home_Page_GL-min.jpeg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Tue Mar 15 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/globallogic30hacks"
+        },
+        {
+            "title": "H2STC - NFT",
+            "desc": "Non-Fungible Token famously abbreviated as NFT has emerged as a hot-selling topic\r\nin less than a year. The rise of NFT has taken the world by the wheel, especially in the art domain.",
+            "img": "https://media.discordapp.net/attachments/939416789195051088/942739455087894558/nft_homepage.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Fri Feb 25 2022",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/h2stc-nft"
+        },
+        {
+            "title": "New Year Lensathon",
+            "desc": "New Year Lensathon is an Augmented Reality Lens creation challenge, for anyone and everyone.",
+            "img": "https://cdn.discordapp.com/attachments/938726922727358494/940971281854107708/Group_2002.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Tue Dec 28 2021",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/snapchat-new-year-lensathon"
+        },
+        {
+            "title": "Symphony Coolathon",
+            "desc": "Symphony brings its first-ever innovation challenge.",
+            "img": "https://media.discordapp.net/attachments/938726922727358494/940984266471395399/Group_202.png?width=693&height=569",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                        Thu Nov 25 2021",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/symphony"
+        },
+        {
+            "title": "Hack-A-Bot",
+            "desc": "Hack-A-Bot, is organised in association with UiPath, ACM VVCE, and Code club on 13-May-2023 open to various colleges.  The hackathon will have a specific focus on automation technology, and students will be encouraged to develop creative solutions to real-world problems using UiPath's platform. We believe that this event will not only enhance our students' technical skills but also provide them with exposure to industry professionals and opportunities for networking.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-05-05T06%3A10%3A38.984Z-Hack-A-Bot.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on:\n                                                        Sat May 13 2023",
+            "Mode": "Mode : \n                                                                offline",
+            "link": "https://hack2skill.com/hack/hack-a-bot-vvce?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Social Summer of Code",
+            "desc": "Social Summer of Code (SSOC) is a program that aims to connect students with open-source organisations and projects to encourage their contribution to the open-source community. The program is run by the Social (Formally Script Foundation) organisation.\nThis time participants will able to build their own open source projects where they will be guided at every part of the stage with a 1:1 mentor for them",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-02-27T07%3A33%3A14.461Z-IMG_1714%20%282%29.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on :\n                                                        Wed May 31 2023",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://hack2skill.com/hack/ssoc?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Think-Tank Ideathon 2023",
+            "desc": "ThinkTank Ideathon is an ideation competition to be conducted by the AIML Society at Chandigarh University Campus from 24-26 April 2023. The event aims to bring together individuals from diverse backgrounds to brainstorm and develop innovative ideas related to Artificial Intelligence and Machine Learning.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-04-24T05%3A58%3A57.465Z-CU.16%20%281%29.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on:\n                                                                                    Wed Apr 26 2023",
+            "Mode": "Mode : \n                                                                                            offline",
+            "link": "https://hack2skill.com/hack/think-tank-2023?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Innoverse",
+            "desc": "A 24-hour hackathon, which will be conducted in hybrid mode, i.e, in both online and offline mode. It is an intensive, brainstorming event where individuals from different backgrounds, skills and interests cover to diagnose predefined problems, identify the best opportunities and ideate the most viable solution. At Innoverse, we bring open-source enthusiasts and entrepreneurs together and share new ideas and learn from industry experts. \u201cINNOVATION is taking two things that exist and putting them together in a new way. What good is an idea if it remains an idea? TRY. EXPERIMENT. FAIL.TRY AGAIN. CHANGE THE WORLD.\u201d",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-12-24T09%3A43%3A29.809Z-innoverse.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Tue Apr 25 2023",
+            "Mode": "Mode : \n                                                                                            Hybrid",
+            "link": "https://hack2skill.com/hack/innoverse"
+        },
+        {
+            "title": "Evolute",
+            "desc": "We believe in developing a pragmatic environment in our campus, so we will encourage hardware and software based problem statements, every team must have a prototype for their solution and the presentation must be appreciable.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-21T14%3A13%3A23.794Z-EVOLUTE%20%28406%20%C3%97%20337px%29.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on :\n                                                                                    Fri Apr 07 2023",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/evolute2k23?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "House of Hackers",
+            "desc": "House of Hackers is first of its kind 36-hours hackathon ever organized in Jharkhand bringing together tech individuals to build and solve problems in a collaborative manner.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-25T16%3A17%3A21.548Z-IMG-20230325-WA0036.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on :\n                                                                                    Wed Apr 05 2023",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/houseofhackers?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "MPGI Hacks",
+            "desc": "MPGI HACKS \u2013 2023 is an event organized by the technical club of CSE department of MPGI (Tech-E-Clan). This event aims to bring like-minded coders and enthusiasts from all over the nation together, and inculcate coding culture among the students of the institute through its programming Hackathon. We aspire to recognize the student\u2019s limitless potential to tackle real world problems of public interest, in a short span of time utilizing the complete freedom for use of concepts and platform.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-11T15%3A40%3A21.684Z-MPGI%20HACKSS%20Hack2Skill_alternate.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on:\n                                                                                    Thu Mar 30 2023",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/mpgihackss?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Solution Sprint",
+            "desc": "Solution-Sprint is a one-of-a-kind technical event that drives around the latest technologies in the talk about Artificial intelligence, machine learning and data science.  The students need to register in teams of 3-4 members, work on the dataset provided to them on the day of the event work, that is, clean processes and standardize the data according to the stated problem and create a Machine learning Model to bring out the most efficient solution possible. In a 4-Hour run, the students need to bring out the possible solutions using software like  Jupiter, Google Colab, Kaggle etc., Results will be declared on the bases of the efficiency of the models and in cases of collisions the breakthrough will be produced on the bases of the analysis and pre-processing done on the dataset provided.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-23T11%3A37%3A36.444Z-SS%20InfoGraphic.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on :\n                                                                                    Tue Mar 28 2023",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/solutionsprint?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Megahack 3.0",
+            "desc": "We are the third edition of a hackathon conducted by and for students at St. John College of Engineering and Management (SJCEM). SJCEM aims to encourage technical innovation and highlight students' abilities and skills throughout this hackathon. We intend to attract the finest and brightest students not only from SJCEM as well as from other universities/institutions throughout India. The event provides a chance for hackers to exchange ideas, learn further information, and make connections for future collaborations. We cordially invite all technophiles to this exciting Hackathon...!!!",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-11T16%3A48%3A16.042Z-Megahack%20%281%29%20%281%29.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on:\n                                                                                    Tue Mar 28 2023",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/megahack3-sjcem?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "BuildSV23",
+            "desc": "BuildSV23 , an online hackathon event with the theme of Healthcare , open theme and web developments is a competition which wants to promote innovation for the good of the society and believes that problem solving lies within the heart of innovation . It is a 48-hour long hackathon which will take place in online mode and promoting generation of new ideas and solutions for the good of the society.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-09T09%3A39%3A27.348Z-Untitled%20design.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on:\n                                                                                    Fri Mar 24 2023",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/buildsv23?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "DComm VALHALLA - Code for better future",
+            "desc": "Build apps capable of taking millions of users on journeys they\u2019ve never been on before. Simple. Scalable. Secure.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-12-19T13%3A49%3A40.928Z-Dcomm.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations ends:\n                                                                                    Sat Mar 04 2023",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/dcommvalhalla?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "HACKGLB",
+            "desc": "HACKGLB is ready for it's 2023 edition. It is an exciting learning opportunity for students who are passionate about technology and are interested in solving real-world problems with cutting-edge solutions.  With the first edition of HACKGLB '23, we're hoping to see much more innovative, improved and effective solutions to the issues at hand and share them with the rest of the world by bringing back the community of student developers together yet again.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-02-10T09%3A26%3A54.353Z-24TH%20Feb%202023%20to%2025TH%20Feb%202023.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration end on :\n                                                                                    Mon Feb 20 2023",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/hackglb?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Poornima Hackathon",
+            "desc": "Poornima Hackathon 2023, aims to raise perfectionist life in India and comprehensive development of India. It will congregate all streams of engineers to deliberate on the innovation and technological advancement in developing smarter technologies for building efficient, sustainable and decent quality life in India.  The theme of Poornima Hackathon \"To build innovative solutions for SMART CITIES\". Emphasize of Hackathon is a space in which developers, entrepreneurs, designers, professors, researchers and persons attentive in making their city a better place, can gather in a collaboratively fashion a solution that makes our city more efficient and intelligent. This event plays a significant role in ingenious creativity, flighting of imagination and funneling for self-reliant India, remodeling commence.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-02-01T10%3A09%3A48.131Z-IMG-20230131-WA0000.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration end:\n                                                                                    Tue Feb 07 2023",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/poornimahackathon?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Hack the Winter",
+            "desc": "Hack The Winter is a Community-organized saga of 30 days of open-source events focused around multiple hot text stacks in which attendees get hands-on coding experience by building real-world projects under the guidance of mentors. Join this venture with your very own technical leads from the corporate world guiding you throughout your journey.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-12-16T10%3A04%3A42.111Z-H2S%20creative.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Mon Jan 23 2023",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/hackthewinter"
+        },
+        {
+            "title": "VinHack",
+            "desc": "VinHack is a 36-hour hybrid hackathon that encourages collaboration, learning and innovation through brainstorming groundbreaking ideas and generating prototypes that solve real-world problems. Conducted in 3 rounds, teams of 1-4 members will be provided with an ideal platform to analyze the problem statements and develop algorithms to implement their solutions. VinHack also incorporates guest speaker sessions and fun games to push our coders to achieve their greatest potential and expand their technical knowledge and skills",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-12-26T15%3A03%3A00.035Z-vinhack.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Tue Jan 10 2023",
+            "Mode": "Mode : \n                                                                                            Hybrid",
+            "link": "https://hack2skill.com/hack/vinhack/"
+        },
+        {
+            "title": "Hackerrupt '22",
+            "desc": "Vidyavardhaka College of Engineering brings you a unique and golden opportunity to showcase your talent in developing innovative solutions to the exciting challenges offered by the industries. A team could select a company-specific problem statement for the event and start implementing feasible solutions. Teams opting for the company-specific problem statements will be mentored by industry experts from the respective organization during the events. Teams may be offered job/internship opportunities and other goodies by respective organizations for innovative solutions to company-specific problems. \u200b A team can also opt for Open Ended problem statement.\n\nOur Official Website : hackerrupt.com\n\nDirect Registration: hackerrupt.com/registrartion\n\nProblem Statements: hackerrupt.com/problem_statements",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-11-21T05%3A54%3A28.005Z-Hackerrupt%20%20%28406%20%C3%97%20337%20px%29%20%281%29.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Fri Dec 16 2022",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/hackerrupt"
+        },
+        {
+            "title": "GIH CODEFIESTA 1.O",
+            "desc": "The GIH CODEFIESTA 1.0 Hackathon, which is a part of JIGYASA Annual Technical Fest, is a 24-Hour long Hackathon that gives you an opportunity to build something unique to solve problems from various spheres of modern human life.\r\n\r\nUse this hackathon to launch your big idea and potentially get continuity grants to turn your idea into a real-world product!",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-11-17T08%3A55%3A51.281Z-2.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Sat Dec 03 2022",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/codefiesta/"
+        },
+        {
+            "title": "SOS TECH HACK",
+            "desc": "SOS TECH HACK is a community-focused Hackathon, designed especially for the community's needs. Whether you are a beginner or an expert, here is a perfect chance to showcase your skills and witness a competitive yet inclusive community around it. This year it is going to be organized from 10/10/2022 in online mode.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-05T13%3A11%3A41.500Z-October%2010%2C2022.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Thu Dec 01 2022",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/sostechhack?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Hack @ NITRA",
+            "desc": "This is a theme-based hackathon where everyone has to choose one or the other theme of his/her choice, work on the same, and submit it before the end of the deadline. You'll find the respective problem statements inside every theme.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-11-07T10%3A35%3A38.595Z-photo_6289366571881181261_y.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Tue Nov 15 2022",
+            "Mode": "Mode : \n                                                                                            Hybrid",
+            "link": "https://hack2skill.com/hack/nitrathon"
+        },
+        {
+            "title": "HackCBS 5.0",
+            "desc": "Did somebody just mention an offline hackathon? That\u2019s right because hackCBS is all set to return with an offline arena for the warriors of code!\n\nAt hackCBS, we provide a tranquil and welcoming environment where you will be completely free to develop a product, pick up new skills, and along with that, we'll also give you the chance to network with leaders in the hacker community.\n\nWe welcome novices and veterans alike making sure they are nourished with action-oriented learning through a number of workshops led by industry experts and multiple other network strengthening activities.\n\nOver 1,000 hackers from all over the country competed for the top spot last year, writing over 50,000 lines of code in a single 24-hour period and guzzling more than 10,000 cups of coffee. But this time it\u2019s going to be different, \u2018coz this time it\u2019s going to be even grander.\n\nWebsite: https://hackcbs.tech/",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-27T09%3A02%3A13.097Z-PlatformLogo_Final%20HackCBS.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Tue Oct 25 2022",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/hackcbs"
+        },
+        {
+            "title": "H2STC- Hack-O-October -  Deogiri Institute of Engineering and Management Studies",
+            "desc": "H2STC DIEMS Innovators Hackathon is here for technology enthusiast by H2S and Deogiri Institute Of Engineering And Management Studies. Here we are to celebrate Hactoberfest. Hacktoberfest can be an especially welcoming time to dip your toes into open source contributions for the first time. Hacktoberfest can be great for finishing off a project, or starting something fresh. Maintainers are the keystone of open source. This year\u2019s Hacktoberfest has a new, added focus: empowering open source maintainers. Participate in OpenSource projects and make contributions for a great experience, a chance to win cool swags, and other benefits. Start your OpenSource Journey. Get chance to explore Git-Github with Hactoberfest.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-21T08%3A49%3A58.302Z-HOMEPAGE%20%E2%80%93%20diems.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations Close :\n                                                                                    Fri Oct 21 2022",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/h2stc-diems-"
+        },
+        {
+            "title": "H2STC- Hack-O-October - Budge  Institute of Technology",
+            "desc": "Show off what you have learnt during hacktoberfest! Build new projects using your newly acquired skills or polish your old project to showcase here! Since, this year,Hacktoberfest as included no code & design elements, you can also submit your designs and Ui/ux prototypes. Apart from these, you are free to use any project which has not breached community and contributing guidelines. You can submit coding solutions if you may, but developer projects might fetch you brownie points! We will be judging on your execution, idea, creativity and hackers-favourite ideas. We wont be having any specific tracks, so feel free to build what you want to!",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-21T08%3A47%3A52.934Z-HOMEPAGE%20%E2%80%93bbit.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations Close :\n                                                                                    Wed Oct 19 2022",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/octoberhacx"
+        },
+        {
+            "title": "H2STC- Hack-O-October ABESIT",
+            "desc": "H2STC Hack-O-October ABESIT is flagship of H2STC Hack-O-October comes up with the perfect opportunity to get involved in the open source community and make your mark on the world. There are so many great projects out there that could use your help, so get hacking!",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-21T08%3A40%3A32.226Z-HOMEPAGE%20%E2%80%93abesit%20%281%29.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations Close :\n                                                                                    Thu Oct 13 2022",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/hacktoberfest-abesit"
+        },
+        {
+            "title": "Technorax V 8.0",
+            "desc": "T-Hacks 5.0 is a 24-Hours virtual Hackathon where you will get the opportunity to interpret real-world problems by revamping them into something unusual. There are numerous themes to test your problem-solving skills. The theme for IEEE day is \u201cLeveraging Technology for a Better Tomorrow\u201d. While the world benefits from what\u2019s new, IEEE focuses on what\u2019s next. You can pick any theme and leverage technology to build solutions for real-life problems. Build the ideas you believe in and make a difference!",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-09-27T05%3A45%3A44.624Z-Technorax.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Mon Oct 10 2022",
+            "Mode": "Mode : \n                                                                                            Hybrid",
+            "link": "https://hack2skill.com/hack/technoraxieee?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Codertine",
+            "desc": "CODERTINE 3.0 is a 2 hours inter-college online coding competition organised by RGIT Codecell in collaboration with RGIT CESS where students will be provided with problem statements that will revolve around the concepts of Competitive Programming",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-03T08%3A42%3A11.313Z-Codertine.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Fri Oct 07 2022",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/codertine?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Robota",
+            "desc": "The annual robotics hackathon is conducted by the KGEC Robotics Society. In this hackathon, there will mainly be three domains, namely, Electronics and IoT, Machine Learning, and Mechatronics and Robotics. This hackathon will contain very beginner-friendly topics so that everyone with different levels of experience can easily participate in it. However, performance will be measured in terms of the different aspects of the competition, including teamwork and coordination, quality of the solution, and other aspects mentioned on the website:\r\n\r\nROBOTA (kgec-robotics-society.github.io)",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-09-12T09%3A34%3A18.810Z-WhatsApp%20Image%202022-09-10%20at%2009.40.21.jpeg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Fri Sep 30 2022",
+            "Mode": "Mode : \n                                                                                            Hybrid",
+            "link": "https://hack2skill.com/hack/robota"
+        },
+        {
+            "title": "HackOut'22",
+            "desc": "Hackathon is an event where computer programmers, software developers, and technological enthusiasts work intensively over a short period on software projects. Hackathon aims to encourage experimentation and creativity that is challenge oriented. The Hackathon phenomenon has emerged as a practical approach to promote innovation alongside digital technology for various fields.\n\nHackout\u201919 was organized in DA-IICT as one of the pre-fest events of Synapse. It was a 36 hours event where students from all over Gujarat took part enthusiastically. The students come up with practical solutions in the 36 hours. The event witnessed the participation of over 90 teams, comprising 3-4 participants in each group.\n\nHackout\u201921 was a virtual Hackathon conducted during the pandemic.\n\nThis year we are back offline. HackOut'22 will be a solid but fun 72 hours of your time in Hackathon wherein the tactical teamwork, innovative ideas, and your journey from project to product, ideas to action, and learning will be judged in a place. REGISTER FAST!! \n\nWe will also be accepting on-spot registrations this time.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-09-12T08%3A33%3A05.741Z-Original%20Poster.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Fri Sep 23 2022",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/hackout22"
+        },
+        {
+            "title": "Codeissance",
+            "desc": "\"Innovation is taking two things that already exist and putting them together in a new way\"\n\n\u26a1 TSEC CodeStorm\u26a1\n\npresents\n\n\ud83d\udd25 CODEISSANCE\ud83d\udd25\n\nA 24 hour \ud83d\udd50 offline hackathon where your skills and our platform will help you build amazing projects worth showing on your resume\ud83e\udd29\n\nDOMAINS\ud83d\udda5\ufe0f :\n\n1. Website and app development\n\n2. BlockChain\n\n3. Social Cause\n\nTEAM SIZE\ud83d\udc65:\n\n2-4 members\n\nPRIZES WORTH \ud83d\udcb8 :\n\n\ud83e\udd47 1st Prize : \u20b9 25,000\n\n\ud83e\udd48 2nd Prize : \u20b9 15,000\n\n\ud83e\udd49 3rd Prize : \u20b9 10,000\n\nREGISTRATION FEE : \u20b9500 per team\n\nLOCATION\ud83d\udccd: Thadomal Shahani Engineering College, Bandra West, Mumbai-400028\n\nDATE\ud83d\udcc6 : 23rd- 24th September, 2022\n\nGet your laptops and brains ready to join us for a worthwhile experience \ud83e\udd73\n\nLast Date Of Registration-18th September, 2022\n\nFor any queries, feel free to contact -\n\nVedant Deshmukh: +919820222154\n\nAaditya Nitin: +919325643272\n\nFollow us on Instagram for updates: www.instagram.com/tseccodestorm/",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-09-14T05%3A02%3A05.788Z-Codeissance_2022.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Wed Sep 21 2022",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/codeissance"
+        },
+        {
+            "title": "Hack The Mountains 3.0",
+            "desc": "Hack The Mountains is a community-focused Hackathon, designed especially for the needs of the community. Whether you are a beginner or an expert, here is a perfect chance to showcase your skills and witness a competitive yet inclusive developer community around it.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-04T07%3A04%3A28.748Z-htm%20theme%20poster.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Sun Sep 18 2022",
+            "Mode": "Mode : \n                                                                                            Offline",
+            "link": "https://hack2skill.com/hack/hackthemountains3?utm_source=H2S&utm_medium=MainPage"
+        },
+        {
+            "title": "Web3Hack",
+            "desc": "CryptoNaukri is providing the best Blockchain developers to the startups by building an innovative learning ecosystem where developers can learn Blockchain development, solve problems during development, gain experience as an aspiring Blockchain developer by working on DAOs open source projects, get a unique identity as a Blockchain developer and get jobs in verified web3 startups across the globe. Web3Hack is a hackathon to empower Web 3 Hacker community, we encourage Blockchain enthusiasts to build some good hacks for the community, our moto is also to involve more beginner hackers and support everyone to solve the shared problems of our society to bring a change in a revolutionary way. We are focusing on creating more learning opportunities along with building and solving.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-09-12T08%3A51%3A18.495Z-IMG_1002.JPG",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Closed:\n                                                                                    Sun Aug 07 2022",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/web3hack"
+        },
+        {
+            "title": "HackO' Mania",
+            "desc": "Hack'O Mania is an event hoping to empower young minds by bringing enthusiastic technocrats of various domains under one roof. This new year, the first hackathon is being held by the Technocrats club of The Oxford College of Engineering with the goal to create a sprint-like event, where participants create, hack, and innovate to solve problems while adhering to the spirit of creativity and teamwork. We aim to tackle real-world problems and will be filled with interactive sessions and insightful webinars and talks by renowned speakers of the industries. Hack'O Mania is gonna bring zeal in the participants to turn their ingenious ideas into tangible projects.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-09-14T05%3A20%3A29.964Z-Hackomania.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration Ends:\n                                                                                    Thu Jan 06 2022",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/hack0mania"
+        },
+        {
+            "title": "H2STC- Hack-O-October - CU",
+            "desc": "H2STC Hack-O-October H2S CU Chapter would be organizing Hack2skill's version of Hacktoberfest, HACKO-OCTOBER -A month-long annual celebration of open-source projects, their maintainers, and the entire community of contributors.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2022-10-21T08%3A53%3A20.177Z-HOMEPAGE%20chandigarh%20university.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations Close :\n                                                                                    Invalid Date",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/h2stc-cu"
+        }
+    ]
+}

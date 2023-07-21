@@ -9,6 +9,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'eventmanage'
 
+
 mysql.init_app(app)
 
 if __name__ == "__main__":

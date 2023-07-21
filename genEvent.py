@@ -1,0 +1,5 @@
+from scrapEvents.scrapH2SEvents import GenerateH2SEvents
+from scrapEvents.scrapGoogleEvents import GenerateGoogleEvent
+
+GenerateGoogleEvent()
+GenerateH2SEvents()
