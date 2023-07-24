@@ -1,26 +1,48 @@
 {
     "allEvents": [
         {
-            "title": "Snap AR India presents India Summer Lensathon",
-            "desc": "The India Summer Lensathon (ISL) is a Lens creation challenge presented by Snap AR India and powered by Hack2skill.",
-            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-20T10%3A39%3A05.870Z-HOEMPAGE%20SNAP.png",
+            "title": "Narra8ive Escape Velocity 1.0",
+            "desc": "Escape Velocity 1.0 is an exclusive learning program designed to empower individuals in their journey to becoming skilled Rust and Solana developers.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-07-10T10%3A31%3A13.086Z-HOEMPAGE%20NARRA8IVE.png",
             "organizer": [
                 "Hack2Skill"
             ],
-            "submmision_date": "Submission Ends :\n                                                        Sun May 07 2023",
+            "submmision_date": "Last date to register:\n                                                        Fri Jul 28 2023",
             "Mode": "Mode : \n                                                                Online",
-            "link": "https://hack2skill.com/snapin-summer-lensathon-2023?utm_source=homepage&utm_medium=h2s"
+            "link": "https://hack2skill.com/hack/narra8ive-escape-velocity1?utm_source=H2Shome&utm_medium=H2Swebsite"
         },
         {
-            "title": "Intel\u00ae oneAPI Hackathon",
-            "desc": "The Intel\u00ae oneAPI Hackathon is a 30-hour offline hackathon that challenges developers to showcase their expertise in building innovative solutions for the social good through heterogeneous computing, using Intel\u00ae oneAPI as the primary programming model.",
-            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-04-04T10%3A57%3A37.079Z-homepage%20creative%20intel-min.png",
+            "title": "Empowering Investors Hackathon",
+            "desc": "The Empowering Investors Hackathon brings together the power of advanced technologies such as Gen Ai and Machine Learning to curate educational content, protect investors from misleading claims, and foster trust in the securities market. By leveraging cutting-edge technology, participants will develop innovative solutions that empower investors and revolutionise the future of banking.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-07-21T09%3A11%3A47.364Z-homepae.png",
             "organizer": [
                 "Hack2Skill"
             ],
-            "submmision_date": "Submissions end:\n                                                        Sun May 07 2023",
+            "submmision_date": "Last date to register:\n                                                        Sun Aug 13 2023",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/sebi-empowering-investors-hackathon?utm_source=h2shomepage&utm_medium=h2shomepage"
+        },
+        {
+            "title": "NASA SPACE APPS NOIDA 2023",
+            "desc": "World\u2019s Largest Space & Science Hackathon\n\n7-8th October 2023",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-05-02T14%3A50%3A55.867Z-HOEMPAGE%20NASA-min.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations end:\n                                                        Sat Oct 07 2023",
             "Mode": "Mode : \n                                                                Offline",
-            "link": "https://hack2skill.com/intel-oneapi-hackathon-2023?utm_source=homepage&utm_medium=promotional"
+            "link": "https://spaceappsnoida.hack2skill.com"
+        },
+        {
+            "title": "GenAI Rush Buildathon",
+            "desc": "Nexus Venture Partners & The Product Folks presents GenAI Rush\u00a0-\u00a0Buildathon, Powered By Hack2skill, Wework Labs, Rephrase.ai & Workhack is an exciting 24-hour non-stop Offline Hackathon where you can maximise your learning through practical application! Enrol in the hackathon following the cohort and gain hands-on experience in building the next groundbreaking AI innovation.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-06-20T04%3A57%3A17.362Z-homepage%20%281%29.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on :\n                                                        Sat Jul 22 2023",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://hack2skill.com/hack/gen-ai-rush-buildathon?utm_source=H2ShomePage&utm_medium=promotional"
         },
         {
             "title": "INSTINCT 3.0 - Innovation Challenge & Hackathon",
@@ -34,15 +56,26 @@
             "link": "https://hack2skill.com/hack/instinct2023"
         },
         {
-            "title": "NASA Space Apps - Recruiting Team Member",
-            "desc": "As a volunteer for NASA Space Apps Noida 2023, you will have the opportunity to work with some of the brightest minds in the field of space exploration and Earth science. You will also receive a certificate from NASA, recognition for your hard work, and of course, plenty of goodies and swag!",
-            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-05-02T14%3A50%3A55.867Z-HOEMPAGE%20NASA-min.png",
+            "title": "Intel\u00ae oneAPI Hackathon",
+            "desc": "The Intel\u00ae oneAPI Hackathon is a 30-hour offline hackathon that challenges developers to showcase their expertise in building innovative solutions for the social good through heterogeneous computing, using Intel\u00ae oneAPI as the primary programming model.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-04-04T10%3A57%3A37.079Z-homepage%20creative%20intel-min.png",
             "organizer": [
                 "Hack2Skill"
             ],
-            "submmision_date": "Registrations end:\n                                                        Sat May 06 2023",
+            "submmision_date": "Submissions end:\n                                                        Sun May 07 2023",
             "Mode": "Mode : \n                                                                Offline",
-            "link": "https://bit.ly/nasaTeam"
+            "link": "https://hack2skill.com/intel-oneapi-hackathon-2023?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Snap AR India presents India Summer Lensathon",
+            "desc": "The India Summer Lensathon (ISL) is a Lens creation challenge presented by Snap AR India and powered by Hack2skill.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-03-20T10%3A39%3A05.870Z-HOEMPAGE%20SNAP.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Submission Ends :\n                                                        Sun May 07 2023",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/snapin-summer-lensathon-2023?utm_source=homepage&utm_medium=h2s"
         },
         {
             "title": "Google Developer Student Clubs",
@@ -441,15 +474,15 @@
             "link": "https://hack2skill.com/hack/symphony"
         },
         {
-            "title": "Hack-A-Bot",
-            "desc": "Hack-A-Bot, is organised in association with UiPath, ACM VVCE, and Code club on 13-May-2023 open to various colleges.  The hackathon will have a specific focus on automation technology, and students will be encouraged to develop creative solutions to real-world problems using UiPath's platform. We believe that this event will not only enhance our students' technical skills but also provide them with exposure to industry professionals and opportunities for networking.",
-            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-05-05T06%3A10%3A38.984Z-Hack-A-Bot.jpg",
+            "title": "Beyond Blockchain: Hashgraph Hackathon",
+            "desc": "Explore the future of #Web3 at the Beyond Blockchain: Hashgraph Hackathon - the virtual hackathon designed for creative experimentation and innovation!",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-05-08T05%3A05%3A58.949Z-hashgraph.jpeg",
             "organizer": [
                 "Hack2Skill"
             ],
-            "submmision_date": "Registration ends on:\n                                                        Sat May 13 2023",
-            "Mode": "Mode : \n                                                                offline",
-            "link": "https://hack2skill.com/hack/hack-a-bot-vvce?utm_source=homepage&utm_medium=promotional"
+            "submmision_date": "Submissions end:\n                                                                                    Sun Jun 25 2023",
+            "Mode": "Mode : \n                                                                                            Online",
+            "link": "https://hack2skill.com/hack/hederahashgraph?utm_source=H2ShomePage&utm_medium=promotional"
         },
         {
             "title": "Social Summer of Code",
@@ -458,9 +491,20 @@
             "organizer": [
                 "Hack2Skill"
             ],
-            "submmision_date": "Registration ends on :\n                                                        Wed May 31 2023",
-            "Mode": "Mode : \n                                                                Offline",
+            "submmision_date": "Registration ends on :\n                                                                                    Wed May 31 2023",
+            "Mode": "Mode : \n                                                                                            Offline",
             "link": "https://hack2skill.com/hack/ssoc?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Hack-A-Bot",
+            "desc": "Hack-A-Bot, is organised in association with UiPath, ACM VVCE, and Code club on 13-May-2023 open to various colleges.  The hackathon will have a specific focus on automation technology, and students will be encouraged to develop creative solutions to real-world problems using UiPath's platform. We believe that this event will not only enhance our students' technical skills but also provide them with exposure to industry professionals and opportunities for networking.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-05-05T06%3A10%3A38.984Z-Hack-A-Bot.jpg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registration ends on:\n                                                                                    Sat May 13 2023",
+            "Mode": "Mode : \n                                                                                            offline",
+            "link": "https://hack2skill.com/hack/hack-a-bot-vvce?utm_source=homepage&utm_medium=promotional"
         },
         {
             "title": "Think-Tank Ideathon 2023",

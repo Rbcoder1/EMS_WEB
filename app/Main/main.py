@@ -16,7 +16,7 @@ main = Blueprint("Main", __name__, template_folder="templates")
 google = LoadGoogleEvent()
 Hack2Skill = loadH2SEvets()
 
-all_Events = google + Hack2Skill
+# all_Events = google + Hack2Skill
 
 all_Events = google + Hack2Skill
 inside_events = []
