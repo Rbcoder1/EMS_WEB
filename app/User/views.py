@@ -13,7 +13,7 @@ def home():
         username = session['username']
         cursor = mysql.connection.cursor()
 
-        cursor.execute('SELECT * FROM users WHERE fname= %s ', [username])
+        cursor.execute('SELECT * FROM user_profile WHERE first_name= %s ', [username])
 
         user = cursor.fetchone()
         return render_template("profile.html", username=username, user=user, ph=profileHealth)
