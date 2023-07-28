@@ -16,6 +16,7 @@
 {%else%}
 {%endif%}
 
+{%if hack%}
 <div class="container my-4 d-flex align-item-center justify-content-center flex-column">
     <div class="container d-flex align-item-center justify-content-center">
         <img src="https://source.unsplash.com/1200x350/?hackathon" class="img-fluid" alt="Responsive image"
@@ -41,22 +42,10 @@
             <div class="col-sm-6 col-md-7">
                 <h1>
                     {{hack[1]}}
-                    <!-- <span class="badge badge-primary text-uppercase">#hackthewinter</span> -->
                 </h1>
                 <p class="details">
-                    {{hack[2]}} <a href="#about-link" class="text-muted font-weight-bold">view more...</a>
+                    <!-- {{hack[2]}} <a href="#about-link" class="text-muted font-weight-bold">view more...</a> -->
                 </p>
-                <p class="hack-stats">
-                    <span class="mr-3 text-capitalize">
-                        <i class="fa fa-globe" aria-hidden="true"></i>
-                        offline
-                    </span>
-                    <span class="mr-2 mx-1">
-                        <i class="fa fa-group" aria-hidden="true"></i>
-                        group entry
-                    </span>
-                </p>
-                <!--  -->
             </div>
             <div class="col-sm-4 col-md-3 d-none d-md-block">
                 <div class="date-section">
@@ -65,7 +54,7 @@
                         Submission Deadline
                     </h6>
                     <h4 class="text-uppercase mb-3 font-weight-normal">
-                        <div class="endDate">{{hack[3]}}<br> <span style="font-size: x-small; white-space: nowrap;">
+                        <div class="endDate">{{(hack[9])}}<br> <span style="font-size: x-small; white-space: nowrap;">
                                 (India Standard Time)</span></div>
                     </h4>
                     <a name="" id="" class="btn btn-secondary" href="#register" role="button">
@@ -83,28 +72,31 @@
             </div>
         </div>
     </div>
-    {{hack[0]}}
-    <!-- {{id}} -->
-
     <!-- about session  -->
-
     <div class="container-md">
-        <h1>About</h1>
+        <h1 class="my-4">About</h1>
         <p>
             {{hack[2]}}
         </p>
-
-        <b>Perk of joining :</b>
-        <ol type="A">
-            <li>Swags</li>
-            <li>Goodies</li>
-            <li>Mentorship</li>
-            <li>Lerning</li>
-        </ol>
     </div>
 
+    <!-- Object Session  -->
+    <div class="cotainer-md">
+        <h1 class="my-4">Objectives :</h1>
+        <p>{{hack[5]}}</p>
+    </div>
+
+    <!-- Technologies Used  -->
+    {% if hack[6] != 'none'%}
+    <div class="container-md">
+        <h1 class="my-4">Technologies Used :</h1>
+        <p>{{hack[6]}}</p>
+    </div>
+    {%else%}
+    {%endif%}
+
     <!-- callenges session starts -->
-    <div class="container">
+    <!-- <div class="container">
         <h1 class="my-4">
             Challenge :
         </h1>
@@ -161,21 +153,44 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container my-4">
-        <h1>Organisors :</h1>
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="card">
-                <img src="https://source.unsplash.com/200x200/?robot" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">R C Patel IMRD</h5>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div> -->
 
+
+    {%if hack[7] != 'none'%}
+    <!-- Phases Of Events  -->
+    <div class="container-md">
+        <h1 class="my-4">
+            Phases :
+        </h1>
+        <p>
+            {%for p in hack[7].split(',')%}
+        <div class="d-flex">
+            <h2 style="color: purple;">Phase : </h2>
+            <h3 class="mx-3">{{p}}</h3>
+        </div>
+        {%endfor%}
+
+        </p>
+    </div>
+    {%else%}
+    {%endif%}
+
+    {%if hack[8] != 'none'%}
+    <!-- Rules Of Event  -->
+    <div class="container-md">
+        <h1 class="my-4">Rules Of {{hack[1]}}</h1>
+        {%for r in hack[8].split(',')%}
+        <div class="d-flex">
+            <h3 style="color: purple;">Rule :</h3>
+            <b class="mx-3">{{r}}</b>
+        </div>
+        {%endfor%}
+    </div>
+    {%else%}
+    {%endif%}
 
     <!-- schedule of Hackathon  -->
+    {%if hack[9] != 'none'%}
     <div class="container my-4">
         <h1 class="my-2">Schedule of Hackathon :</h1>
         <div class="container bootstrap snippets bootdeys">
@@ -252,61 +267,43 @@
                         </div>
                     </article>
                 </div>
+            </div>
+            {%else%}
+            {%endif%}
+            <div class="container" id="register">
+                <form class="text-center border border-light p-5" method="post"
+                    action="/hackathon/user_registration/{{hack[0]}}">
 
-                <div class="container" id="register">
-                    <form class="text-center border border-light p-5" method="post"
-                        action="/hackathon/user_registration/{{hack[0]}}">
+                    <p class="h4 mb-4">{{hack[1]}} Registration</p>
 
-                        <p class="h4 mb-4">Field Work Registration</p>
-
-                        <div class="form-row mb-4">
-                            <div class="col my-3">
-                                <!-- First name -->
-                                <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="flname"
-                                    placeholder="Full Name" required>
-                            </div>
-                            <div class="col my-3">
-                                <!-- last name -->
-                                <input type="number" id="defaultRegisterFormFirstName" class="form-control" name="rno"
-                                    placeholder="Roll No" required>
-                            </div>
-                            <div class="col my-3">
-                                <!-- member 1 name -->
-                                <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="tname"
-                                    placeholder="Topic Name" required>
-                            </div>
-                            <div class="col my-3">
-                                <!-- member 3 name -->
-                                <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="m2name"
-                                    placeholder="Member2 Name" required>
-                            </div>
-                            <div class="col my-3">
-                                <!-- member 3 name -->
-                                <input type="text" id="defaultRegisterFormLastName" class="form-control" name="m3name"
-                                    placeholder="Member3 name" required>
-                            </div>
-                            <div class="col my-3">
-                                <!-- member 4 name -->
-                                <input type="text" id="defaultRegisterFormLastName" class="form-control" name="m4name"
-                                    placeholder="Member4 name" required>
-                            </div>
+                    <div class="form-row mb-4">
+                        <div class="col my-3">
+                            <!-- First name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="flname"
+                                placeholder="Full Name" required>
                         </div>
                         <div class="col my-3">
-                            <!-- project name -->
-                            <input type="text" id="defaultRegisterFormLastName" class="form-control" name="pname"
-                                placeholder="Project Idea name" required>
+                            <!-- last name -->
+                            <input type="number" id="defaultRegisterFormFirstName" class="form-control" name="rno"
+                                placeholder="Roll No" required>
+                        </div>
+                        <div class="col my-3">
+                            <!-- member 1 name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="tname"
+                                placeholder="Topic Name" required>
+                        </div>
+                        <div class="col my-3">
+                            <!-- member 1 name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="dname"
+                                placeholder="Enter Division" required>
                         </div>
 
-                        <div class="col my-3">
-                            <!-- project name -->
-                            <input type="text" id="defaultRegisterFormLastName" class="form-control" name="tech"
-                                placeholder="Tech Name like NLP,ML,Blockchain" required>
-                        </div>
                         <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
+</div>
+{%endif%}
 {% endblock body %}

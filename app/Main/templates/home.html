@@ -15,7 +15,7 @@
 <!-- https://mdbcdn.b-cdn.net/img/new/slides/041.webp -->
 <section class="slider-area mycontainer">
     <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-        <div class="carousel-inner" style="height: 25rem; width:90%; margin: auto;">
+        <div class="carousel-inner" style="width:90%; margin: auto;">
             {%for item in fe%}
             {%if item.id == "1"%}
             <div class="carousel-item active">
@@ -71,8 +71,8 @@ and getstarted button  -->
     <div class="my-4">
         <h3 class="my-3">Some Popular Event's Logo</h3>
         <div class="row">
-            <div class="col-md - 2 col - sm - 4">
-                <div class="" style=" width: 200px; text-align: center;">
+            <div class="col-md-2 col-sm-4">
+                <div class="" style="width: 200px; text-align: center;">
                     <img src="{{ url_for('static', filename='img/carrerfair.jfif') }}" alt="Photo of sunset"
                         style="width:200px;  height:100px; border:1px; border-radius:10px;">
                 </div>

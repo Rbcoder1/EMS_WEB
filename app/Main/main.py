@@ -4,6 +4,7 @@ from app.db import mysql
 from data import loadH2SEvets, LoadGoogleEvent
 from data import loadH2SEvets, LoadGoogleEvent
 import json
+import ast
 
 
 main = Blueprint("Main", __name__, template_folder="templates")
@@ -71,18 +72,18 @@ def outside_event():
     cursor.execute('SELECT * FROM internal_events WHERE is_open=0')
     past_events = cursor.fetchall()
 
-    return render_template('AllEvents.html', past_events=past_events, username=session['username'])
+    print(past_events)
+    return render_template('AllEvents.html', events=past_events, username=session['username'])
 
 
 @main.route('/inside_event')
 def inside_event():
     if 'loggedin' in session:
         cursor = mysql.connection.cursor()
-        cursor.execute('SELECT * FROM internal_events')
+        cursor.execute('SELECT * FROM internal_events WHERE is_open=1')
         internal_events = cursor.fetchall()
+        return render_template('AllEvents.html', username=session['username'], events=list(internal_events))
 
-        return render_template('AllEvents.html', username=session['username'],events=internal_events)
-    
     return render_template('login.html')
 
 
@@ -105,7 +106,6 @@ def sessions():
     if 'loggedin' in session:
         return render_template('AllEvents.html',  username=session['username'])
     return render_template('AllEvents.html')
-
 
 
 # routes for authentication register and login
@@ -156,11 +156,6 @@ def register():
             cursor.execute(
                 "INSERT INTO user_register(first_name,last_name,user_email,user_password) VALUES(%s,%s,%s,%s)",
                 (fname, lname, email, password))
-
-            cursor.execute(
-                "INSERT INTO user_profile(first_name,last_name,user_email) VALUES(%s,%s,%s)",
-                (fname, lname, email)
-            )
             mysql.connection.commit()
             msg = "Successfully Registered "
             cursor.close()
@@ -191,7 +186,7 @@ def single_page(name):
             # fetching event from event table in database
             cursor = mysql.connection.cursor()
             cursor.execute(
-                'SELECT * FROM hackathons WHERE event_id= %s', (name))
+                'SELECT * FROM internal_events WHERE event_id= %s', (name))
             hk = cursor.fetchone()
 
             # rendering template after successfully event is fetch
@@ -208,26 +203,36 @@ def user_register(name):
     if 'loggedin' in session:
 
         if request.method == 'POST':
-            tname = request.form['tname']
-            lname = request.form['lname']
-            m1name = request.form['m1name']
-            m2name = request.form['m2name']
-            m3name = request.form['m3name']
-            m4name = request.form['m4name']
-            tech = request.form['tech']
-            pname = request.form['pname']
-
+            print(request.form['rno'])
+            if 'flname' in request.form:
+                flname = request.form['flname']
+            if 'rno' in request.form:
+                rno = request.form['rno']
+            if 'tname' in request.form:
+                tname = request.form['tname']
+            if 'dname' in request.form:
+                dname = request.form['dname']
+            if 'm3name' in request.form:
+                m3name = request.form['m3name']
+            if 'm4name' in request.form:
+                m4name = request.form['m4name']
+            if 'tech' in request.form:
+                tech = request.form['tech']
+            if 'pname' in request.form:
+                pname = request.form['pname']
+            
+            print(flname,rno,tname,dname)
             try:
                 # inserting user data into database
                 cursor = mysql.connection.cursor()
-                cursor.execute('INSERT INTO event_registration(id,team_name, leader_name, memeber1_name,memeber2_name,memeber3_name,memeber4_name,techonology_used,project_name) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s);', (
-                    name, tname, lname, m1name, m2name, m3name, m4name, tech, pname))
+                cursor.execute('INSERT INTO fieldwork(rno,name,divi,topic) VALUES(%s,%s,%s,%s);', (
+                    rno,flname,dname,tname))
                 mysql.connection.commit()
                 msg = "Event Registration Successfull"
 
                 # fetching event from database with event_id
                 cursor.execute(
-                    'SELECT * FROM hackathons WHERE event_id= %s', (name))
+                    'SELECT * FROM internal_events WHERE event_id= %s', (name))
                 hk = cursor.fetchone()
 
                 # cursor close
@@ -238,7 +243,7 @@ def user_register(name):
 
             except Exception as e:
                 error = "Please Check Value in Fields"
-                return render_template('single_page.html', hack=hk, error=error, err=e, username=session['username'])
+                return render_template('single_page.html' ,error=error, err=e, username=session['username'])
 
         return "please Post the request"
     else:
