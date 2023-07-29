@@ -154,7 +154,7 @@ var str = "";
 
 for (item of orgArray) {
     let strcp = `<div class="col-md - 3 col - sm - 6">
-                    <div class="" style=" width: 200px; text-align: center; >
+                    <div class="mb-4" style=" width: 200px; text-align: center; margin: auto; >
                         <h4 class="card-title text-right"><i class="material-icons">${item.title}</i></h4>
                         <img src=${item.img} alt="Photo of sunset" style="width:200px;  height:100px; border:1px; border-radius:10px;">
                         <div style="display:flex; justify-content:center; align-item:center;" class="my-2">

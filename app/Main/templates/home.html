@@ -2,6 +2,7 @@
 {% block Title%} Home Page {%endblock Title%}
 
 
+
 {% block body%}
 <!-- Spinner Start -->
 <!-- <div id="spinner"
@@ -17,13 +18,13 @@
     <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
         <div class="carousel-inner" style="width:90%; margin: auto;">
             {%for item in fe%}
-            {%if item.id == "1"%}
+            {%if item[0]%}
             <div class="carousel-item active">
-                <img src="{{item.path}}" class="d-block w-100" alt="...">
+                <img src="{{item[1]}}" class="d-block w-100" alt="..." style="height: 60vh;">
             </div>
             {%else%}
             <div class="carousel-item">
-                <img src="{{item.path}}" class="d-block w-100" alt="...">
+                <img src="{{item[1]}}" class="d-block w-100" alt="..." style="height: 60vh;">
             </div>
             {%endif%}
             {%endfor%}
@@ -72,31 +73,31 @@ and getstarted button  -->
         <h3 class="my-3">Some Popular Event's Logo</h3>
         <div class="row">
             <div class="col-md-2 col-sm-4">
-                <div class="" style="width: 200px; text-align: center;">
+                <div class="d-flex mb-4" style="width: 200px; text-align: center; margin: auto;">
                     <img src="{{ url_for('static', filename='img/carrerfair.jfif') }}" alt="Photo of sunset"
                         style="width:200px;  height:100px; border:1px; border-radius:10px;">
                 </div>
             </div>
             <div class="col-md - 3 col - sm - 6">
-                <div class="" style=" width: 200px; text-align: center;">
+                <div class=" mb-4" style=" width: 200px; text-align: center; margin: auto;">
                     <img src="{{ url_for('static', filename='img/techtalk.jfif') }}" alt="Photo of sunset"
                         style="width:200px;  height:100px; border:1px; border-radius:10px;">
                 </div>
             </div>
             <div class="col-md - 3 col - sm - 6">
-                <div class="" style=" width: 200px; text-align: center;">
+                <div class=" mb-4" style=" width: 200px; text-align: center; margin: auto;">
                     <img src="{{ url_for('static', filename='img/summitgcp.jpg') }}" alt="Photo of sunset"
                         style="width:200px;  height:100px; border:1px; border-radius:10px;">
                 </div>
             </div>
             <div class="col-md - 3 col - sm - 6">
-                <div class="" style=" width: 200px; text-align: center;">
+                <div class=" mb-4" style=" width: 200px; text-align: center; margin: auto;">
                     <img src="{{ url_for('static', filename='img/workshops.png') }}" alt="Photo of sunset"
                         style="width:200px;  height:100px; border:1px; border-radius:10px;">
                 </div>
             </div>
             <div class="col-md - 3 col - sm - 6">
-                <div class="" style=" width: 200px; text-align: center;">
+                <div class=" mb-4" style=" width: 200px; text-align: center; margin: auto;">
                     <img src="{{ url_for('static', filename='img/hackathons.png') }}" alt="Photo of sunset"
                         style="width:200px;  height:100px; border:1px; border-radius:10px;">
                 </div>

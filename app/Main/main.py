@@ -18,16 +18,16 @@ Hack2Skill = loadH2SEvets()
 
 all_Events = google + Hack2Skill
 
-featureEvent = [
-    {
-        "id": "1",
-        "path": "static/img/img2.jpg"
-    },
-    {
-        "id": "1",
-        "path": "static/img/img1.png"
-    }
-]
+# featureEvent = [
+#     {
+#         "id": "1",
+#         "path": "static/img/img2.jpg"
+#     },
+#     {
+#         "id": "1",
+#         "path": "static/img/img1.png"
+#     }
+# ]
 
 # route of main blueprint start from here
 
@@ -35,9 +35,13 @@ featureEvent = [
 @main.route('/')
 def home():
     if 'loggedin' in session:
+        cursor = mysql.connection.cursor()
+        cursor.execute('SELECT * FROM feature_banners')
+        featureEvent = cursor.fetchall()
+        print(featureEvent)
         return render_template('home.html', username=session['username'], fe=featureEvent)
 
-    return render_template('home.html', fe=featureEvent)
+    return render_template('home.html',)
 
 
 @main.route('/about')
@@ -212,8 +216,8 @@ def user_register(name):
                 tname = request.form['tname']
             if 'dname' in request.form:
                 dname = request.form['dname']
-            if 'm3name' in request.form:
-                m3name = request.form['m3name']
+            if 'm1name' in request.form:
+                m1name = request.form['m1name']
             if 'm4name' in request.form:
                 m4name = request.form['m4name']
             if 'tech' in request.form:
@@ -225,8 +229,8 @@ def user_register(name):
             try:
                 # inserting user data into database
                 cursor = mysql.connection.cursor()
-                cursor.execute('INSERT INTO fieldwork(rno,name,divi,topic) VALUES(%s,%s,%s,%s);', (
-                    rno,flname,dname,tname))
+                cursor.execute('INSERT INTO fieldwork(rno,name,divi,topic,member1) VALUES(%s,%s,%s,%s,%s);', (
+                    rno,flname,dname,tname,m1name))
                 mysql.connection.commit()
                 msg = "Event Registration Successfull"
 
