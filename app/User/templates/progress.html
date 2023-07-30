@@ -1,7 +1,6 @@
 {% extends "UserLayout.html"%}
 {% block Title%} Profile | EMS {%endblock Title%}
 
-
 {% block body%}
 
 <section class="common-user-section">
@@ -12,7 +11,7 @@
                     <div class="card progress-shor-card" style="border-radius: 20px; padding:0px;">
                         <div class="card-body inner-progress-card">
                             <h5 class="card-title">Total Events</h5>
-                            <h6>233</h6>
+                            <h6>{{pdata.total_events}}</h6>
                         </div>
                     </div>
                 </div>
@@ -20,7 +19,7 @@
                     <div class="card progress-shor-card" style="border-radius: 20px; padding:0px;">
                         <div class="card-body inner-progress-card">
                             <h5 class="card-title">You Participate</h5>
-                            <h6>33</h6>
+                            <h6>{{pdata.user_participated}}</h6>
                         </div>
                     </div>
                 </div>
@@ -28,7 +27,7 @@
                     <div class="card progress-shor-card" style="border-radius: 20px; padding:0px;">
                         <div class="card-body inner-progress-card">
                             <h5 class="card-title">You Miss</h5>
-                            <h6>200</h6>
+                            <h6>{{pdata.user_missed}}</h6>
                         </div>
                     </div>
                 </div>
@@ -36,7 +35,7 @@
                     <div class="card progress-shor-card" style="border-radius: 20px; padding:0px;">
                         <div class="card-body inner-progress-card">
                             <h5 class="card-title">Your Portfolio</h5>
-                            <h6>30%</h6>
+                            <h6>{{pdata.portfolio}}%</h6>
                         </div>
                     </div>
                 </div>

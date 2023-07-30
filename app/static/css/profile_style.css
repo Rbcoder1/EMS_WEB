@@ -46,6 +46,10 @@ nav {
     border: 1px solid;
     border-radius: 30px;
 }
+.profile-session-pic{
+    border: 1px;
+    border-radius: 10px;
+}
 
 .resume-area {
     display: flex;
@@ -125,7 +129,7 @@ nav {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     color: #0804e6;
-    padding: 5px 50px;
+    padding: 1rem 2rem;
     background: linear-gradient(rgb(172, 159, 230), rgb(164, 174, 228));
     transition: 0.2s;
     border: 1px;
@@ -196,3 +200,65 @@ nav {
     padding: 20px 5px;
     display: flex;
 }
+.navbar-toggler{
+    display: none;
+}
+
+.conprof{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* making responsive  */
+
+@media screen and (max-width:1036px) {
+    /* profile page responsiveness  */
+    .btn-resume{
+        padding: 5px;
+    }
+    .side-nav-link{
+        font-size: 12px;
+        width: 20vw;
+    }
+    .side-nav-social-link{
+        font-size: 12px;
+        width: 20vw;
+    }
+    .side-nav-social-link-youtube{
+        font-size: 12px;
+        width: 20vw;
+    }  
+    .common-user-section{
+        padding-left: 13rem;
+    }
+}
+
+@media screen and (max-width:700px){
+    .sideNav{
+        width: 22%;
+    }
+    .side-nav-link{
+        width: 25vw;
+    }
+    .side-nav-social-link-youtube{
+        width: 23vw;
+    }
+}
+
+@media screen and (max-width:650px){
+    .sideNav{
+        display: none;
+    }
+    .common-user-section{
+        padding: 5rem 0;
+    }
+    .navbar-toggler{
+        display: block;
+    }
+    .conprof{
+        text-align: center;
+        padding: 10px;
+    }
+}
+

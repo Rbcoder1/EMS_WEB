@@ -9,7 +9,7 @@ allevent = []
 
 def GenerateGoogleEvent():
     print("Proccess of Generating Google Events Take Some Time......")
-    url = 'https://cloud.google.com/events?ser=EiQKDWZpbHRlcl90eXBlXzIQASIREg9maWx0ZXJfdmFsdWVfMTA'
+    url = 'https://cloud.google.com/events'
 
     # Send a request to the URL and get the HTML content
     response = requests.get(url)

@@ -18,6 +18,7 @@ Hack2Skill = loadH2SEvets()
 
 all_Events = google + Hack2Skill
 
+all_Events_length = len(all_Events)
 # featureEvent = [
 #     {
 #         "id": "1",
@@ -96,11 +97,13 @@ def inside_event():
 def hackathon():
     if 'loggedin' in session:
         cursor = mysql.connection.cursor()
-        cursor.execute('SELECT * FROM internal_events WHERE tags="hackathon"')
+        cursor.execute(
+            'SELECT * FROM internal_events WHERE tags="hackathon" and is_open=1')
         hk = cursor.fetchall()
+        print(hk)
         return render_template('hackathon.html',
                                username=session['username'],
-                               event=hackathon)
+                               event=hk)
 
     return render_template('login.html')
 
@@ -162,13 +165,24 @@ def register():
                 (fname, lname, email, password))
             mysql.connection.commit()
             msg = "Successfully Registered "
+
+            cursor.execute(
+                'SELECT user_id FROM user_register WHERE user_email = %s',
+                [email])
+            uid = cursor.fetchone()
+
+            cursor.execute(
+                "INSERT INTO user_profile(profile_id) VALUES(%s)",
+                (uid))
+
+            mysql.connection.commit()
             cursor.close()
 
             # returning template after user is successfully inserted
             return render_template('login.html', msg=msg)
         except Exception as e:
             print(e)
-            error = "Please fill form properly"
+            error = e
             return render_template('register.html', error=error, err=e)
 
     return render_template('register.html')
@@ -224,13 +238,13 @@ def user_register(name):
                 tech = request.form['tech']
             if 'pname' in request.form:
                 pname = request.form['pname']
-            
-            print(flname,rno,tname,dname)
+
+            # print(flname,rno,tname,dname)
             try:
                 # inserting user data into database
                 cursor = mysql.connection.cursor()
                 cursor.execute('INSERT INTO fieldwork(rno,name,divi,topic,member1) VALUES(%s,%s,%s,%s,%s);', (
-                    rno,flname,dname,tname,m1name))
+                    rno, flname, dname, tname, m1name))
                 mysql.connection.commit()
                 msg = "Event Registration Successfull"
 
@@ -247,7 +261,7 @@ def user_register(name):
 
             except Exception as e:
                 error = "Please Check Value in Fields"
-                return render_template('single_page.html' ,error=error, err=e, username=session['username'])
+                return render_template('single_page.html', error=error, err=e, username=session['username'])
 
         return "please Post the request"
     else:
