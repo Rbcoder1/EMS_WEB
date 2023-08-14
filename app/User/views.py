@@ -23,7 +23,7 @@ def home():
 
         for i in user:
             if i is '':
-                profileHealth -= 10
+                profileHealth -= 15
 
         return render_template("profile.html", user=user, ph=profileHealth)
     else:
@@ -85,7 +85,7 @@ def user_update():
 
         cursor.execute(
             'UPDATE user_profile SET photo=%s,mobile_no=%s,about=%s,b_date=%s,interest=%s,skill=%s,future_goal=%s WHERE profile_id=%s',
-            (photo, int(mobile), about, birthdate, interest, skills, fgoal, userid))
+            (photo, mobile, about, birthdate, interest, skills, fgoal, userid))
 
         mysql.connection.commit()
         cursor.close()
