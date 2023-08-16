@@ -143,47 +143,53 @@ def login():
                                        session=session, msg=msg)
             else:
                 error = "Loggin with correct username and password"
-                return render_template('login.html', error=error)
+                return render_template('Authentication.html', error=error)
         else:
-            return render_template('login.html')
+            return render_template('Authentication.html')
 
 
 @main.route('/register', methods=['GET', 'POST'])
 def register():
-    if request.method == 'POST':
-        fname = request.form['fname']
-        lname = request.form['lname']
-        email = request.form['email']
-        password = request.form['password']
-        # phone_number = request.form['phone']
+    if 'loggedin' in session:
+        return redirect('/')
+    else:
 
-        try:
-            # inserting new user entry into user_register table in database
-            cursor = mysql.connection.cursor()
-            cursor.execute(
-                "INSERT INTO user_register(first_name,last_name,user_email,user_password) VALUES(%s,%s,%s,%s)",
-                (fname, lname, email, password))
-            mysql.connection.commit()
-            msg = "Successfully Registered "
+        if request.method == 'POST':
+            fname = request.form['fname']
+            lname = request.form['lname']
+            email = request.form['email']
+            password = request.form['password']
+            # phone_number = request.form['phone']
+            print(fname,lname,email,password)
 
-            cursor.execute(
-                'SELECT user_id FROM user_register WHERE user_email = %s',
-                [email])
-            uid = cursor.fetchone()
+            try:
+                # inserting new user entry into user_register table in database
+                cursor = mysql.connection.cursor()
+                cursor.execute(
+                    "INSERT INTO user_register(first_name,last_name,user_email,user_password) VALUES(%s,%s,%s,%s)",
+                    (fname, lname, email, password))
+                mysql.connection.commit()
+                msg = "Successfully Registered "
 
-            cursor.execute(
-                "INSERT INTO user_profile(profile_id) VALUES(%s)",
-                (uid))
+                cursor.execute(
+                    'SELECT user_id FROM user_register WHERE user_email = %s',
+                    [email])
+                uid = cursor.fetchone()
 
-            mysql.connection.commit()
-            cursor.close()
+                cursor.execute(
+                    "INSERT INTO user_profile(profile_id) VALUES(%s)",
+                    (uid))
 
-            # returning template after user is successfully inserted
-            return render_template('login.html', msg=msg)
-        except Exception as e:
-            print(e)
-            error = e
-            return render_template('register.html', error=error, err=e)
+                mysql.connection.commit()
+                cursor.close()
+
+                # returning template after user is successfully inserted
+                return render_template('Authentication.html', msg=msg)
+            
+            except Exception as e:
+                error = "Already Register"
+                # return redirect('/login')
+                return render_template('Authentication.html', error=error, err=e)
 
     return render_template('register.html')
 

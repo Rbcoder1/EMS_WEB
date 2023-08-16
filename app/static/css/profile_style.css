@@ -160,7 +160,8 @@ nav {
 /* common section for users  */
 
 .common-user-section {
-    padding-left: 20rem;
+    padding-left: 18rem;
+    padding-right: 3rem;
     padding-top: 5rem;
 }
 

@@ -1,9 +1,12 @@
 from flask import Blueprint, render_template, session, redirect, request
 from app.db import mysql
 from app.Main import allevent_len
+import requests
+from serpapi import GoogleSearch
 
 user = Blueprint("User", __name__, url_prefix="/user",
                  template_folder="templates")
+
 
 @user.route('/')
 def home():
@@ -18,12 +21,13 @@ def home():
         user_profile = cursor.fetchone()
 
         user = user_profile + user_register
-        
+
         profileHealth = 100
 
         for i in user:
-            if i is '':
-                profileHealth -= 15
+            print(i)
+            if i == '' or i == None:
+                profileHealth -= 12.5
 
         return render_template("profile.html", user=user, ph=profileHealth)
     else:
@@ -36,21 +40,37 @@ def user_progress():
     cursor = mysql.connection.cursor()
     cursor.execute('SELECT count(event_id) FROM internal_events')
     internal_event_count = cursor.fetchall()
-    allevents = allevent_len()  + internal_event_count[0][0]
+    allevents = allevent_len() + internal_event_count[0][0]
 
-    # fetching user participation in events 
+    # fetching user participation in events
 
-    cursor.execute('SELECT * FROM event_registration WHERE user_id=%s',[session['id']])
-    user_register_data = cursor.fetchall();
+    cursor.execute(
+        'SELECT * FROM event_registration WHERE user_id=%s', [session['id']])
+    user_register_data = cursor.fetchall()
     user_register_count = len(user_register_data)
 
-    user_progres_data={
+    user_progres_data = {
         "total_events": allevents,
-        "user_participated" : user_register_count,
+        "user_participated": user_register_count,
         "user_missed": allevents - user_register_count,
-        "portfolio" : int(user_register_count/allevents*100)  
+        "portfolio": int(user_register_count/allevents*100)
     }
-    return render_template('progress.html', pdata = user_progres_data)
+    return render_template('progress.html', pdata=user_progres_data)
+
+
+@user.route('/job')
+def job():
+    params = {
+        "engine": "google_jobs",
+        "q": "india",
+        "hl": "en",
+        "api_key": "25f356d132750d01b7b1c531209efc065322bba1e8df57197a7d0fd0bb585eeb",
+    }
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    jobs_results = results["jobs_results"]
+    
+    return render_template('job.html',jobs=jobs_results)
 
 
 @user.route('/learning')
@@ -82,7 +102,6 @@ def user_update():
 
         # storign it in database
         cursor = mysql.connection.cursor()
-
         cursor.execute(
             'UPDATE user_profile SET photo=%s,mobile_no=%s,about=%s,b_date=%s,interest=%s,skill=%s,future_goal=%s WHERE profile_id=%s',
             (photo, mobile, about, birthdate, interest, skills, fgoal, userid))

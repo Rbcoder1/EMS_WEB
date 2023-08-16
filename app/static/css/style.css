@@ -27,7 +27,7 @@
     outline: none
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
@@ -36,7 +36,7 @@ body {
     font-family: "Mulish", sans-serif;
     font-weight: normal;
     font-style: normal;
-    font-size: 16px
+    font-size: 16px;
 }
 
 h1,
@@ -176,6 +176,7 @@ li {
     font-weight: bold;
     border-radius: 30px;
 }
+
 .btn-resume {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
@@ -195,11 +196,12 @@ li {
     border: 1px solid;
     border-radius: 30px;
 }
- 
+
 .btn-resume:hover {
     color: black;
     background: linear-gradient(rgb(87, 87, 199), white);
 }
+
 .btncs:hover {
     /* border: 1px solid; */
     background-color: white;
@@ -8865,4 +8867,50 @@ del {
     width: 23vh;
 }
 
-/* slider css  */
+/* Job page  */
+
+.job-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-card__content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.job-card__content .job-card_img {
+    margin-right: 25px;
+}
+
+.job-card__content .job-card_img img {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.job-card__content .job-card_info {
+    flex: 1;
+}
+
+.job-card__content .job-card_info .text-muted a {
+    color: #777;
+}
+
+.job-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.job-label {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    margin-right: 2px;
+}

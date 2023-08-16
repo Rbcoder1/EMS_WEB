@@ -3,8 +3,6 @@
 
 
 {% block body%}
-
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
@@ -101,6 +99,7 @@
 </div>
 </div>
 <section class="common-user-section">
+
     <!-- Button trigger modal -->
     <div class="container my-4 py-4">
         <div class="profile-session-con card mb-3" style="background-color: rgb(227, 227, 240);">
@@ -217,7 +216,7 @@
                         <div class="mb-4 mb-sm-5">
                             <span class="section-title text-primary mb-3 mb-sm-4">Skill</span>
 
-                            {%if user[6]%}
+                            {%if user[6] %}
                             {%for skill in user[6].split(',')%}
                             <div class="progress-text">
                                 <div class="row">

@@ -1,0 +1,44 @@
+{% extends "UserLayout.html"%}
+{% block Title%} Profile | EMS {%endblock Title%}
+
+
+{% block body%}
+<section class="common-user-section">
+    <h1>Jobs</h1>
+    {%if jobs%}
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+        {%for item in jobs%}
+        <div class="col-sm-4 mb-2 mb-sm-0">
+            <div class="job-card">
+                <div class="job-card__content">
+                    <div class="job-card_img">
+                        <img src={{item['thumbnail']}} alt="Company Logo">
+                    </div>
+                    <div class="job-card_info">
+                        <h6 class="text-muted">
+                            <a href="#!" class="job-card_company">{{item['company_name'][:20]}}</a>
+                            <a href="#!" class="float-right">
+                                <i class="fa fa-heart-o"></i>
+                            </a>
+                        </h6>
+                        <h5>{{item['company_name'][:15]}}..</h5>
+                        <p class="mb-0">$75k - $105k</p>
+                    </div>
+                </div>
+                <div class="job-card__footer">
+                    <div class="job-card_job-type">
+                        <span class="job-label">Full time</span>
+                        <span class="job-label">{{item['location'].split(',')[0]}}</span>
+                        <span class="job-label">UX/UI</span>
+                    </div>
+                    <button class="btn btn-primary"><a style="color:white;"
+                            href={{item['related_links'][0]['link']}}>Apply</a></button>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+    {%endif%}
+</section>
+{%endblock body%}

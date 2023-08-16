@@ -1,0 +1,112 @@
+{% extends "Layout.html"%}
+{% block Title%} Home Page {%endblock Title%}
+
+{%block authcss%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Authentication.css') }}">
+{%endblock authcss%}
+
+{% block body%}
+<div class="py-5 bg-primary hero-header mb-5">
+</div>
+{%if msg%}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success</strong> {{msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{%elif error%}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong></strong> {{error}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{%else%}
+{%endif%}
+
+
+<main>
+    <div class="box">
+        <div class="inner-box">
+            <div class="forms-wrap">
+                <!-- Login Form  -->
+                <form action="" autocomplete="off" class="sign-in-form" method="post" action="/login">
+                    <div class="logo">
+                        <h4>Connect With Eveniverse</h4>
+                    </div>
+
+                    <div class="heading">
+                        <h2>Welcome Back</h2>
+                        <h6>Not registred yet?</h6>
+                        <a href="#" class="toggle">Create</a>
+                    </div>
+
+                    <div class="actual-form">
+                        <div class="input-wrap">
+                            <input type="text" minlength="4" class="input-field" autocomplete="off" name="email"
+                                required />
+                            <label>Email</label>
+                        </div>
+
+                        <div class="input-wrap">
+                            <input type="password" minlength="4" class="input-field" autocomplete="off" name="password"
+                                required />
+                            <label>Password</label>
+                        </div>
+                        <div class="heading" style="text-align: right;">
+                            <h6><a href="" class="toggle">Forget Password ? </a></h6>
+                        </div>
+
+                        <input type="submit" value="Log In" class="sign-btn" />
+                    </div>
+                </form>
+
+                <!-- Registration Form  -->
+                <form method="post" action="/register" autocomplete="off" class="sign-up-form">
+                    <div class="logo">
+                        <h4>Join Eveniverse Now</h4>
+                    </div>
+
+                    <div class="heading">
+                        <h2>Get Started</h2>
+                        <h6>Already have an account?</h6>
+                        <a href="#" class="toggle">Log In</a>
+                    </div>
+
+                    <div class="actual-form">
+                        <div class="input-wrap">
+                            <input type="text" minlength="4" class="input-field" autocomplete="off" name="fname"
+                                required />
+                            <label>First Name</label>
+                        </div>
+
+                        <div class="input-wrap">
+                            <input type="text" class="input-field" autocomplete="off" name="lname" required />
+                            <label>Last Name</label>
+                        </div>
+
+                        <div class="input-wrap">
+                            <input type="email" minlength="4" class="input-field" autocomplete="off" name="email"
+                                required />
+                            <label>Email</label>
+                        </div>
+
+                        <div class="input-wrap">
+                            <input type="password" minlength="4" class="input-field" autocomplete="off" name="password"
+                                required />
+                            <label>Password</label>
+                        </div>
+
+                        <input type="submit" value="Create" class="sign-btn" />
+
+                        <p class="text">
+                            By signing up, I agree to the
+                            <a href="#">Terms of Services</a> and
+                            <a href="#">Privacy Policy</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</main>
+{% endblock body %}
