@@ -4,16 +4,14 @@ from app.Main import allevent_len
 import requests
 from serpapi import GoogleSearch
 
-user = Blueprint("User", __name__, url_prefix="/user",
-                 template_folder="templates")
-
+# Creating a Blueprint for user and its related routes 
+user = Blueprint("User", __name__, url_prefix="/user", template_folder="templates")
 
 @user.route('/')
 def home():
     if 'loggedin' in session:
         id = session['id']
         cursor = mysql.connection.cursor()
-
         cursor.execute('SELECT * FROM user_register WHERE user_id = %s', [id])
         user_register = cursor.fetchone()
         cursor.execute(
@@ -21,7 +19,6 @@ def home():
         user_profile = cursor.fetchone()
 
         user = user_profile + user_register
-
         profileHealth = 100
 
         for i in user:
@@ -43,7 +40,6 @@ def user_progress():
     allevents = allevent_len() + internal_event_count[0][0]
 
     # fetching user participation in events
-
     cursor.execute(
         'SELECT * FROM event_registration WHERE user_id=%s', [session['id']])
     user_register_data = cursor.fetchall()
@@ -60,23 +56,25 @@ def user_progress():
 
 @user.route('/job')
 def job():
-    params = {
+    try:
+        params = {
         "engine": "google_jobs",
         "q": "india",
         "hl": "en",
         "api_key": "25f356d132750d01b7b1c531209efc065322bba1e8df57197a7d0fd0bb585eeb",
-    }
-    search = GoogleSearch(params)
-    results = search.get_dict()
-    jobs_results = results["jobs_results"]
-    
-    return render_template('job.html',jobs=jobs_results)
+        }
+        search = GoogleSearch(params)
+        results = search.get_dict()
+        jobs_results = results["jobs_results"]
+        return render_template('job.html',jobs=jobs_results)
+    except Exception as e:
+        error = "Sorrry Job Section Temporary Down"
+        return render_template('job.html', error=error)
 
 
 @user.route('/learning')
 def user_learning():
     return render_template('userlearning.html')
-
 
 @user.route('/recent')
 def user_recent():
@@ -101,13 +99,15 @@ def user_update():
         photo = request.form['file']
 
         # storign it in database
-        cursor = mysql.connection.cursor()
-        cursor.execute(
-            'UPDATE user_profile SET photo=%s,mobile_no=%s,about=%s,b_date=%s,interest=%s,skill=%s,future_goal=%s WHERE profile_id=%s',
-            (photo, mobile, about, birthdate, interest, skills, fgoal, userid))
-
-        mysql.connection.commit()
-        cursor.close()
-        return redirect('/user')
+        try:
+            cursor = mysql.connection.cursor()
+            cursor.execute(
+                'UPDATE user_profile SET photo=%s,mobile_no=%s,about=%s,b_date=%s,interest=%s,skill=%s,future_goal=%s WHERE profile_id=%s',
+                (photo, mobile, about, birthdate, interest, skills, fgoal, userid))
+            mysql.connection.commit()
+            cursor.close()
+            return redirect('/user')
+        except Exception as e :
+            return "<h1> Fail To Update Server Problem </h1>"
     else:
         return "<h1>Invalid Request</h1>"

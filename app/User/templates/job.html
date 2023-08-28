@@ -4,8 +4,12 @@
 
 {% block body%}
 <section class="common-user-section">
-    <h1>Jobs</h1>
+    {%if error%}
+    <h1>{{error}}</h1>
+    {%endif%}
+
     {%if jobs%}
+    <h1>Jobs</h1>
     <div class="row row-cols-1 row-cols-md-3 g-3">
         {%for item in jobs%}
         <div class="col-sm-4 mb-2 mb-sm-0">

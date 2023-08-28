@@ -150,23 +150,23 @@ let orgArray = [
 
 ]
 
-var str = "";
+// var str = "";
 
-for (item of orgArray) {
-    let strcp = `<div class="col-md - 3 col - sm - 6">
-                    <div class="mb-4" style=" width: 200px; text-align: center; margin: auto; >
-                        <h4 class="card-title text-right"><i class="material-icons">${item.title}</i></h4>
-                        <img src=${item.img} alt="Photo of sunset" style="width:200px;  height:100px; border:1px; border-radius:10px;">
-                        <div style="display:flex; justify-content:center; align-item:center;" class="my-2">
-                            <a class="mx-2  linkorg" href=${item.linkedin}><i class="fa-brands fa-linkedin"></i></a>
-                            <a class="mx-2 linkorg" href=${item.website}><i class="fa-solid fa-link"></i></a>
-                        </div>    
-                    </div>
-                </div > `
+// for (item of orgArray) {
+//     let strcp = `<div class="col-md - 3 col - sm - 6">
+//                     <div class="mb-4" style=" width: 200px; text-align: center; margin: auto; >
+//                         <h4 class="card-title text-right"><i class="material-icons">${item.title}</i></h4>
+//                         <img src=${item.img} alt="Photo of sunset" style="width:200px;  height:100px; border:1px; border-radius:10px;">
+//                         <div style="display:flex; justify-content:center; align-item:center;" class="my-2">
+//                             <a class="mx-2  linkorg" href=${item.linkedin}><i class="fa-brands fa-linkedin"></i></a>
+//                             <a class="mx-2 linkorg" href=${item.website}><i class="fa-solid fa-link"></i></a>
+//                         </div>    
+//                     </div>
+//                 </div > `
 
-    str += strcp;
-}
-container.innerHTML = str
-console.log(container)
+//     str += strcp;
+// }
+// container.innerHTML = str
+// console.log(container)
 
 

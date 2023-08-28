@@ -8,6 +8,9 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <!-- custom css  -->
+    {%block custmcss%}{%endblock custmcss%}
+
     <!-- cdn bootstrap -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/maincss.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }} ">
@@ -34,6 +37,7 @@
                     <a href="/about" class="nav-item nav-link">About</a>
                     <a href="/events" class="nav-item nav-link">Events</a>
                     <a href="/roadmaps" class="nav-item nav-link">Roadmaps</a>
+                    <a href="/learning-path" class="nav-item nav-link">Learning Path</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
@@ -75,7 +79,7 @@
     <!-- Manual JavaScript -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/Auth.js') }}"></script>
-
+    {%block custmjs%}{%endblock custmjs%}
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

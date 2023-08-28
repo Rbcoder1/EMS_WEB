@@ -2,23 +2,28 @@
 {% block Title%} Home Page {%endblock Title%}
 
 {% block body%}
-<div class="py-5 bg-primary hero-header mb-5">
-    <div class="container my-5 py-5 px-lg-5">
+<div class="py-5 bg-primary hero-header mb-2">
+    <div class="container mt-5 pt-5 px-lg-5">
         <div class="row g-5 py-5">
             <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="text-white mb-4 animated zoomIn">All in one SEO tool need to grow your business
-                    rapidly</h1>
-                <p class="text-white pb-3 animated zoomIn">Tempor rebum no at dolore lorem clita rebum rebum
-                    ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo
-                    amet ipsum vero ipsum clita lorem</p>
-                <a href="/register" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Join
+                <h1 class="text-white mb-4 animated zoomIn">Learn Explore Connect & Increase Your Productivity 2X
+                </h1>
+                <p class="text-white pb-3 animated zoomIn">Connect and Explore Various Events With Us. Organized
+                    Different Kinds of event with us. Increased Your Learning curve with our learning path and session.
+                    We Help You To Become A Best Version Of YourSelf.
+                </p>
+                {%if username%}
+                <h2 style="color: white;">Welcome {{username}} ,</h2>
+                {%else%}
+                <a href="/login" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInLeft">Join
                     Now</a>
                 <a href="/contact"
                     class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
                     Us</a>
+                {%endif%}
             </div>
             <div class="col-lg-6 text-center text-lg-start">
-                <img class="img-fluid" src="" alt="">
+                <img class="rounded img-fluid" src="{{ url_for('static', filename='img/bgimage1.png' ) }}" alt="">
             </div>
         </div>
     </div>
@@ -27,7 +32,7 @@
     <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
         <div class="carousel-inner" style="width:90%; margin: auto;">
             {%for item in fe%}
-            {%if item[0]%}
+            {%if item[0] == 1%}
             <div class="carousel-item active">
                 <img src="{{item[1]}}" class="d-block w-100" alt="..." style="height: 40vh;">
             </div>
@@ -50,22 +55,7 @@
 </section>
 
 <!-- some popular event organization  -->
-<div class="container-xxl py-5">
-    <div>
-        <h1>Some Popular Organization</h1>
-        <h3>That Arrange Technological Event</h3>
-    </div>
-    <div class="my-4">
-        <div class="row" id="orgCon">
-        </div>
-    </div>
-    <div>
-        <h6>This are some organization that organized many event monthly for help student by provide various
-            opportunities to student by participating in it. Some event give's you a better learning resources free of
-            cost & some give you prices to boost your motivatioin about your carrer</h6>
-    </div>
 
-</div>
 
 <!-- About Video And Headline Section  -->
 <!-- add the intro youtube video 
@@ -75,11 +65,85 @@ and getstarted button  -->
 
 </div>
 
-<!-- popular event  -->
-<!-- edit it as per cuvette websie job icon section  -->
+<!-- Trending Events-->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp my-2" data-wow-delay="0.1s">
+            <h5 class="section-title bg-white text-center text-primary px-3 my-3">Some Outside Hackathons</h5>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            {%for item in allevents%}
+            <div class="col">
+                <div class="card" style="height: 100%;">
+                    <img src={{item.img}} class="card-img-top" alt="..." style="height: 13pc;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <p class="card-text"> {{item.desc[0:100]+'...'}} </p>
+                        <a href={{item.link}} class="btn btn-primary" target="_blank" rel="noopener noreferrer">more</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+
+<!-- Service Start -->
 <div class="container-xxl py-4">
-    <div class="my-4">
-        <h3 class="my-3">Some Popular Event's Logo</h3>
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="section-title bg-white text-center text-primary px-3 my-4">Our Services</h5>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item si-1 text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                        <h5 class="mb-3">Checkout Past</h5>
+                        <p>All Events That Are Already Finish List Here. See Them What Your Progress Or What You Are
+                            Missing.</p>
+                        <a href="/past_events" class="btn ">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item si-2 text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                        <h5 class="mb-3">IMRD Events</h5>
+                        <p>All Event Of College Campus Are Listed Here. See Them What New There For You</p>
+                        <a href="/inside_event" class="btn ">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item si-3 text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-code text-primary mb-4"></i>
+                        <h5 class="mb-3">IMRD Hackathons</h5>
+                        <p>All Technical Hackathon Competitions Are Listed Down Here. Go Particate And Prices.</p>
+                        <a href="/hackathons" class="btn ">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item si-4 text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                        <h5 class="mb-3">How To Particate</h5>
+                        <p>Here Some Video's Available That Help You In Participating In Events. Watch Them Before
+                            Particate</p>
+                        <a href="/online_session" class="btn ">More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- popular event logo's -->
+<div class="container-xxl py-4">
+    <div class="my-1">
         <div class="row">
             <div class="col-md-2 col-sm-4">
                 <div class="d-flex mb-4" style="width: 200px; text-align: center; margin: auto;">
@@ -114,70 +178,40 @@ and getstarted button  -->
         </div>
     </div>
 </div>
-<!-- Service Start -->
-<div class="container-xxl py-4">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h5 class="section-title bg-white text-center text-primary px-3 my-4">Our Services</h5>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item text-center pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                        <h5 class="mb-3">Past Event</h5>
-                        <p>All Events That Are Already Finish List Here. See Them What Your Progress Or What You Are
-                            Missing.</p>
-                        <a href="/past_events" class="btn ">More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item text-center pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                        <h5 class="mb-3">Inside Events</h5>
-                        <p>All Event Of College Campus Are Listed Here. See Them What New There For You</p>
-                        <a href="/inside_event" class="btn ">More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item text-center pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-code text-primary mb-4"></i>
-                        <h5 class="mb-3">Hackathons</h5>
-                        <p>All Technical Hackathon Competitions Are Listed Down Here. Go Particate And Prices.</p>
-                        <a href="/hackathons" class="btn ">More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item text-center pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                        <h5 class="mb-3">How To Particate</h5>
-                        <p>Here Some Video's Available That Help You In Participating In Events. Watch Them Before
-                            Particate</p>
-                        <a href="/online_session" class="btn ">More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Service End -->
 
-<!-- Courses Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s ">
-            <h5 class="section-title bg-white text-center text-primary px-3 my-3">Some Events</h5>
-        </div>
-        <h1>Top Trending Events</h1>
+<!-- past event memories  -->
+<div class="container-xxl">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h5 class="section-title bg-white text-center text-primary px-3 my-4">Past Event Snapshot's</h5>
     </div>
+    <!-- Gallery -->
+    <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+                class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+        </div>
+
+        <div class="col-lg-4 mb-4 mb-lg-0">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+                class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
+
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+        </div>
+
+        <div class="col-lg-4 mb-4 mb-lg-0">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+                class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+                class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+        </div>
+    </div>
+    <!-- Gallery -->
 </div>
-<!-- Courses End -->
 
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">

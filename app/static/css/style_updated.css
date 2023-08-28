@@ -239,7 +239,7 @@ h6,
     height: 10px;
     top: 2px;
     left: 0;
-    background: rgba(33, 66, 177, .5);
+    background: rgba(48, 83, 200, 0.5);
 }
 
 .section-title h6::after {
@@ -258,8 +258,21 @@ h6,
     transition: .5s;
 }
 
-.service-item:hover {
+.si-1:hover {
     background: var(--primary);
+}
+.si-2:hover {
+    font-weight: bold;
+    background: url('../img/imrd.jpg') rgba(0, 0, 0, 0.6);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+}
+.si-3:hover {
+    background: var(--primary);
+}
+.si-4:hover {
+    background: red;
 }
 
 .service-item .service-icon {
@@ -316,7 +329,7 @@ h6,
 
 .service-item:hover a.btn::before {
     width: 100%;
-    background: var(--light);
+    background: var(--dark);
 }
 
 
