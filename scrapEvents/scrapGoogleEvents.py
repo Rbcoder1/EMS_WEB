@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 allevent = []
 # Set the URL of the events page
 
-
 def GenerateGoogleEvent():
     print("Proccess of Generating Google Events Take Some Time......")
     url = 'https://cloud.google.com/events'

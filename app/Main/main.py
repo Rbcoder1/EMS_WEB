@@ -19,20 +19,18 @@ all_Events_length = len(all_Events)
 # routes for main pages like home,about,contact,etc
 @main.route('/')
 def home():
+    cursor = mysql.connection.cursor()
+    # fetching banner 
+    cursor.execute('SELECT * FROM feature_banners')
+    featureEvent = cursor.fetchall() 
     if 'loggedin' in session:
-        cursor = mysql.connection.cursor()
-
         # storing user activity 
         msg = "Visited to Home"
         cursor.execute("INSERT INTO user_activity(user_id,type) VALUES(%s,%s)",(session['id'],msg))
         mysql.connection.commit()
-
-        # fetching banner 
-        cursor.execute('SELECT * FROM feature_banners')
-        featureEvent = cursor.fetchall()
-        # print(featureEvent)
         return render_template('home.html', username=session['username'], fe=featureEvent, allevents=all_Events[0:4])
-    return render_template('home.html',)
+    else:
+        return render_template('home.html',fe=featureEvent,allevents=all_Events[0:4])
 
 @main.route('/about')
 def about():

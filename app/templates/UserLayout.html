@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>{% block Title%}{% endblock Title%}</title>
@@ -15,21 +14,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
-
 <body>
-
     <header>
         <nav class="navbar bg-body-tertiary fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand Nav-icon" href="/"><i class="fa fa-book me-3"></i>EMS </a>
                 <div class="link-nav-con">
-                    <button class="navbar-toggler dots link-nav" id="tog" ="button" data-bs-toggle="offcanvas"
+                    <button class="navbar-toggler dots link-nav" id="tog"="button" data-bs-toggle="offcanvas"
                         style="padding: 0;" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
                         aria-label="Toggle navigation">
                         |||
                     </button>
-
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle link-nav" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -41,7 +36,6 @@
                         </ul>
                     </li>
                 </div>
-
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
@@ -59,12 +53,13 @@
                                 <div class="side-nav-link-con">
                                     <a href="/user" class="side-nav-link" id="Profile" style="width: 100vw;"><i
                                             class="fa-regular fa-user mx-2"></i>Profile</a>
-                                    <a href="/user/progress" class="side-nav-link" id="progress" style="width: 100vw;"><i
-                                            class="fa-solid fa-bars-progress mx-2"></i>Progress</a>
-                                    <a href="/user/job" class="side-nav-link" style="width: 100vw;"><i class="fa-regular fa-thumbs-up mx-2"
-                                            id="job"></i>Jobs<span class="badge badge-success mx-2">New</span></a>
-                                    <a href="/user/learning" class="side-nav-link" id="learning" style="width: 100vw;"><i
-                                            class="fa-solid fa-chalkboard mx-2"></i>Learning</a>
+                                    <a href="/user/progress" class="side-nav-link" id="progress"
+                                        style="width: 100vw;"><i class="fa-solid fa-bars-progress mx-2"></i>Progress</a>
+                                    <a href="/user/job" class="side-nav-link" style="width: 100vw;"><i
+                                            class="fa-regular fa-thumbs-up mx-2" id="job"></i>Jobs<span
+                                            class="badge badge-success mx-2">New</span></a>
+                                    <a href="/user/learning" class="side-nav-link" id="learning"
+                                        style="width: 100vw;"><i class="fa-solid fa-chalkboard mx-2"></i>Learning</a>
                                     <a href="/user/recent" class="side-nav-link" id="recent" style="width: 100vw;"><i
                                             class="fa-solid fa-recycle mx-2"></i>Recent</a>
                                     <a href="#" class="side-nav-link" id="helproom" style="width: 100vw;"><i
@@ -73,16 +68,18 @@
                                 </div>
                                 <hr>
                                 <div class="side-nav-social-con">
-                                    <a href="" class="side-nav-social-link"  style="width: 100vw;"><i class="fa-brands fa-whatsapp mx-3"
+                                    <a href="" class="side-nav-social-link" style="width: 100vw;"><i
+                                            class="fa-brands fa-whatsapp mx-3"
                                             style="color: green; font-weight: bolder;"></i>Join Now</a>
-                                    <a href="" class="side-nav-social-link"  style="width: 100vw;"><i
+                                    <a href="" class="side-nav-social-link" style="width: 100vw;"><i
                                             class="fa-solid fa-envelope mx-3"></i>Mail Us</a>
-                                    <a href="" class="side-nav-social-link"  style="width: 100vw;"><i
+                                    <a href="" class="side-nav-social-link" style="width: 100vw;"><i
                                             class="fa-brands fa-linkedin mx-3"></i>Connect Us</a>
                                 </div>
                                 <hr>
                                 <div class="side-nav-social-con">
-                                    <a href="" class="side-nav-social-link-youtube"  style="width: 100vw;"><i class="fa-brands fa-youtube mx-3"
+                                    <a href="" class="side-nav-social-link-youtube" style="width: 100vw;"><i
+                                            class="fa-brands fa-youtube mx-3"
                                             style="color: red; font-weight: bolder; font-size: larger;"></i>Subscribe
                                         Us</a>
                                 </div>
@@ -133,5 +130,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="{{ url_for('static', filename='js/progres_srcpit.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
 </html>

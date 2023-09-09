@@ -25,8 +25,8 @@
         <div class="row hack-details">
             <div class="col-sm-2 mb-4">
                 <picture>
-                    <img class="rounded-circle shadow-sm" src="{{ url_for('static', filename='img/fieldworklogo.png') }}"
-                        alt="hackthewinter">
+                    <img class="rounded-circle shadow-sm"
+                        src="{{ url_for('static', filename='img/fieldworklogo.png') }}" alt="hackthewinter">
                 </picture>
             </div>
             <div class="col-sm-6 col-md-7">
@@ -37,56 +37,32 @@
                     {{hack[2]}} <a href="#about-link" class="text-muted font-weight-bold">view more...</a>
                 </p>
             </div>
-            <!-- <div class="col-sm-4 col-md-3 d-none d-md-block">
-                <div class="date-section">
 
-                    <h6 class="text-uppercase">
-                        Submission Deadline
-                    </h6>
-                    <h4 class="text-uppercase mb-3 font-weight-normal">
-                        <div class="endDate">{{(hack[9])}}<br> <span style="font-size: x-small; white-space: nowrap;">
-                                (India Standard Time)</span></div>
-                    </h4>
-                    <a name="" id="" class="btn btn-secondary" href="#register" role="button">
-                        Register Now
-                    </a>
-                </div>
-
-                <small class="my-2 d-block text-right" id="idea-sec">
-
-                    Submission Closing in:
-                    <h6 id="countdown_launch" class="text-right ml-auto text-uppercase d-none d-sm-block mt-2">11d 18h
-                        2m 19s </h6>
-
-                </small>
+            <!-- about session  -->
+            <div class="container-md">
+                <h1 class="my-4">About</h1>
+                <p>
+                    {{hack[2]}}
+                </p>
             </div>
-        </div>
-    </div> -->
-    <!-- about session  -->
-    <div class="container-md">
-        <h1 class="my-4">About</h1>
-        <p>
-            {{hack[2]}}
-        </p>
-    </div>
 
-    <!-- Object Session  -->
-    <div class="cotainer-md">
-        <h1 class="my-4">Objectives :</h1>
-        <p>{{hack[5]}}</p>
-    </div>
+            <!-- Object Session  -->
+            <div class="cotainer-md">
+                <h1 class="my-4">Objectives :</h1>
+                <p>{{hack[5]}}</p>
+            </div>
 
-    <!-- Technologies Used  -->
-    {% if hack[6] != 'none'%}
-    <div class="container-md">
-        <h1 class="my-4">Technologies Used :</h1>
-        <p>{{hack[6]}}</p>
-    </div>
-    {%else%}
-    {%endif%}
+            <!-- Technologies Used  -->
+            {% if hack[6] != 'none'%}
+            <div class="container-md">
+                <h1 class="my-4">Technologies Used :</h1>
+                <p>{{hack[6]}}</p>
+            </div>
+            {%else%}
+            {%endif%}
 
-    <!-- callenges session starts -->
-    <!-- <div class="container">
+            <!-- callenges session starts -->
+            <!-- <div class="container">
         <h1 class="my-4">
             Challenge :
         </h1>
@@ -146,159 +122,159 @@
     </div> -->
 
 
-    {%if hack[7] != 'none'%}
-    <!-- Phases Of Events  -->
-    <div class="container-md">
-        <h1 class="my-4">
-            Phases :
-        </h1>
-        <p>
-            {%for p in hack[7].split(',')%}
-        <div class="d-flex">
-            <h2 style="color: purple;">Phase : </h2>
-            <h3 class="mx-3">{{p}}</h3>
-        </div>
-        {%endfor%}
-
-        </p>
-    </div>
-    {%else%}
-    {%endif%}
-
-    {%if hack[8] != 'none'%}
-    <!-- Rules Of Event  -->
-    <div class="container-md">
-        <h1 class="my-4">Rules Of {{hack[1]}}</h1>
-        {%for r in hack[8].split(',')%}
-        <div class="d-flex">
-            <h3 style="color: purple;">Rule :</h3>
-            <b class="mx-3">{{r}}</b>
-        </div>
-        {%endfor%}
-    </div>
-    {%else%}
-    {%endif%}
-
-    <!-- schedule of Hackathon  -->
-    {%if hack[9] != 'none'%}
-    <div class="container my-4">
-        <h1 class="my-2">Schedule of Hackathon :</h1>
-        <div class="container bootstrap snippets bootdeys">
-            <div class="col-md-9" style="margin: auto;">
-                <div class="timeline-centered timeline-sm">
-                    <article class="timeline-entry">
-                        <div class="timeline-entry-inner">
-                            <time datetime="2014-01-10T03:45" class="timeline-time"><span>13 Feb 2023
-                                </span><span>Monday</span></time>
-                            <div class="timeline-icon bg-violet"><i class="fa fa-exclamation"></i></div>
-                            <div class="timeline-label">
-                                <h4 class="timeline-title">Registration Open</h4>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="timeline-entry left-aligned">
-                        <div class="timeline-entry-inner">
-                            <time datetime="2014-01-10T03:45" class="timeline-time"><span>17 Feb 2023
-                                </span><span>Friday</span></time>
-                            <div class="timeline-icon bg-pink"><i class="fa fa-group"></i></div>
-                            <div class="timeline-label bg-pink">
-                                <h4 class="timeline-title">Idea Submission</h4>
-
-                                <!-- <p>Submit your selected idea with problem statement and solution on it.</p> -->
-                            </div>
-                        </div>
-                    </article>
-                    <article class="timeline-entry">
-                        <div class="timeline-entry-inner">
-                            <time datetime="2014-01-09T13:22" class="timeline-time"><span>20 Feb 2023
-                                </span><span>Monday</span></time>
-                            <!-- <div class="timeline-icon bg-orange"><i class="fa fa-paper-plane"></i></div> -->
-                            <div class="timeline-label">
-                                <h4 class="timeline-title">Registration Closed</h4>
-                                <p></p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="timeline-entry left-aligned">
-                        <div class="timeline-entry-inner">
-                            <time datetime="2014-01-10T03:45" class="timeline-time"><span>21 Feb 2023
-                                </span><span>Tuesday</span></time>
-                            <div class="timeline-icon bg-green"><i class="fa fa-group"></i></div>
-                            <div class="timeline-label bg-green">
-                                <h4 class="timeline-title">Learning Phase</h4>
-
-                                <!-- <p>It's time to make capable to make your project learn technologies needed for project
-                                </p> -->
-                            </div>
-                        </div>
-                    </article>
-                    <article class="timeline-entry">
-                        <div class="timeline-entry-inner">
-                            <time datetime="2014-01-09T13:22" class="timeline-time"><span>31 Feb 2023
-                                </span><span></span></time>
-                            <div class="timeline-icon bg-blue"><i class="fa fa-group"></i></div>
-                            <div class="timeline-label bg-blue">
-                                <h4 class="timeline-title">Development Phase</h4>
-                                <!-- <p>Start Development of your Project </p> -->
-                            </div>
-                        </div>
-                    </article>
-                    <article class="timeline-entry left-aligned">
-                        <div class="timeline-entry-inner">
-                            <time datetime="2014-01-10T03:45" class="timeline-time"><span>15 Mar 2023
-                                </span><span>Tuesday</span></time>
-                            <div class="timeline-icon bg-red"><i class="fa fa-group"></i></div>
-                            <div class="timeline-label bg-red">
-                                <h4 class="timeline-title">Project Submission</h4>
-
-                                <!-- <p>It's Time To Present Your Knowledge ! Submit Your Project
-                                </p> -->
-                            </div>
-                        </div>
-                    </article>
+            {%if hack[7] != 'none'%}
+            <!-- Phases Of Events  -->
+            <div class="container-md">
+                <h1 class="my-4">
+                    Phases :
+                </h1>
+                <p>
+                    {%for p in hack[7].split(',')%}
+                <div class="d-flex">
+                    <h2 style="color: purple;">Phase : </h2>
+                    <h3 class="mx-3">{{p}}</h3>
                 </div>
+                {%endfor%}
+
+                </p>
             </div>
             {%else%}
             {%endif%}
-            <div class="container" id="register">
-                <form class="text-center border border-light p-5" method="post"
-                    action="/hackathon/user_registration/{{hack[0]}}">
 
-                    <p class="h4 mb-4">{{hack[1]}} Registration</p>
+            {%if hack[8] != 'none'%}
+            <!-- Rules Of Event  -->
+            <div class="container-md">
+                <h1 class="my-4">Rules Of {{hack[1]}}</h1>
+                {%for r in hack[8].split(',')%}
+                <div class="d-flex">
+                    <h3 style="color: purple;">Rule :</h3>
+                    <b class="mx-3">{{r}}</b>
+                </div>
+                {%endfor%}
+            </div>
+            {%else%}
+            {%endif%}
 
-                    <div class="form-row mb-4">
-                        <div class="col my-3">
-                            <!-- First name -->
-                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="flname"
-                                placeholder="Full Name" required>
-                        </div>
-                        <div class="col my-3">
-                            <!-- last name -->
-                            <input type="number" id="defaultRegisterFormFirstName" class="form-control" name="rno"
-                                placeholder="Roll No" required>
-                        </div>
-                        <div class="col my-3">
-                            <!-- member 1 name -->
-                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="tname"
-                                placeholder="Topic Name" required>
-                        </div>
-                        <div class="col my-3">
-                            <!-- member 1 name -->
-                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="dname"
-                                placeholder="Enter Division" required>
-                        </div>
-                        <div class="col my-3">
-                            <!-- member 1 name -->
-                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="m1name"
-                                placeholder="Enter Member Name" required>
-                        </div>
+            <!-- schedule of Hackathon  -->
+            {%if hack[9] != 'none'%}
+            <div class="container my-4">
+                <h1 class="my-2">Schedule of Hackathon :</h1>
+                <div class="container bootstrap snippets bootdeys">
+                    <div class="col-md-9" style="margin: auto;">
+                        <div class="timeline-centered timeline-sm">
+                            <article class="timeline-entry">
+                                <div class="timeline-entry-inner">
+                                    <time datetime="2014-01-10T03:45" class="timeline-time"><span>13 Feb 2023
+                                        </span><span>Monday</span></time>
+                                    <div class="timeline-icon bg-violet"><i class="fa fa-exclamation"></i></div>
+                                    <div class="timeline-label">
+                                        <h4 class="timeline-title">Registration Open</h4>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="timeline-entry left-aligned">
+                                <div class="timeline-entry-inner">
+                                    <time datetime="2014-01-10T03:45" class="timeline-time"><span>17 Feb 2023
+                                        </span><span>Friday</span></time>
+                                    <div class="timeline-icon bg-pink"><i class="fa fa-group"></i></div>
+                                    <div class="timeline-label bg-pink">
+                                        <h4 class="timeline-title">Idea Submission</h4>
 
-                        <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
-                </form>
+                                        <!-- <p>Submit your selected idea with problem statement and solution on it.</p> -->
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="timeline-entry">
+                                <div class="timeline-entry-inner">
+                                    <time datetime="2014-01-09T13:22" class="timeline-time"><span>20 Feb 2023
+                                        </span><span>Monday</span></time>
+                                    <!-- <div class="timeline-icon bg-orange"><i class="fa fa-paper-plane"></i></div> -->
+                                    <div class="timeline-label">
+                                        <h4 class="timeline-title">Registration Closed</h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="timeline-entry left-aligned">
+                                <div class="timeline-entry-inner">
+                                    <time datetime="2014-01-10T03:45" class="timeline-time"><span>21 Feb 2023
+                                        </span><span>Tuesday</span></time>
+                                    <div class="timeline-icon bg-green"><i class="fa fa-group"></i></div>
+                                    <div class="timeline-label bg-green">
+                                        <h4 class="timeline-title">Learning Phase</h4>
+
+                                        <!-- <p>It's time to make capable to make your project learn technologies needed for project
+                                </p> -->
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="timeline-entry">
+                                <div class="timeline-entry-inner">
+                                    <time datetime="2014-01-09T13:22" class="timeline-time"><span>31 Feb 2023
+                                        </span><span></span></time>
+                                    <div class="timeline-icon bg-blue"><i class="fa fa-group"></i></div>
+                                    <div class="timeline-label bg-blue">
+                                        <h4 class="timeline-title">Development Phase</h4>
+                                        <!-- <p>Start Development of your Project </p> -->
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="timeline-entry left-aligned">
+                                <div class="timeline-entry-inner">
+                                    <time datetime="2014-01-10T03:45" class="timeline-time"><span>15 Mar 2023
+                                        </span><span>Tuesday</span></time>
+                                    <div class="timeline-icon bg-red"><i class="fa fa-group"></i></div>
+                                    <div class="timeline-label bg-red">
+                                        <h4 class="timeline-title">Project Submission</h4>
+
+                                        <!-- <p>It's Time To Present Your Knowledge ! Submit Your Project
+                                </p> -->
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    {%else%}
+                    {%endif%}
+                    <div class="container" id="register">
+                        <form class="text-center border border-light p-5" method="post"
+                            action="/hackathon/user_registration/{{hack[0]}}">
+
+                            <p class="h4 mb-4">{{hack[1]}} Registration</p>
+
+                            <div class="form-row mb-4">
+                                <div class="col my-3">
+                                    <!-- First name -->
+                                    <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                        name="flname" placeholder="Full Name" required>
+                                </div>
+                                <div class="col my-3">
+                                    <!-- last name -->
+                                    <input type="number" id="defaultRegisterFormFirstName" class="form-control"
+                                        name="rno" placeholder="Roll No" required>
+                                </div>
+                                <div class="col my-3">
+                                    <!-- member 1 name -->
+                                    <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                        name="tname" placeholder="Topic Name" required>
+                                </div>
+                                <div class="col my-3">
+                                    <!-- member 1 name -->
+                                    <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                        name="dname" placeholder="Enter Division" required>
+                                </div>
+                                <div class="col my-3">
+                                    <!-- member 1 name -->
+                                    <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                        name="m1name" placeholder="Enter Member Name" required>
+                                </div>
+
+                                <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-{%endif%}
-{% endblock body %}
+    {%endif%}
+    {% endblock body %}

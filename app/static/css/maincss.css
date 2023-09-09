@@ -13,8 +13,6 @@
     z-index: 99;
 }
 
-
-
 /*** Section Title ***/
 .section-title {
     position: relative;
@@ -57,9 +55,33 @@
 
 /*** Service ***/
 .service-item {
-    background: var(--light);
+    position: relative;
+    height: 170px;
+    padding: 30px 25px;
+    background: #CFD4FF;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+    border: 0px;
+    border-radius: 20px;
+}
+
+.service-item .service-icon {
+    margin: 0 auto 20px auto;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    background: url(../img/icon-shape-primary.png) center center no-repeat;
     transition: .5s;
 }
+
+.service-item:hover .service-icon {
+    color: var(--primary);
+    background: url(../img/icon-shape-white.png);
+}
+
 
 .service-item:hover {
     margin-top: -10px;
@@ -73,21 +95,6 @@
 .service-item:hover * {
     color: var(--light) !important;
 }
-
-
-/*** Categories & Courses ***/
-.category img,
-.course-item img {
-    transition: .5s;
-}
-
-.category a:hover img,
-.course-item:hover img {
-    transform: scale(1.1);
-}
-
-
-
 
 /*** Footer ***/
 .footer .btn.btn-social {

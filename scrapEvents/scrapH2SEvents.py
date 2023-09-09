@@ -2,10 +2,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 
-
 allevent = []
-# Set the URL of the events page
-
 
 def GenerateH2SEvents():
     print("Proccess of Generating Hack2Skill Events Take Some Time......")
