@@ -285,3 +285,7 @@ def user_register(name):
 @main.route('/learning-path')
 def learning_path():
     return render_template('learning-path.html')
+
+@main.route('/roadmaps')
+def roadmaps():
+    return render_template('roadmap.html')

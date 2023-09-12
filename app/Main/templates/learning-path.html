@@ -4,7 +4,219 @@
 <!-- writing custom css for learning-path page  -->
 {%block custmcss%}
 <style>
+    #loader {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 20vh;
+        overflow: hidden;
+        animation-delay: 1s;
+    }
 
+    .item-1 {
+        width: 20px;
+        height: 20px;
+        background: #170262;
+        border-radius: 50%;
+        background-color: #5b8fdc;
+        margin: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1);
+        }
+
+        50%,
+        75% {
+            transform: scale(2.5);
+        }
+
+        78%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .item-1:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #5038c9;
+        opacity: 0.7;
+        animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        animation-delay: 200ms;
+        transition: 0.5s all ease;
+        transform: scale(1);
+    }
+
+    .item-2 {
+        width: 20px;
+        height: 20px;
+        background: #3530bb;
+        border-radius: 50%;
+        background-color: #5345f0;
+        margin: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1);
+        }
+
+        50%,
+        75% {
+            transform: scale(2.5);
+        }
+
+        78%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .item-2:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #5b59c3;
+        opacity: 0.7;
+        animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        animation-delay: 400ms;
+        transition: 0.5s all ease;
+        transform: scale(1);
+    }
+
+    .item-3 {
+        width: 20px;
+        height: 20px;
+        background: #5f43ce;
+        border-radius: 50%;
+        background-color: #4134a2;
+        margin: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1);
+        }
+
+        50%,
+        75% {
+            transform: scale(2.5);
+        }
+
+        78%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .item-3:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #21177c;
+        opacity: 0.7;
+        animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        animation-delay: 600ms;
+        transition: 0.5s all ease;
+        transform: scale(1);
+    }
+
+    .item-4 {
+        width: 20px;
+        height: 20px;
+        background: #351bab;
+        border-radius: 50%;
+        background-color: #251279;
+        margin: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1);
+        }
+
+        50%,
+        75% {
+            transform: scale(2.5);
+        }
+
+        78%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .item-4:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #3621d7;
+        opacity: 0.7;
+        animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        animation-delay: 800ms;
+        transition: 0.5s all ease;
+        transform: scale(1);
+    }
+
+    .item-5 {
+        width: 20px;
+        height: 20px;
+        background: #3811d2;
+        border-radius: 50%;
+        background-color: #0e027d;
+        margin: 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1);
+        }
+
+        50%,
+        75% {
+            transform: scale(2.5);
+        }
+
+        78%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .item-5:before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #2c1ba0;
+        opacity: 0.7;
+        animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+        animation-delay: 1000ms;
+        transition: 0.5s all ease;
+        transform: scale(1);
+    }
 </style>
 {%endblock custmcss%}
 
@@ -19,10 +231,13 @@
         secondYear: [],
         ThirdYear: []
     }
+    var yearwise = document.getElementById("yearwise");
+    var loader = document.getElementById("loader")
 
     // Fetching Data From Api Year Wise 
     const firstYear = async () => {
-        const url = 'https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLhQjrBD2T380F_inVRXMIHCqLaNUd7bN4&part=snippet&maxResults=50';
+        const url1 = 'https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLhQjrBD2T380F_inVRXMIHCqLaNUd7bN4&part=snippet&maxResults=50';
+        const url2 = 'https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLgR7oV8PLORypUbUP2L3fmMe6qscHzZFZ&part=snippet&maxResults=50'
         const options = {
             method: 'GET',
             headers: {
@@ -32,45 +247,72 @@
         };
 
         try {
-            const response = await fetch(url, options);
-            const result = await response.json();
-            learningState.firstYear.push(result.items)
-            console.log(learningState)
+            yearwise.style.display = "none";
+            loader.style.display = "flex";
+
+            let [item1, item2] = await Promise.all([
+                fetch(url1, options),
+                fetch(url2, options)
+            ])
+            item1 = await item1.json();
+            item2 = await item2.json();
+
+            yearwise.style.display = "";
+            loader.style.display = "none";
+
+            learningState.firstYear.push(item1.items)
+            learningState.secondYear.push(item2.items)
+            displayCourses(learningState.firstYear[0], 'firstyear')
+            displayCourses(learningState.secondYear[0], 'secondyear')
+            console.log(learningState.secondYear)
         } catch (error) {
             console.error(error);
         }
     }
 
-    // calling all function when page load 
-    // firstYear()
+    // calling all function when page load and loading animation
+    firstYear()
+
 
     // displaying first year course 
-    let fy = document.getElementById("firstyear")
-    str = '';
-
-    for (course in learningState.firstYear) {
-        str += `
+    function displayCourses(courseYear, year) {
+        let yearCon = document.getElementById(year)
+        str = '';
+        var i = 0;
+        for (course of courseYear) {
+            if (i < 5) { i++ } else { break }
+            str += `
                  <div class="col">
                     <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src=${course.snippet.thumbnails.high.url} class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural
-                                lead-in to additional content. This content is a little bit longer.</p>
+                            <h5 class="">${course.snippet.title}</h5>
+                            <p class="card-text">${course.snippet.description.slice(0, 50)}</p>
+                            <button class='btn'>more</button>
                         </div>
                     </div>
                 </div>
                 `;
-    }
-    fy.innerHTML = str;
+        }
+        yearCon.innerHTML = str;
 
+    }
 </script>
 {%endblock custmjs%}
 
 {% block body%}
 <div class="py-5 bg-primary hero-header mb-5"></div>
 
-<section class="yearwise">
+<!-- loading spinner  -->
+<div class="container" id="loader">
+    <div class="item-1"></div>
+    <div class="item-2"></div>
+    <div class="item-3"></div>
+    <div class="item-4"></div>
+    <div class="item-5"></div>
+</div>
+
+<section class="yearwise" id="yearwise">
     <div class="container">
         <section class="first-year">
             <div class="secheading">
@@ -90,6 +332,23 @@
 
                 </div>
             </div>
+        </section>
+        <section class="second-year my-4">
+            <div class="secheading">
+                <div class="d-flex align-items-center">
+                    <h2>2st Year Computer Science</h2>
+                </div>
+                <div class="d-flex">
+                    <p class="mr-4">Now It's Time To Choose Right ways</p>
+                    <a href="" class="mx-4">Explore More</a>
+                </div>
+            </div>
+            <div class="secmain">
+                <div class="row row-cols-1 row-cols-md-5 g-4" id="secondyear">
+
+                </div>
+            </div>
+        </section>
     </div>
 </section>
 </div>
