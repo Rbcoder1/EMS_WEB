@@ -238,6 +238,8 @@
     const firstYear = async () => {
         const url1 = 'https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLhQjrBD2T380F_inVRXMIHCqLaNUd7bN4&part=snippet&maxResults=50';
         const url2 = 'https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLgR7oV8PLORypUbUP2L3fmMe6qscHzZFZ&part=snippet&maxResults=50'
+        const url3 = 'https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLgR7oV8PLORxAeaMMmxe_9-P9dqmck9Wo&part=snippet&maxResults=50'
+
         const options = {
             method: 'GET',
             headers: {
@@ -250,20 +252,26 @@
             yearwise.style.display = "none";
             loader.style.display = "flex";
 
-            let [item1, item2] = await Promise.all([
+            let [item1, item2, item3] = await Promise.all([
                 fetch(url1, options),
-                fetch(url2, options)
+                fetch(url2, options),
+                fetch(url3, options)
             ])
+
             item1 = await item1.json();
             item2 = await item2.json();
+            item3 = await item3.json();
 
             yearwise.style.display = "";
             loader.style.display = "none";
 
             learningState.firstYear.push(item1.items)
             learningState.secondYear.push(item2.items)
+            learningState.ThirdYear.push(item3.items)
+
             displayCourses(learningState.firstYear[0], 'firstyear')
             displayCourses(learningState.secondYear[0], 'secondyear')
+            displayCourses(learningState.ThirdYear[0], 'thirdyear')
             console.log(learningState.secondYear)
         } catch (error) {
             console.error(error);
@@ -288,14 +296,13 @@
                         <div class="card-body">
                             <h5 class="">${course.snippet.title}</h5>
                             <p class="card-text">${course.snippet.description.slice(0, 50)}</p>
-                            <button class='btn'>more</button>
+                            <button class='btn'><a href="https://www.youtube.com/watch?v=${course.snippet.resourceId.videoId} target="__blank"">more</a></button>
                         </div>
                     </div>
                 </div>
                 `;
         }
         yearCon.innerHTML = str;
-
     }
 </script>
 {%endblock custmjs%}
@@ -345,6 +352,21 @@
             </div>
             <div class="secmain">
                 <div class="row row-cols-1 row-cols-md-5 g-4" id="secondyear">
+
+                </div>
+            </div>
+        </section>
+        <section class="third-year my-4">
+            <div class="secheading">
+                <div class="d-flex align-items-center">
+                    <h2>3rd Year Computer Science</h2>
+                    <div class="d-flex">
+                        <a href="" class="mx-4">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="secmain">
+                <div class="row row-cols-1 row-cols-md-5 g-4" id="thirdyear">
 
                 </div>
             </div>

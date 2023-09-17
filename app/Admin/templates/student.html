@@ -1,0 +1,30 @@
+{%extends "AdminLayout.html"%}
+{%block body%}
+<div class="main">
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+         {% for user_register in  stu %}
+            
+         
+        <tr>
+        
+        <td> {{loop.index}} </td>
+        <td>{{user_register.first_name }}</td>
+        <td>{{user_register.user_email }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  </div>
+
+{%endblock body%}

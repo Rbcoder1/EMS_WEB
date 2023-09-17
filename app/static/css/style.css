@@ -2080,6 +2080,29 @@ li {
     background: #fff
 }
 
+.si-1{
+    background: url("../img/callenges.jpg") rgba(0, 0, 0, 0.2);
+    background-blend-mode: darken;
+    background-size: cover;
+    height: 100%;
+    border-radius: 15px;
+}
+.si-2{
+    background: url("../img/roadmap.webp") rgba(0, 0, 0, 0.2);
+    background-blend-mode: darken;
+    background-size: cover;
+
+}.si-3{
+    background: url("../img/learning.avif") rgba(0, 0, 0, 0.2);
+    background-blend-mode: darken;
+    background-size: cover;
+}
+.si-4{
+    background: url("../img/hk.avif") rgba(0, 0, 0, 0.2);
+    background-blend-mode: darken;
+    background-size: cover;
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .services-area .single-services {
         padding: 18px 14px

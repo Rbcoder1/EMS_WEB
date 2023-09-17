@@ -1,0 +1,62 @@
+{%extends "AdminLayout.html"%}
+{%block body%}
+<div class="container" style="margin-left: 20rem;">
+    <div class="main">
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <div class="number">{{total}}</div>
+                    <div class="card-name">Students</div>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="number">{{event}}</div>
+                    <div class="card-name">Hackethon </div>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="number">{{filed }}</div>
+                    <div class="card-name">Fieldwork</div>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="number">{{user}}</div>
+                    <div class="card-name">User Activity </div>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+        </div>
+        <div class="charts">
+            <div class="chart">
+                <h2>User Activity </h2>
+                <div>
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+            <div class="chart doughnut-chart">
+                <h2>Students</h2>
+                <div>
+                    <canvas id="doughnut"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+<script src="{{url_for('static',filename='js/chart1.js')  }}"></script>
+<script src="{{url_for('static',filename='js/chart2.js')}} "></script>
+{%endblock body%}

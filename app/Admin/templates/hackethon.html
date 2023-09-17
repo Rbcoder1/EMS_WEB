@@ -1,0 +1,33 @@
+{%extends "AdminLayout.html"%}
+{%block body%}
+<div class="main">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name of student </th>
+        <th scope="col">Topic name </th>
+        <th scope="col">Roll Number </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for Event_registration in hack %}
+
+
+      <tr>
+
+        <td> {{loop.index}} </td>
+        <td>{{Event_registration.name }}</td>
+        <b>
+          <td>{{Event_registration.topic }}</td>
+        </b>
+        <td>{{Event_registration.roll_no }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+{%endblock body%}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Adminpannel.css') }}">
+    <title>Admin panel</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <h2><a href="/" style="text-decoration: none;">IMRD TechClub</a></h2>
+            </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="search here">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/admin/dash" >
+                        <i class="fas fa-th-large"></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/student">
+                        <i class="fas fa-user-graduate"></i>
+                        <div>Students</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/hackethon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div>Hackethon </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/filed">
+                        <i class="fas fa-users"></i>
+                        <div>Fieldwork</div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        {%block body%}
+        {%endblock body%}
+</body>
+
+</html>
