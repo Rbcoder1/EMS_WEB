@@ -1,42 +1,56 @@
 {% extends "Layout.html"%}
 {% block Title%} Contact Us {%endblock Title%}
 
-
 {% block body%}
 <div class="py-5 bg-primary hero-header mb-5">
 </div>
-<div class="container ">
-    <div class="text-center wow fadeInUp my-4" data-wow-delay="0.1s">
-        <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
-        <h4 class="mb-5">Fill Contact For Any Query</h4>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h3 class="heading mb-4">Let's talk about everything!</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas debitis, fugit natus?</p>
+                    <p><img src="static/img/undraw-contact.svg" alt="Image" class="img-fluid"></p>
+                </div>
+                <div class="col-md-6">
+                    <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                        <div class="frow">
+                            <div class="col-md-12 form-group">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                            </div>
+                        </div>
+                        <div class="frow">
+                            <div class="col-md-12 form-group">
+                                <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="frow">
+                            <div class="col-md-12 form-group">
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                    placeholder="Subject">
+                            </div>
+                        </div>
+                        <div class="frow">
+                            <div class="col-md-12 form-group">
+                                <textarea class="form-control" name="message" id="message" cols="30" rows="7"
+                                    placeholder="Write your message"></textarea>
+                            </div>
+                        </div>
+                        <div class="frow">
+                            <div class="col-12">
+                                <input type="submit" value="Send Message" class="btn btn-primary rounded-0 py-2 px-4">
+                                <span class="submitting"></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="form-message-warning mt-4"></div>
+                    <div id="form-message-success">
+                        Your message was sent, thank you!
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <form action="/contact" method="POST">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">First Name</label>
-                <input type="text" class="form-control" name="firstname" id="fname" placeholder="Enter First Name"
-                    required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Last Name</label>
-                <input type="text" class="form-control" name="Lastname" id="Lname" placeholder="Enter Last Name"
-                    required>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputCity">Phone Number</label>
-                <input type="number" class="form-control" name="phone_num" id="num" placeholder="Enter your Phonenumber"
-                    required>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="email">email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email"
-                    required>
-            </div>
-        </div>
-        <button type="submit" name="submit" id="btn" class="btn btn-primary">Submit</button>
-    </form>
 </div>
 {% endblock body%}
