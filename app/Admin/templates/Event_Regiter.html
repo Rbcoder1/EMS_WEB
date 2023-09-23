@@ -1,0 +1,85 @@
+{%extends "AdminLayout.html"%}
+{%block body%}
+<div class="main">
+    <div class="white_card mb_30">
+        <div class="white_card_header">
+            <div class="box_header m-0">
+                <div class="main-title">
+                    <h3 class="m-0">Hackathon Registration</h3>
+                </div>
+                <div class="erning_btn d-flex">
+                    <a href="#" class="small_blue_btn radius_0 border-right-0">TechClub</a>
+                    <a href="#" class="small_blue_btn radius_0"></a>
+                </div>
+            </div>
+        </div>
+        <div class="white_card_body">
+            <div class="QA_section">
+                <div class="QA_table mb-0">
+                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+                        <table class="table lms_table_active2 dataTable no-footer dtr-inline" id="DataTables_Table_0"
+                            role="grid" style="width: 80vw;">
+                            <thead>
+                                <tr role="row">
+                                    <th scope="col" class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 35.2px;" aria-sort="ascending"
+                                        aria-label="NO: activate to sort column descending">Register ID</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 83px;"
+                                        aria-label="Currency: activate to sort column ascending">User ID</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 108px;"
+                                        aria-label="Plateform: activate to sort column ascending">Event Name</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 115px;"
+                                        aria-label="Email: activate to sort column ascending">Roll No</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 108px;"
+                                        aria-label="ID: activate to sort column ascending">Tech Used</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 77px;"
+                                        aria-label="Amount: activate to sort column ascending">Tech Name</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 77px;"
+                                        aria-label="Amount: activate to sort column ascending">Leader Name</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 77px;"
+                                        aria-label="Amount: activate to sort column ascending">Member 1</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 77px;"
+                                        aria-label="Amount: activate to sort column ascending">Member 2</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 77px;"
+                                        aria-label="Amount: activate to sort column ascending">Member 3</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 77px;"
+                                        aria-label="Amount: activate to sort column ascending">Member 4</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 77px;"
+                                        aria-label="Amount: activate to sort column ascending">Register At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%if data%}
+                                    {%for s in data%}
+                                        <tr role="row" class="odd">
+                                            <td scope="row" tabindex="0" class="sorting_1">1</td>
+                                            <td>15</td>
+                                            <td>bitcoin.com</td>
+                                            <td>Using - Bank</td>
+                                            <td>-0.454 USD</td>
+                                            <td>$25.00</td>
+                                            <td><a href="#" class="status_btn pending_btn">Update</a></td>
+                                            <td><a href="#" class="status_btn pending_btn">Delete</a></td>
+                                        </tr>
+                                    {%endfor%}
+                                {%endif%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock body%}

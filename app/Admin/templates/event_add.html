@@ -1,0 +1,56 @@
+{%extends "AdminLayout.html"%}
+{%block body%}
+<div class="main">
+    <div class="container p-4">
+        <form class="row g-3" method="post" action="/admin/add_event_page/add_event">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Event Name</label>
+                <input type="text" class="form-control" id="inputEmail4" name="ename" required>
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Event Tag</label>
+                <input type="text" class="form-control" id="inputPassword4" name="etag" placeholder="10 Character Only" required>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Objective</label>
+                <input type="text" class="form-control" id="inputAddress2" name="eobj" placeholder="Must Be comma(,) seperated" required>
+            </div>
+            <div class="col-md-12">
+                <label for="inputCity" class="form-label">Technologies Used</label>
+                <input type="text" class="form-control" id="inputCity" name="etech" placeholder="Must Be Comma Seperated">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="edesc" required></textarea>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Phases</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated" rows="3" name="ephases"></textarea>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Rules</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated" rows="3" name="erules"></textarea>
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Competition Date</label>
+               <input type="date" class="form-control" name="edate">
+            </div>
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label">Open/Closed Status</label>
+                <input type="text" class="form-control" id="inputZip" placeholder="0/1 Only" name="estatus">
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <label class="form-check-label" for="gridCheck">
+                        Is Event Upcomming
+                    </label>
+                    <input class="form-check-input" type="checkxbox" id="gridCheck" name="eup">
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Add Event </button>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock body%}

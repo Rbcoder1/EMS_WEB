@@ -9,6 +9,8 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="{{ url_for('static',filename='css/Adminpannel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrapadmin.css') }}">
+    
     <title>Admin panel</title>
 </head>
 
@@ -42,13 +44,31 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/hackethon">
+                    <a href="/admin/event_registration">
                         <i class="fas fa-chalkboard-teacher"></i>
                         <div>Hackethon </div>
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/filed">
+                    <a href="/admin/user_activity">
+                        <i class="fas fa-users"></i>
+                        <div>User Activity</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/allevents">
+                        <i class="fas fa-users"></i>
+                        <div>All Events</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/feature_banners">
+                        <i class="fas fa-users"></i>
+                        <div>Feature Banners</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/fieldwork">
                         <i class="fas fa-users"></i>
                         <div>Fieldwork</div>
                     </a>

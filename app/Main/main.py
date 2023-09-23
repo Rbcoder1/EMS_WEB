@@ -22,7 +22,7 @@ def home():
     cursor = mysql.connection.cursor()
     # fetching banner 
     cursor.execute('SELECT * FROM feature_banners')
-    featureEvent = cursor.fetchall() 
+    featureEvent = cursor.fetchall()
     if 'loggedin' in session:
         # storing user activity 
         msg = "Visited to Home"

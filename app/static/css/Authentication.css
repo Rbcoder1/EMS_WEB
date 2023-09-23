@@ -2,7 +2,7 @@
 
 main {
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     overflow: hidden;
     background-color: #F7FAFF;
     display: flex;
@@ -17,7 +17,7 @@ main {
     height: 640px;
     background-color: #F7FAFF;
     border-radius: 3.3rem;
-    box-shadow: 60px 60px 40px -30px rgba(0, 0, 0, 0.27);
+    box-shadow: none;
   }
   
   .inner-box {
@@ -39,6 +39,7 @@ main {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     transition: 0.8s ease-in-out;
+    background-color: #2124B1;
   }
   
   form {
@@ -117,7 +118,7 @@ main {
     border-bottom: 1px solid #bbb;
     padding: 0;
     font-size: 0.95rem;
-    color: #2c2ce3;
+    color: black;
     /* font-weight: bold; */
     transition: 0.4s;
   }
@@ -253,7 +254,7 @@ main {
   }
   
   .text-group {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     text-align: center;
     transform: translateY(0);
@@ -288,7 +289,22 @@ main {
     background-color: #151111;
     border-radius: 1rem;
   }
-  
+  @media(max-width: 980px){
+    #loginsubheader{
+      display: none;
+    }
+  }
+  @media(max-width: 445px){
+    .heading h2{
+      font-size: 1rem;
+    }
+    .heading{
+      margin: 0rem 0;
+    }
+    .box{
+      padding: 10px;
+    }
+  }
   @media (max-width: 850px) {
     .box {
       height: auto;
@@ -317,7 +333,7 @@ main {
     }
   
     .heading {
-      margin: 2rem 0;
+      /* margin: 2rem 0; */
     }
   
     form.sign-up-form {

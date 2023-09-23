@@ -6,7 +6,7 @@
 {%endblock authcss%}
 
 {% block body%}
-<div class="py-5 bg-primary hero-header mb-5">
+<div class="py-5 bg-primary hero-header" id="loginsubheader">
 </div>
 {%if msg%}
 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -25,13 +25,13 @@
         <div class="inner-box">
             <div class="forms-wrap">
                 <!-- Login Form  -->
-                <form action="" autocomplete="off" class="sign-in-form" method="post" action="/login">
-                    <div class="logo">
+                <form autocomplete="off" class="sign-in-form" method="post" action="/login">
+                    <!-- <div class="logo">
                         <h4>Connect With Eveniverse</h4>
-                    </div>
+                    </div> -->
 
                     <div class="heading">
-                        <h2>Welcome Back</h2>
+                        <h2 class="loghead">Welcome Back</h2>
                         <h6>Not registred yet?</h6>
                         <a href="#" class="toggle">Create</a>
                     </div>
@@ -58,12 +58,7 @@
 
                 <!-- Registration Form  -->
                 <form method="post" action="/register" autocomplete="off" class="sign-up-form">
-                    <div class="logo">
-                        <h4>Join Eveniverse Now</h4>
-                    </div>
-
                     <div class="heading">
-                        <h2>Get Started</h2>
                         <h6>Already have an account?</h6>
                         <a href="#" class="toggle">Log In</a>
                     </div>

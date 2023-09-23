@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>{% block Title%}{% endblock Title%}</title>
@@ -16,13 +17,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style_updated.css') }}">
     {%block authcss%}
     {%endblock authcss%}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
+
 <body>
     <!-- Navbar End -->
-    <div class="container-xxl position-relative p-0">
+    <div class="container-xxl">
         <nav class="navbar navbar-expand-lg navbar-light  p-0 ">
-            <a href="/" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-search me-2"></i>IMRD<span class="fs-5">TechClub</span></h1>
+            <a href="/" class="navbar-brand mx-4">
+                <h1 class="m-0">IMRD<span class="fs-5">TechClub</span></h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -79,4 +85,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
