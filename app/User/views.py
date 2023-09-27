@@ -26,7 +26,7 @@ def home():
             if i == '' or i == None:
                 profileHealth -= 12.5
 
-        return render_template("profile.html", user=user, ph=profileHealth)
+        return render_template("profile.html", user=user, ph=profileHealth,username=session['username'])
     else:
         return redirect('/login')
 
@@ -51,7 +51,7 @@ def user_progress():
         "user_missed": allevents - user_register_count,
         "portfolio": int(user_register_count/allevents*100)
     }
-    return render_template('progress.html', pdata=user_progres_data)
+    return render_template('progress.html', pdata=user_progres_data,username=session['username'])
 
 
 @user.route('/job')
@@ -69,16 +69,16 @@ def job():
         return render_template('job.html',jobs=jobs_results)
     except Exception as e:
         error = "Sorrry Job Section Temporary Down"
-        return render_template('job.html', error=error)
+        return render_template('job.html', error=error,username=session['username'])
 
 
 @user.route('/learning')
 def user_learning():
-    return render_template('userlearning.html')
+    return render_template('userlearning.html',username=session['username'])
 
 @user.route('/recent')
 def user_recent():
-    return render_template('recent.html')
+    return render_template('recent.html',username=session['username'])
 
 
 @user.route('/profile/update', methods=['GET', 'POST'])

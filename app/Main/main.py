@@ -15,61 +15,66 @@ all_Events = google + Hack2Skill
 all_Events_length = len(all_Events)
 
 
-
 # routes for main pages like home,about,contact,etc
 @main.route('/')
 def home():
     cursor = mysql.connection.cursor()
-    # fetching banner 
+    # fetching banner
     cursor.execute('SELECT * FROM feature_banners')
     featureEvent = cursor.fetchall()
     if 'loggedin' in session:
-        # storing user activity 
+        # storing user activity
         msg = "Visited to Home"
-        cursor.execute("INSERT INTO user_activity(user_id,type) VALUES(%s,%s)",(session['id'],msg))
+        cursor.execute(
+            "INSERT INTO user_activity(user_id,type) VALUES(%s,%s)", (session['id'], msg))
         mysql.connection.commit()
         return render_template('home.html', username=session['username'], fe=featureEvent, allevents=all_Events[0:4])
     else:
-        return render_template('home.html',fe=featureEvent,allevents=all_Events[0:4])
+        return render_template('home.html', fe=featureEvent, allevents=all_Events[0:4])
+
 
 @main.route('/about')
 def about():
     if 'loggedin' in session:
-        # storing user activity 
+        # storing user activity
         cursor = mysql.connection.cursor()
         msg = "Visited to About Page"
-        cursor.execute("INSERT INTO user_activity(user_id,type) VALUES(%s,%s)",(session['id'],msg))
+        cursor.execute(
+            "INSERT INTO user_activity(user_id,type) VALUES(%s,%s)", (session['id'], msg))
         mysql.connection.commit()
 
         return render_template('about.html', username=session['username'])
     return render_template('about.html')
 
+
 @main.route('/contact')
 def contact():
     if 'loggedin' in session:
-        # storing user activity 
+        # storing user activity
         cursor = mysql.connection.cursor()
         msg = "Visited to Contact Page"
-        cursor.execute("INSERT INTO user_activity(user_id,type) VALUES(%s,%s)",(session['id'],msg))
+        cursor.execute(
+            "INSERT INTO user_activity(user_id,type) VALUES(%s,%s)", (session['id'], msg))
         mysql.connection.commit()
         return render_template('contact.html', username=session['username'])
     return redirect('/login')
-
 
 
 # routes for events pages
 @main.route('/events')
 def all_events():
     if 'loggedin' in session:
-        # storing user activity 
+        # storing user activity
         cursor = mysql.connection.cursor()
         msg = "Visited to Event Pages"
-        cursor.execute("INSERT INTO user_activity(user_id,type) VALUES(%s,%s)",(session['id'],msg))
+        cursor.execute(
+            "INSERT INTO user_activity(user_id,type) VALUES(%s,%s)", (session['id'], msg))
         mysql.connection.commit()
         return render_template('all_events.html',
                                username=session['username'],
                                event=all_Events)
     return redirect('/login')
+
 
 @main.route('/past_events')
 def outside_event():
@@ -78,13 +83,15 @@ def outside_event():
     past_events = cursor.fetchall()
     return render_template('AllEvents.html', events=past_events, username=session['username'])
 
+
 @main.route('/inside_event')
 def inside_event():
     if 'loggedin' in session:
-        # storing user activity 
+        # storing user activity
         cursor = mysql.connection.cursor()
         msg = "Visited to IRMD Events"
-        cursor.execute("INSERT INTO user_activity(user_id,type) VALUES(%s,%s)",(session['id'],msg))
+        cursor.execute(
+            "INSERT INTO user_activity(user_id,type) VALUES(%s,%s)", (session['id'], msg))
         mysql.connection.commit()
 
         cursor = mysql.connection.cursor()
@@ -94,15 +101,15 @@ def inside_event():
     return render_template('login.html')
 
 
-
 # route for different events and category of events
 @main.route('/hackathons')
 def hackathon():
     if 'loggedin' in session:
-        # storing user activity 
+        # storing user activity
         cursor = mysql.connection.cursor()
         msg = "Explore Hackathon"
-        cursor.execute("INSERT INTO user_activity(user_id,type) VALUES(%s,%s)",(session['id'],msg))
+        cursor.execute(
+            "INSERT INTO user_activity(user_id,type) VALUES(%s,%s)", (session['id'], msg))
         mysql.connection.commit()
 
         cursor = mysql.connection.cursor()
@@ -110,17 +117,18 @@ def hackathon():
             'SELECT * FROM internal_events WHERE tags="hackathon" and is_open=1')
         hk = cursor.fetchall()
         print(hk)
-        return render_template('hackathon.html',username=session['username'],event=hk)
+        return render_template('hackathon.html', username=session['username'], event=hk)
     return render_template('login.html')
 
 
 @main.route('/online_session')
 def sessions():
     if 'loggedin' in session:
-        # storing user activity 
+        # storing user activity
         cursor = mysql.connection.cursor()
         msg = "Watch Online Session"
-        cursor.execute("INSERT INTO user_activity(user_id,type) VALUES(%s,%s)",(session['id'],msg))
+        cursor.execute(
+            "INSERT INTO user_activity(user_id,type) VALUES(%s,%s)", (session['id'], msg))
         mysql.connection.commit()
 
         return render_template('AllEvents.html',  username=session['username'])
@@ -149,10 +157,11 @@ def login():
 
                 msg = "Successfully login "
 
-                # storing user activity 
+                # storing user activity
                 cursor = mysql.connection.cursor()
                 msg = "Login Into System"
-                cursor.execute("INSERT INTO user_activity(user_id,type) VALUES(%s,%s)",(session['id'],msg))
+                cursor.execute(
+                    "INSERT INTO user_activity(user_id,type) VALUES(%s,%s)", (session['id'], msg))
                 mysql.connection.commit()
 
                 return render_template('home.html',
@@ -229,7 +238,7 @@ def single_page(name):
             return render_template('single_page.html', hack=hk, username=session['username'])
 
         except Exception as e:
-            return render_template('error.html', err=e, username=session['username'])
+            return render_template('single_page.html', err=e, username=session['username'])
     else:
         return redirect('/login')
 
@@ -238,29 +247,34 @@ def single_page(name):
 def user_register(name):
     if 'loggedin' in session:
         if request.method == 'POST':
-            print(request.form['rno'])
-            if 'flname' in request.form:
-                flname = request.form['flname']
             if 'rno' in request.form:
                 rno = request.form['rno']
-            if 'tname' in request.form:
-                tname = request.form['tname']
-            if 'dname' in request.form:
-                dname = request.form['dname']
-            if 'm1name' in request.form:
-                m1name = request.form['m1name']
-            if 'm4name' in request.form:
-                m4name = request.form['m4name']
+            if 'topic' in request.form:
+                tname = request.form['topic']
             if 'tech' in request.form:
                 tech = request.form['tech']
-            if 'pname' in request.form:
-                pname = request.form['pname']
+            if 'teamname' in request.form:
+                teamname = request.form['teamname']
+            if 'leadname' in request.form:
+                leadname = request.form['leadname']
+            if 'm1name' in request.form:
+                m1name = request.form['m1name']
+            if 'm2name' in request.form:
+                m2name = request.form['m2name']
+            if 'm3name' in request.form:
+                m3name = request.form['m3name']
+            if 'm4name' in request.form:
+                m4name = request.form['m4name']
 
             try:
                 # inserting user data into database
                 cursor = mysql.connection.cursor()
-                cursor.execute('INSERT INTO fieldwork(rno,name,divi,topic,member1) VALUES(%s,%s,%s,%s,%s);', (
-                    rno, flname, dname, tname, m1name))
+                cursor.execute(
+                    'SELECT event_name FROM internal_events WHERE event_id=%s', [name])
+                eventname = cursor.fetchone()
+
+                cursor.execute('INSERT INTO event_registration(user_id,event_name,roll_no,topic,tech_used,team_name,leader_name,member1_name,member2_name,member3_name,member4_name) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);', (
+                    int(session['id']), eventname, int(rno), tname, tech, teamname, leadname, m1name, m2name, m3name, m4name))
                 mysql.connection.commit()
                 msg = "Event Registration Successfull"
 
@@ -285,6 +299,7 @@ def user_register(name):
 @main.route('/learning-path')
 def learning_path():
     return render_template('learning-path.html')
+
 
 @main.route('/roadmaps')
 def roadmaps():

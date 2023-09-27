@@ -50,8 +50,8 @@ def hackethon():
     if 'admin' in session:
         cursor = mysql.connection.cursor()
         cursor.execute('SELECT * FROM event_registration')
-        student = cursor.fetchall()
-        return render_template('Event_Regiter.html')
+        edata = cursor.fetchall()
+        return render_template('Event_Regiter.html',edata=edata)
     return render_template('Auth.html')
 
 @admin.route('/user_activity')

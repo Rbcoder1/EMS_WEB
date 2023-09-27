@@ -1,15 +1,48 @@
 {
     "allEvents": [
         {
-            "title": "National Agrifunds Hackathon",
-            "desc": "We are thrilled to present the National AgriFunds Hackathon, an extraordinary initiative brought to you by the National Bank for Agriculture and Rural Development (NABARD) and Powered by Hack2skill. This one-of-a-kind hackathon is all about driving groundbreaking solutions that will revolutionize the agricultural landscape, making a real difference in the lives of farmers and rural communities.",
-            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-08-05T11%3A47%3A36.162Z-homepage.png",
+            "title": "ICC NIUM 'NEXT-IN 2.0' HACKATHON",
+            "desc": "The revolutionary hackathon that merges the exhilarating world of cricket with cutting-edge technologies like AI/ML, Fintech, AR/VR, and more. Prepare to ignite a new era in cricket innovation and unite with the worldwide community of sports and technology innovators.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-08-17T06%3A46%3A00.993Z-homepage%20icc%202.png",
             "organizer": [
                 "Hack2Skill"
             ],
-            "submmision_date": "Registrations end:\n                                                        Sun Aug 27 2023",
+            "submmision_date": "Registrations end:\n                                                        Fri Sep 29 2023",
+            "Mode": "Mode : \n                                                                Online & In Person (Demo Day)",
+            "link": "https://hackathon.icc-cricket.com?utm_source=homepage&utm_medium=promotional"
+        },
+        {
+            "title": "Build for Bharat - sponsored by ONDC and Google Cloud",
+            "desc": "The hackathon aims to unite tech enthusiasts, students, developers, and startups in solving real-world e-commerce challenges using cutting-edge technology and fostering innovation in the digital commerce ecosystem.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-09-06T12%3A02%3A37.761Z-build%20for%20bharat%20hackathon%20%281%29.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Last date to register:\n                                                        Sat Sep 30 2023",
             "Mode": "Mode : \n                                                                Online",
-            "link": "https://hack2skill.com/hack/nabard-naf-hackathon?utm_source=homepage&utm_medium=promotional"
+            "link": "https://hack2skill.com/hack/ondc-hackathon?utm_source=h2shomepage&utm_medium=h2s"
+        },
+        {
+            "title": "</Code> with Maps sponsored by Google Maps Platform",
+            "desc": "Google Maps Platform allows developers to create unique location-based experiences using our APIs & SDKs. Now is your chance to build or expand an existing app to incorporate rich location experiences using the latest APIs and push the boundaries of what is possible with our platform.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-09-01T06%3A02%3A12.179Z-homepage%20cwm.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Last date to register:\n                                                        Mon Oct 02 2023",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/google-maps-platform-hackathon?utm_source=h2shome&utm_medium=h2shome"
+        },
+        {
+            "title": "NASA SPACE APPS NOIDA 2023",
+            "desc": "World\u2019s Largest Space & Science Hackathon\n\n7-8th October 2023",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-05-02T14%3A50%3A55.867Z-HOEMPAGE%20NASA-min.png",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations end:\n                                                        Sat Oct 07 2023",
+            "Mode": "Mode : \n                                                                Offline",
+            "link": "https://spaceappsnoida.hack2skill.com"
         },
         {
             "title": "Pitch to SBI Hackathon",
@@ -23,26 +56,15 @@
             "link": "https://hack2skill.com/hack/pitch-to-sbi?utm_source=h2shomepage&utm_medium=H2SHome"
         },
         {
-            "title": "ICC NIUM 'NEXT-IN 2.0' HACKATHON",
-            "desc": "The revolutionary hackathon that merges the exhilarating world of cricket with cutting-edge technologies like AI/ML, Fintech, AR/VR, and more. Prepare to ignite a new era in cricket innovation and unite with the worldwide community of sports and technology innovators.",
-            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-08-17T06%3A46%3A00.993Z-homepage%20icc%202.png",
+            "title": "National Agrifunds Hackathon",
+            "desc": "We are thrilled to present the National AgriFunds Hackathon, an extraordinary initiative brought to you by the National Bank for Agriculture and Rural Development (NABARD) and Powered by Hack2skill. This one-of-a-kind hackathon is all about driving groundbreaking solutions that will revolutionize the agricultural landscape, making a real difference in the lives of farmers and rural communities.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-08-05T11%3A47%3A36.162Z-homepage.png",
             "organizer": [
                 "Hack2Skill"
             ],
-            "submmision_date": "Registrations end:\n                                                        Fri Sep 29 2023",
-            "Mode": "Mode : \n                                                                Online & In Person (Demo Day)",
-            "link": "https://hackathon.icc-cricket.com?utm_source=homepage&utm_medium=promotional"
-        },
-        {
-            "title": "NASA SPACE APPS NOIDA 2023",
-            "desc": "World\u2019s Largest Space & Science Hackathon\n\n7-8th October 2023",
-            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-05-02T14%3A50%3A55.867Z-HOEMPAGE%20NASA-min.png",
-            "organizer": [
-                "Hack2Skill"
-            ],
-            "submmision_date": "Registrations end:\n                                                        Sat Oct 07 2023",
-            "Mode": "Mode : \n                                                                Offline",
-            "link": "https://spaceappsnoida.hack2skill.com"
+            "submmision_date": "Registrations end:\n                                                        Sun Aug 27 2023",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/nabard-naf-hackathon?utm_source=homepage&utm_medium=promotional"
         },
         {
             "title": "Empowering Investors Hackathon",
@@ -505,6 +527,17 @@
             "submmision_date": "Registration Ends:\n                                                        Thu Nov 25 2021",
             "Mode": "Mode : \n                                                                Online",
             "link": "https://hack2skill.com/hack/symphony"
+        },
+        {
+            "title": "GPL Logo Design competition",
+            "desc": "GSM product which helps user to extract insights from location data to solve real world problems. Functionalities of GSM i.e mapping, routing, spatial analysis, 2D-3D visualization, dashboard for decision support system. G-field is the mobile application for geospatial and location data collection from ground by field user. GDA is the desktop and web based application for drone data processing, data sharing and analytics. We are looking for the unique and creative logo for our product. Logo should be in PNG, JPG,and PSD format with all supporting sizes along with the raw files.",
+            "img": "https://s3-h2s-v2.s3.ap-south-1.amazonaws.com/2023-09-02T08%3A10%3A45.471Z-logothon_small_size.jpeg",
+            "organizer": [
+                "Hack2Skill"
+            ],
+            "submmision_date": "Registrations end:\n                                                        Sat Sep 30 2023",
+            "Mode": "Mode : \n                                                                Online",
+            "link": "https://hack2skill.com/hack/gpllogocompetition?utm_source=homepage&utm_medium=promotional"
         },
         {
             "title": "Hacked-a-thon",

@@ -101,11 +101,12 @@
 <section class="common-user-section">
     <!-- Button trigger modal -->
     <div class="container my-4 py-4">
-        <div class="profile-session-con card mb-3" style="background-color: rgb(227, 227, 240);">
+        <div class="profile-session-con card mb-2" style="background-color: rgb(227, 227, 240);">
             <div class="row g-0 conprof">
-                <div class="col-md-2 profile-session-pic-con">
-                    <img src="{{ url_for('static', filename='img/azure.png') }}" class="img-fluid profile-session-pic"
-                        alt={{user[9]}}>
+                <div class="col-md-2">
+                    <div class="profile-session-pic-con">
+                        <h1>{{user[10][0]}}{{user[11][0]}}</h1>
+                    </div>
                 </div>
                 <div class="col-md-7">
                     <div class="card-body">
@@ -229,17 +230,6 @@
                             </div>
                             {%endfor%}
                             {%endif%}
-                        </div>
-                        <div>
-                            <span class="section-title text-primary mb-3 mb-sm-4">Education</span>
-                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-                                default model text, and a search for 'lorem ipsum' will uncover many web sites still
-                                in
-                                their infancy.</p>
-                            <p class="mb-1-9">There are many variations of passages of Lorem Ipsum available, but
-                                the
-                                majority have suffered alteration in some form, by injected humour.</p>
-
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 {% block Title%} {{id}} {%endblock Title%}
 
 {% block body%}
-{{err}}
+<div class="py-5 bg-primary hero-header mb-5"></div>
 {%if msg%}
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Success</strong> {{msg}}
@@ -17,16 +17,11 @@
 {%endif%}
 {%if hack%}
 <div class="container my-4 d-flex align-item-center justify-content-center flex-column">
-    <!-- <div class="container d-flex align-item-center justify-content-center">
-        <img src='{{ url_for('static', filename='img/hack[4]') }}' class="img-fluid" alt="Responsive image"
-            style="border: 1px solid; border-radius: 15px;">
-    </div> -->
     <div class="container-md my-4">
         <div class="row hack-details">
             <div class="col-sm-2 mb-4">
                 <picture>
-                    <img class="rounded-circle shadow-sm"
-                        src="{{ url_for('static', filename='img/fieldworklogo.png') }}" alt="hackthewinter">
+                    <img class="rounded-circle shadow-sm" style="width: 70%;" src='/static/{{hack[4]}}' alt={{hack[4]}}>
                 </picture>
             </div>
             <div class="col-sm-6 col-md-7">
@@ -49,78 +44,25 @@
             <!-- Object Session  -->
             <div class="cotainer-md">
                 <h1 class="my-4">Objectives :</h1>
-                <p>{{hack[5]}}</p>
+                <ol type="dot">
+                    {%for i in hack[5].split(',')%}
+                    <li class="my-2" style="color: black;">{{i}}</li>
+                    {%endfor%}
+                </ol>
             </div>
 
             <!-- Technologies Used  -->
             {% if hack[6] != 'none'%}
             <div class="container-md">
                 <h1 class="my-4">Technologies Used :</h1>
-                <p>{{hack[6]}}</p>
+                <div class="d-flex">
+                    {%for i in hack[6].split(',')%}
+                    <div style="padding: 5px 15px; border: 1px solid;" class="mx-2">{{i}}</div>
+                    {%endfor%}
+                </div>
             </div>
             {%else%}
             {%endif%}
-
-            <!-- callenges session starts -->
-            <!-- <div class="container">
-        <h1 class="my-4">
-            Challenge :
-        </h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='img/ml.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Machine Lerning</h5>
-                        <p class="card-text">Complete Your Project You Machine Learning Algorithms and submit it</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='img/datas.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Data Science</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='img/android.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Android</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='img/blockchain.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Blockchain</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='img/nlp.jpg.crdownload') }}" class="card-img-top"
-                        alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">NLP</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
 
             {%if hack[7] != 'none'%}
             <!-- Phases Of Events  -->
@@ -234,47 +176,70 @@
                             </article>
                         </div>
                     </div>
-                    {%else%}
-                    {%endif%}
-                    <div class="container" id="register">
-                        <form class="text-center border border-light p-5" method="post"
-                            action="/hackathon/user_registration/{{hack[0]}}">
-
-                            <p class="h4 mb-4">{{hack[1]}} Registration</p>
-
-                            <div class="form-row mb-4">
-                                <div class="col my-3">
-                                    <!-- First name -->
-                                    <input type="text" id="defaultRegisterFormFirstName" class="form-control"
-                                        name="flname" placeholder="Full Name" required>
-                                </div>
-                                <div class="col my-3">
-                                    <!-- last name -->
-                                    <input type="number" id="defaultRegisterFormFirstName" class="form-control"
-                                        name="rno" placeholder="Roll No" required>
-                                </div>
-                                <div class="col my-3">
-                                    <!-- member 1 name -->
-                                    <input type="text" id="defaultRegisterFormFirstName" class="form-control"
-                                        name="tname" placeholder="Topic Name" required>
-                                </div>
-                                <div class="col my-3">
-                                    <!-- member 1 name -->
-                                    <input type="text" id="defaultRegisterFormFirstName" class="form-control"
-                                        name="dname" placeholder="Enter Division" required>
-                                </div>
-                                <div class="col my-3">
-                                    <!-- member 1 name -->
-                                    <input type="text" id="defaultRegisterFormFirstName" class="form-control"
-                                        name="m1name" placeholder="Enter Member Name" required>
-                                </div>
-
-                                <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
-                        </form>
-                    </div>
                 </div>
+            </div>
+
+            {%else%}
+            {%endif%}
+            <div class="container" id="register">
+                <form class="text-center border border-light p-5" method="post"
+                    action="/hackathon/user_registration/{{hack[0]}}">
+
+                    <p class="h4 mb-4">{{hack[1]}} Registration</p>
+
+                    <div class="form-row mb-4">
+                        <div class="col my-3">
+                            <!-- Roll No -->
+                            <input type="number" id="defaultRegisterFormFirstName" class="form-control" name="rno"
+                                placeholder="Roll No" required>
+                        </div>
+                        <div class="col my-3">
+                            <!-- Topic Name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="topic"
+                                placeholder="Topic Name" required>
+                        </div>
+                        <div class="col my-3">
+                            <!-- Tech Used -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="tech"
+                                placeholder="Technolgies Used" required>
+                        </div>
+                        <div class="col my-3">
+                            <!-- Team name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="teamname"
+                                placeholder="Team Name" required>
+                        </div>
+                        <div class="col my-3">
+                            <!-- Leader name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="leadname"
+                                placeholder="Enter Leader Name" required>
+                        </div>
+                        <div class="col my-3">
+                            <!-- member 1 name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="m1name"
+                                placeholder="Enter Member Name" required>
+                        </div>
+                        <div class="col my-3">
+                            <!-- member 2 name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="m2name"
+                                placeholder="Enter Member Name" required>
+                        </div>
+                        <div class="col my-3">
+                            <!-- member 3 name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="m3name"
+                                placeholder="Enter Member Name" required>
+                        </div>
+                        <div class="col my-3">
+                            <!-- member 4 name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" name="m4name"
+                                placeholder="Enter Member Name" required>
+                        </div>
+
+                        <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
+                </form>
             </div>
         </div>
     </div>
-    {%endif%}
-    {% endblock body %}
+</div>
+</div>
+{%endif%}
+{% endblock body %}

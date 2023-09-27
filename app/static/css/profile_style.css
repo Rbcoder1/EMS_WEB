@@ -205,6 +205,16 @@ nav {
     align-items: center;
 }
 
+.profile-session-pic-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    border: 1px;
+    background-color: #a7a6dd;
+    
+}
+
 /* making responsive  */
 @media screen and (max-width:1036px) {
     /* profile page responsiveness  */

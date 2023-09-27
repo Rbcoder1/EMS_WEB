@@ -35,10 +35,13 @@
                                         aria-label="Email: activate to sort column ascending">Roll No</th>
                                     <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                         rowspan="1" colspan="1" style="width: 108px;"
-                                        aria-label="ID: activate to sort column ascending">Tech Used</th>
+                                        aria-label="ID: activate to sort column ascending">Topic</th>
                                     <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                         rowspan="1" colspan="1" style="width: 77px;"
-                                        aria-label="Amount: activate to sort column ascending">Tech Name</th>
+                                        aria-label="Amount: activate to sort column ascending">Tech Used</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 77px;"
+                                        aria-label="Amount: activate to sort column ascending">Team Name</th>
                                     <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                         rowspan="1" colspan="1" style="width: 77px;"
                                         aria-label="Amount: activate to sort column ascending">Leader Name</th>
@@ -60,17 +63,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {%if data%}
-                                    {%for s in data%}
+                                {%if edata%}
+                                    {%for s in edata%}
                                         <tr role="row" class="odd">
-                                            <td scope="row" tabindex="0" class="sorting_1">1</td>
-                                            <td>15</td>
-                                            <td>bitcoin.com</td>
-                                            <td>Using - Bank</td>
-                                            <td>-0.454 USD</td>
-                                            <td>$25.00</td>
-                                            <td><a href="#" class="status_btn pending_btn">Update</a></td>
-                                            <td><a href="#" class="status_btn pending_btn">Delete</a></td>
+                                            <td scope="row" tabindex="0" class="sorting_1">{{s[0]}}</td>
+                                            <td>{{s[1]}}</td>
+                                            <td>{{s[2]}}</td>
+                                            <td>{{s[3]}}</td>
+                                            <td>{{s[4]}}</td>
+                                            <td>{{s[5]}}</td>
+                                            <td>{{s[6]}}</td>
+                                            <td>{{s[7]}}</td>
+                                            <td>{{s[8]}}</td>
+                                            <td>{{s[9]}}</td>
+                                            <td>{{s[10]}}</td>
+                                            <td>{{s[11]}}</td>
+                                            <td>{{s[12]}}</td>
                                         </tr>
                                     {%endfor%}
                                 {%endif%}

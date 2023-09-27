@@ -8993,9 +8993,10 @@ del {
 }
 
 /* Contact Form Sytling  */
-.frow{
+.frow {
     margin-bottom: 2remm;
 }
+
 .text-black {
     color: #000;
 }
@@ -9112,27 +9113,43 @@ label.error {
 
 
 
-.portfolio-menu{
-	text-align:center;
-}
-.portfolio-menu ul li{
-	display:inline-block;
-	margin:0;
-	list-style:none;
-	padding:10px 15px;
-	cursor:pointer;
-	-webkit-transition:all 05s ease;
-	-moz-transition:all 05s ease;
-	-ms-transition:all 05s ease;
-	-o-transition:all 05s ease;
-	transition:all .5s ease;
+.portfolio-menu {
+    text-align: center;
 }
 
-.portfolio-item{
-	/*width:100%;*/
+.portfolio-menu ul li {
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    -webkit-transition: all 05s ease;
+    -moz-transition: all 05s ease;
+    -ms-transition: all 05s ease;
+    -o-transition: all 05s ease;
+    transition: all .5s ease;
 }
-.portfolio-item .item{
-	/*width:303px;*/
-	float:left;
-	margin-bottom:10px;
+
+.portfolio-item {
+    /*width:100%;*/
+}
+
+.portfolio-item .item {
+    /*width:303px;*/
+    float: left;
+    margin-bottom: 10px;
+}
+
+.profile-icon {
+    border: 1px solid white;
+    padding: 3px 11px;
+    background: wheat;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-icon h2{
+    margin: 0;
+    padding: 0;
 }

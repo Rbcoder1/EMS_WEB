@@ -9,11 +9,11 @@
         {% for item in events %}
         <div class="col">
             <div class="card">
-                <img src='{{ url_for('static', filename='img/ml.jpg' ) }}' class="card-img-top" alt="..."
+                <img src='static/img/ml.jpg' class="card-img-top" alt="..."
                     style="height: 13pc;">
                 <div class="card-body">
                     <h5 class="card-title">{{item[1]}}</h5>
-                    <p class="card-text">{{item[2]}}</p>
+                    <p class="card-text">{{item[2][0:100]}}</p>
                     {%if item[10]==0%}
                     <a href='/single_page/{{item[0]}}' class="btn btn-primary disabled"
                         rel="noopener noreferrer">More</a>
