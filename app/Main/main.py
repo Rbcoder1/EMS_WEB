@@ -251,20 +251,36 @@ def user_register(name):
                 rno = request.form['rno']
             if 'topic' in request.form:
                 tname = request.form['topic']
+            else:
+                tname = 'None'
             if 'tech' in request.form:
                 tech = request.form['tech']
+            else:
+                tech = 'None'
             if 'teamname' in request.form:
                 teamname = request.form['teamname']
+            else:
+                teamname = 'None'
             if 'leadname' in request.form:
                 leadname = request.form['leadname']
+            else:
+                leadname = 'None'
             if 'm1name' in request.form:
                 m1name = request.form['m1name']
+            else:
+                m1name = 'None'
             if 'm2name' in request.form:
                 m2name = request.form['m2name']
+            else:
+                m2name = 'None'
             if 'm3name' in request.form:
                 m3name = request.form['m3name']
+            else:
+                m3name = 'None'
             if 'm4name' in request.form:
                 m4name = request.form['m4name']
+            else:
+                m4name = 'None'
 
             try:
                 # inserting user data into database
