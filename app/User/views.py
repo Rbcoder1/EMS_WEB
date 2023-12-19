@@ -3,6 +3,8 @@ from app.db import mysql
 from app.Main import allevent_len
 import requests
 from serpapi import GoogleSearch
+from flask_socketio import join_room,leave_room,send,SocketIO
+import app
 
 # Creating a Blueprint for user and its related routes 
 user = Blueprint("User", __name__, url_prefix="/user", template_folder="templates")
@@ -111,3 +113,10 @@ def user_update():
             return "<h1> Fail To Update Server Problem </h1>"
     else:
         return "<h1>Invalid Request</h1>"
+
+# @user.route('/help-room')
+# def help_room():
+#     socketio = SocketIO(app,cors_allowed_origins="*",async_mode=None)
+    
+
+#     return "Help Room"

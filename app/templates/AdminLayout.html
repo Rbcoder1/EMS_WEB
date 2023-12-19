@@ -10,7 +10,8 @@
 
     <link rel="stylesheet" href="{{ url_for('static',filename='css/Adminpannel.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrapadmin.css') }}">
-    
+    {%block custscript%}
+    {%endblock custscript%}
     <title>Admin panel</title>
 </head>
 
@@ -32,7 +33,7 @@
         <div class="sidebar">
             <ul>
                 <li>
-                    <a href="/admin/dash" >
+                    <a href="/admin/dash">
                         <i class="fas fa-th-large"></i>
                         <div>Dashboard</div>
                     </a>
@@ -44,36 +45,41 @@
                     </a>
                 </li>
                 <li>
+                    <a href="/admin/allevents">
+                        <i class="fas fa-solid fa-calendar"></i>
+                        <div> Events</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/bootcamp/fetch/None">
+                        <i class="fas fa-solid fa-chalkboard"></i>
+                        <div>Bootcamps</div>
+                    </a>
+                </li>
+                <li>
                     <a href="/admin/event_registration">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <div>Hackethon Registration </div>
+                        <i class="fas fa-solid fa-address-card"></i>
+                        <div>Event Registration </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/bootcamp/register">
+                        <i class="fas fa-solid fa-address-card"></i>
+                        <div>Bootcamp Registration </div>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/user_activity">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-solid fa-list"></i>
                         <div>User Activity</div>
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/allevents">
-                        <i class="fas fa-users"></i>
-                        <div>All Events</div>
-                    </a>
-                </li>
-                <li>
                     <a href="/admin/feature_banners">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-solid fa-image"></i>
                         <div>Feature Banners</div>
                     </a>
                 </li>
-                <li>
-                    <a href="/admin/fieldwork">
-                        <i class="fas fa-users"></i>
-                        <div>Fieldwork</div>
-                    </a>
-                </li>
-
             </ul>
         </div>
         {%block body%}

@@ -1,0 +1,84 @@
+{%extends "AdminLayout.html"%}
+{%block body%}
+{%block custscript%}
+<script>
+
+</script>
+{%endblock custscript%}
+<div class="main">
+    <div class="white_card mb_30">
+        <div class="white_card_header">
+            <div class="box_header m-0">
+                <div class="main-title">
+                    <h3 class="m-0">TechClub Users</h3>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary"><a href="/admin/bootcamp/add"
+                        style="color: white; text-decoration: none;">Add Bootcamp</a></button>
+            </div>
+        </div>
+        <div class="white_card_body">
+            <div class="QA_section">
+                <div class="QA_table mb-0">
+                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+                        <table class="table lms_table_active2 dataTable no-footer dtr-inline" id="DataTables_Table_0"
+                            role="grid" style="width: 80vw;">
+                            <thead>
+                                <tr role="row">
+                                    <th scope="col" class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 35.2px;" aria-sort="ascending"
+                                        aria-label="NO: activate to sort column descending">Title</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 108px;"
+                                        aria-label="Plateform: activate to sort column ascending">Mode
+                                        Name</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 115px;"
+                                        aria-label="Email: activate to sort column ascending">Total Duration
+                                    </th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 108px;"
+                                        aria-label="ID: activate to sort column ascending">Starts_On</th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 83px;"
+                                        aria-label="Currency: activate to sort column ascending">Ends_On
+                                    </th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 77px;"
+                                        aria-label="Amount: activate to sort column ascending">Created_On
+                                    </th>
+                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                        rowspan="1" colspan="1" style="width: 98.2px;"
+                                        aria-label="Status: activate to sort column ascending">Delete
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%if bootcamps%}
+                                {%for camp in bootcamps%}
+                                <tr role="row" class="odd">
+                                    <td scope="row" tabindex="0" class="sorting_1">{{camp[1]}}</td>
+                                    <td>{{camp[4]}}</td>
+                                    <td>{{camp[8]}}</td>
+                                    <td>{{camp[10]}}</td>
+                                    <td>{{camp[11]}}</td>
+                                    <td>{{camp[14]}}</td>
+                                    <td>
+                                        <form action="/admin/bootcamp/delete/{{camp[0]}}" method="post">
+                                            <button type="submit" class="status_btn pending_btn"> delete </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {%endfor%}
+                                {%endif%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock body%}

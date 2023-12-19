@@ -1,0 +1,69 @@
+{%extends "AdminLayout.html"%}
+{%block body%}
+<div class="main">
+    <div class="container p-4">
+        <form class="row g-3" action="/admin/bootcamp/add" method="post" enctype="multipart/form-data">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Bootcamp Name</label>
+                <input type="text" class="form-control" id="inputEmail4" name="title" required>
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Mode</label>
+                <input type="text" class="form-control" id="inputPassword4" name="mode" placeholder="6 Character Only"
+                    required>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"
+                    required></textarea>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress2" class="form-label">Objective</label>
+                <input type="text" class="form-control" id="inputAddress2" name="objective"
+                    placeholder="Must Be comma(,) seperated" required>
+            </div>
+            <div class="col-md-12">
+                <label for="inputCity" class="form-label">Outcome</label>
+                <input type="text" class="form-control" id="inputCity" name="outcome"
+                    placeholder="Must Be Comma Seperated">
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Instructer's</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated"
+                    rows="3" name="instructor"></textarea>
+            </div>
+            <div class="col-md-4">
+                <label for="inputZip" class="form-label">Cover Image</label>
+                <input type="file" class="form-control" id="inputZip" name="cover_image">
+            </div>
+            <div class="col-md-4">
+                <label for="inputZip" class="form-label">Hours/Day</label>
+                <input type="number" class="form-control" id="inputZip" placeholder="hours" name="hours_per_day">
+            </div>
+            <div class="col-md-4">
+                <label for="inputZip" class="form-label">Total Duration (hours)</label>
+                <input type="number" class="form-control" id="inputZip" placeholder="total hours" name="total_duration">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Registraion Start </label>
+                <input type="date" class="form-control" name="register_start_on">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Registraion Ends </label>
+                <input type="date" class="form-control" name="register_end_on">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Bootcamp Starts </label>
+                <input type="date" class="form-control" name="camp_start_on">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Bootcamp Ends </label>
+                <input type="date" class="form-control" name="camp_end_on">
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Add Bootcamp</button>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock body%}
