@@ -20,7 +20,8 @@ def home():
             'SELECT * FROM user_profile WHERE profile_id = %s', [id])
         user_profile = cursor.fetchone()
 
-        user = user_profile + user_register
+        if(user_profile != "None" and user_register != "None") :
+            user = user_profile + user_register
         profileHealth = 100
 
         for i in user:

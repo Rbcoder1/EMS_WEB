@@ -1,5 +1,41 @@
-CREATE TABLE `eventmanage`.`bootcamps` (`bootcamp_id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(100) NOT NULL , `description` VARCHAR(500) NOT NULL , `objective` VARCHAR(500) NOT NULL , `mode` VARCHAR(10) NOT NULL DEFAULT 'online' , `instructor` VARCHAR(100) NOT NULL , `outcome` VARCHAR(200) NOT NULL , `hours/day` INT NOT NULL , `total_duration` INT NOT NULL , `cover_image` VARCHAR(200) NULL DEFAULT 'bootcamp_default.jpg' , `register_start_on` TIMESTAMP NULL DEFAULT NULL , `register_end_on` TIMESTAMP NULL DEFAULT NULL , `camp_start_on` TIMESTAMP NULL DEFAULT NULL , `camp_end_on` TIMESTAMP NULL DEFAULT NULL , `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`bootcamp_id`)) ENGINE = InnoDB;
+CREATE TABLE bootcamps (
+    bootcamp_id INT NOT NULL AUTO_INCREMENT ,
+    title VARCHAR(100) NOT NULL ,
+    description VARCHAR(500) NOT NULL ,
+    objective VARCHAR(500) NOT NULL ,
+    mode VARCHAR(10) NOT NULL DEFAULT 'online' ,
+    instructor VARCHAR(100) NOT NULL , 
+    outcome VARCHAR(200) NOT NULL , 
+    hours_per_day INT NOT NULL , 
+    total_duration INT NOT NULL , 
+    cover_image VARCHAR(200) NULL DEFAULT 'bootcamp_default.jpg' , 
+    register_start_on TIMESTAMP NULL DEFAULT NULL , 
+    register_end_on TIMESTAMP NULL DEFAULT NULL , 
+    camp_start_on TIMESTAMP NULL DEFAULT NULL , 
+    camp_end_on TIMESTAMP NULL DEFAULT NULL , 
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+    PRIMARY KEY (`bootcamp_id`)
+    );
 
-CREATE TABLE `eventmanage`.`bootcamp_registrations` (`bootcamp_id` INT NOT NULL , `stud_name` VARCHAR(200) NOT NULL , `mobile_no` VARCHAR(12) NOT NULL , `email` VARCHAR(100) NOT NULL , `class` VARCHAR(6) NOT NULL , `hours_attend` INT NOT NULL , `register_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ) ENGINE = InnoDB;
+CREATE TABLE bootcamp_registrations (
+    bootcamp_id INT NOT NULL , 
+    stud_name VARCHAR(200) NOT NULL , 
+    mobile_no VARCHAR(12) NOT NULL , 
+    email VARCHAR(100) NOT NULL , 
+    class VARCHAR(6) NOT NULL , 
+    hours_attend INT NOT NULL , 
+    register_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+    );
 
 CREATE TABLE `eventmanage`.`learning_history` (`stud_id` INT NOT NULL , `video_id` INT NOT NULL , `stop_on` INT NOT NULL , `started_on` INT NOT NULL ) ENGINE = InnoDB;
+
+
+CREATE TABLE admin (
+    admin_id INT NOT NULL AUTO_INCREMENT , 
+    username VARCHAR(50) NOT NULL , 
+    password VARCHAR(50) NOT NULL , 
+    role VARCHAR(20) NOT NULL , 
+    token VARCHAR(100) NOT NULL , 
+    register_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+    PRIMARY KEY (`admin_id`)
+    );
