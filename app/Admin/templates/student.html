@@ -8,15 +8,13 @@
 <div class="main">
   <div class="white_card mb_30">
     <div class="white_card_header">
-      <div class="box_header m-0">
+      <div class="box_header m-0 header-bar">
         <div class="main-title">
           <h3 class="m-0">TechClub Users</h3>
         </div>
         <div class="erning_btn d-flex">
-          <a href="#" class="small_blue_btn radius_0 border-right-0">Listed By</a>
           <form action="/admin/student" method="post">
-            <input type="text" placeholder="search" name="query">
-            <select class="mx-2" name="filtername">
+            <select class="mx-2 sort-group" name="filtername">
               <option value="user_id">SID</option>
               <option value="first_name">First Name</option>
               <option value="last_name">Last Name</option>
@@ -24,7 +22,7 @@
               <option value="created_at">Date</option>
               <option value="confirm_status">Confirm</option>
             </select>
-            <button type="submit">Display</button>
+            <button type="submit" class="btn btn-secondary">Sort</button>
           </form>
         </div>
       </div>
@@ -32,59 +30,61 @@
     <div class="white_card_body">
       <div class="QA_section">
         <div class="QA_table mb-0">
-          <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
-            <table class="table lms_table_active2 dataTable no-footer dtr-inline" id="DataTables_Table_0" role="grid"
-              style="width: 80vw;">
-              <thead>
-                <tr role="row">
-                  <th scope="col" class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                    colspan="1" style="width: 35.2px;" aria-sort="ascending"
-                    aria-label="NO: activate to sort column descending">SID</th>
-                  <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                    colspan="1" style="width: 108px;" aria-label="Plateform: activate to sort column ascending">First
-                    Name</th>
-                  <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                    colspan="1" style="width: 115px;" aria-label="Email: activate to sort column ascending">Last Name
-                  </th>
-                  <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                    colspan="1" style="width: 108px;" aria-label="ID: activate to sort column ascending">Email</th>
-                  <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                    colspan="1" style="width: 83px;" aria-label="Currency: activate to sort column ascending">Password
-                  </th>
-                  <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                    colspan="1" style="width: 77px;" aria-label="Amount: activate to sort column ascending">Register At
-                  </th>
-                  <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                    colspan="1" style="width: 98.2px;" aria-label="Status: activate to sort column ascending">Confirm
-                  </th>
-                  <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                    colspan="1" style="width: 98.2px;" aria-label="Status: activate to sort column ascending">Delete
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {%if student%}
-                {%for s in student%}
-                <tr role="row" class="odd">
-                  <td scope="row" tabindex="0" class="sorting_1">{{s[0]}}</td>
-                  <td>{{s[1]}}</td>
-                  <td>{{s[2]}}</td>
-                  <td>{{s[3]}}</td>
-                  <td>{{s[4]}}</td>
-                  <td>{{s[6]}}</td>
-                  <td><a href="#" class="status_btn pending_btn">{{s[5]}}</a></td>
-                  <td><a href="#" onclick="banStudent()"
-                      class="status_btn pending_btn">Delete</a></td>
-                </tr>
-                {%endfor%}
+          <table class="table">
+            <thead class="thead-dark">
+              <tr style="background-color: rgba(0, 0, 0, 0.938);">
+                <th scope="col" class="color: white;">SID</th>
+                <th scope="col" class="color: white;">First</th>
+                <th scope="col" class="color: white;">Last</th>
+                <th scope="col" class="color: white;">Email</th>
+                <th scope="col" class="color: white;">Reg.At</th>
+                <th scope="col" class="color: white;">Update</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%if student%}
+              {%for s in student%}
+              <tr>
+                <td scope="row">{{s[0]}}</td>
+                <td>{{s[1]}}</td>
+                <td>{{s[2]}}</td>
+                <td>{{s[3]}}</td>
+                <td>{{s[6]}}</td>
+                {%if s[5] == "1"%}
+                <td class="text-center "><button class="btn btn-danger" id="unbanButton" value="{{s[0]}}">unban</button>
+                </td>
+                {%else%}
+                <td class="text-center "><button class="btn btn-danger" id="banButton" value="{{s[0]}}">ban</button>
+                </td>
+
                 {%endif%}
-              </tbody>
-            </table>
-          </div>
+              </tr>
+              {%endfor%}
+              {%endif%}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+{%block adminjs%}
+<script>
+  const banButton = document.getElementById("banButton");
+
+  banButton.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    banButton.innerText = "process"
+    const res = await fetch(`/admin/student/ban-student/${banButton.value}`,
+      {
+        method: "post"
+      }
+    );
+    console.log(res);
+    banButton.innerText = "ban"
+  })
+</script>
+{%endblock adminjs%}
 {%endblock body%}

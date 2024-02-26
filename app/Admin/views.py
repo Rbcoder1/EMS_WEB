@@ -1,71 +1,34 @@
 from flask import Blueprint, render_template, session,request,redirect
 from app.db import mysql
-import uuid
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 from werkzeug.utils import secure_filename
 import os
 
 admin = Blueprint("Admin", __name__, url_prefix="/admin",
                   template_folder="./templates")
 
+
 UPLOAD_FOLDER = "/home/eventmsystem/mysite/app/static/uploads"
 
 # Routes for Authentication
-# register route for admin
-@admin.route('/auth/register',methods=['GET','POST'])
-def auth():
+@admin.route('/login',methods=['GET','POST'])
+def loginAdmin():
     if request.method == 'POST':
-        username = request.form['username']
+        token = request.form['token']
         password = request.form['password']
-        role = request.form['role']
-        token = uuid.uuid4()
         try:
-            cursor = mysql.connection.cursor()
-            cursor.execute("INSERT INTO admin(username,password,role,token) VALUES(%s,%s,%s,%s)",(username,password,role,token));
-            cursor.connection.commit()
-
-            cursor.execute("SELECT * FROM admin WHERE username=%s",[username])
-            admin = cursor.fetchone()
-
-            if admin:
-                return redirect("admin/auth/login")
+            if token.strip() == "admin" and password.strip() == "admin@123":
+                session['admin'] = True
+                print("LoggedIn")
+                return redirect("/admin")
             else:
-                return render_template("Error.html")
+                return render_template("Error.html",error="Internal Server Error")
 
         except Exception as e:
             print("Internal Server Error", e)
 
-    return render_template("RegisterAdmin.html")
+    return "Bad Request"
 
-@admin.route('/auth/login',methods=['GET','POST'])
-def loginAdmin():
-    session["admin"] = True
-    return redirect("/admin")
-    # if request.method == 'POST':
-    #     token = request.form['token']
-    #     password = request.form['password']
-
-    #     try:
-    #         cursor = mysql.connection.cursor()
-    #         cursor.execute("SELECT * FROM admin WHERE token=%s and password=%s",(token,password))
-    #         admin = cursor.fetchone()
-
-    #         print(admin)
-
-    #         if admin != None:
-    #             session['admin'] = True
-    #             return redirect("/admin")
-    #         else:
-    #             return render_template("Error.html",error="Internal Server Error")
-
-    #     except Exception as e:
-    #         print("Internal Server Error", e)
-
-    # return "Bad Request"
-
-
+# main routes 
 @admin.route('/')
 def home():
     if 'admin' in session:
@@ -80,8 +43,7 @@ def student():
         cursor = mysql.connection.cursor()
         if request.method == 'POST':
             filtername = request.form['filtername']
-            query = request.form['query']
-            cursor.execute(f"SELECT * FROM user_register WHERE {filtername} = '{query}' ")
+            cursor.execute(f"SELECT * FROM user_register ORDER BY {filtername}")
             student = cursor.fetchall();
             return render_template('student.html',student=student)
         else:
@@ -90,12 +52,16 @@ def student():
             return render_template('student.html', student=student)
     return render_template('LoginAdmin.html')
 
-admin.route('/student/ban-student/<id>')
+@admin.route('/student/ban-student/<id>',methods=['GET','POST'])
 def ban_student(id):
     if request.method == 'POST':
         cursor = mysql.connection.cursor()
-        cursor.execute("UPDATE user_register SET ban=True WHERE id=%s",[id])
-        cursor.commit()
+        cursor.execute("UPDATE user_register SET ban=true WHERE user_id=%s",[id])
+        cursor.connection.commit()
+        
+        return {
+            "msg": "student ban successfully"
+        }
     else:
         return render_template("Error.html")
 
@@ -167,21 +133,28 @@ def addevent():
         if request.method == 'POST':
             # fetching all values from form
             ename = request.form['ename']
-            etag = request.form['etag']
             edesc = request.form['edesc']
+            ecat = request.form['ecategory']
             eobj = request.form['eobj']
             erules = request.form['erules']
-            etech = request.form['etech']
+            ementor = request.form['ementor']
             ephase = request.form['ephases']
-            estatus = request.form['estatus']
-            edate = request.form['edate']
-            eup = request.form['eup']
-            print(ename,etag,edate,edesc,eobj,erules,etech,ephase,estatus,eup)
+            edates = request.form['edates']
+            eprices = request.form['eprice']
+            registration_start_date = request.form['erdate']
+            registration_end_date = request.form['eredate']
+            event_start_date = request.form['ecdate']
+            event_end_date = request.form['ecedate']
+            logoimg = request.form['logoimg']
+            
             # storing in data base
             cursor = mysql.connection.cursor()
-            cursor.execute("INSERT INTO internal_events(event_name,description,tags,images,objective,tech_used,phases,rules,dates,is_open) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(ename,edesc,etag,'',eobj,etech,ephase,erules,edate,int(estatus)))
+            cursor.execute("INSERT INTO internal_events(title,description,category,logo_image,objective,rules,\
+                           mentors,phases,prices,dates,registration_start_on,registration_ends_on,event_start_on,event_ends_on)\
+                           VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(ename,edesc,ecat,'',eobj,erules,ementor,ephase,eprices,\
+                            edates,registration_start_date,registration_end_date,event_start_date,event_end_date))
             cursor.connection.commit()
-            return "Ok"
+            return redirect('/admin')
         return "cancle"
     return render_template('LoginAdmin.html')
 

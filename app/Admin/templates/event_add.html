@@ -8,16 +8,16 @@
                 <input type="text" class="form-control" id="inputEmail4" name="ename" required>
             </div>
             <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Event Tag</label>
-                <input type="text" class="form-control" id="inputPassword4" name="etag" placeholder="10 Character Only" required>
+                <label for="inputPassword4" class="form-label">Event Category</label>
+                <input type="text" class="form-control" id="inputPassword4" name="ecategory" placeholder="10 Character Only" required>
             </div>
             <div class="col-12">
                 <label for="inputAddress2" class="form-label">Objective</label>
                 <input type="text" class="form-control" id="inputAddress2" name="eobj" placeholder="Must Be comma(,) seperated" required>
             </div>
             <div class="col-md-12">
-                <label for="inputCity" class="form-label">Technologies Used</label>
-                <input type="text" class="form-control" id="inputCity" name="etech" placeholder="Must Be Comma Seperated">
+                <label for="inputCity" class="form-label">Mentors</label>
+                <input type="text" class="form-control" id="inputCity" name="ementor" placeholder="Must Be Comma Seperated">
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Description</label>
@@ -31,21 +31,33 @@
                 <label for="inputAddress" class="form-label">Rules</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated" rows="3" name="erules"></textarea>
             </div>
-            <div class="col-md-4">
-                <label for="inputState" class="form-label">Competition Date</label>
-               <input type="date" class="form-control" name="edate">
-            </div>
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Open/Closed Status</label>
-                <input type="text" class="form-control" id="inputZip" placeholder="0/1 Only" name="estatus">
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Dates</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated" rows="3" name="edates"></textarea>
             </div>
             <div class="col-12">
-                <div class="form-check">
-                    <label class="form-check-label" for="gridCheck">
-                        Is Event Upcomming
-                    </label>
-                    <input class="form-check-input" type="checkxbox" id="gridCheck" name="eup">
-                </div>
+                <label for="inputAddress" class="form-label">Prices</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated" rows="3" name="eprice"></textarea>
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Registration Date</label>
+               <input type="date" class="form-control" name="erdate">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Registration End Date</label>
+               <input type="date" class="form-control" name="eredate">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Competition Date</label>
+               <input type="date" class="form-control" name="ecdate">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Competition End Date</label>
+               <input type="date" class="form-control" name="ecedate">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Competition Logo</label>
+               <input type="file" class="form-control" name="logoimg">
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Add Event </button>

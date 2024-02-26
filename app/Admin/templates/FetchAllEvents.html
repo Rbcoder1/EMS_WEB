@@ -15,59 +15,45 @@
                     </div>
                 </div>
                 <div>
-                    <button class="btn btn-primary"><a href="/admin/add_event_page" style="color: white; text-decoration: none;">Add New Event</a></button>
+                    <button class="btn btn-secondary"><a href="/admin/add_event_page" style="color: white; text-decoration: none;">Add New Event</a></button>
                 </div>
             </div>
         </div>
         <div class="white_card_body">
             <div class="QA_section">
-                <div class="QA_table mb-0">
-                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
-                        <table class="table lms_table_active2 dataTable no-footer dtr-inline" id="DataTables_Table_0"
-                            role="grid" style="width: 80vw;">
-                            <thead>
-                                <tr role="row">
-                                    <th scope="col" class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0"
-                                        rowspan="1" colspan="1" style="width: 35.2px;" aria-sort="ascending"
-                                        aria-label="NO: activate to sort column descending">Event ID</th>
-                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
-                                        rowspan="1" colspan="1" style="width: 83px;"
-                                        aria-label="Currency: activate to sort column ascending">Event Name</th>
-                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
-                                        rowspan="1" colspan="1" style="width: 108px;"
-                                        aria-label="Plateform: activate to sort column ascending">Created At</th>
-                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
-                                        rowspan="1" colspan="1" style="width: 115px;"
-                                        aria-label="Email: activate to sort column ascending">Status</th>
-                                    <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
-                                        rowspan="1" colspan="1" style="width: 115px;"
-                                        aria-label="Email: activate to sort column ascending">Update</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {%if allevents%}
-                                {%for s in allevents%}
-                                <tr role="row" claFss="odd">
-                                    <td scope="row" tabindex="0" class="sorting_1">{{s[0]}}</td>
-                                    <td>{{s[1]}}</td>
-                                    <td>{{s[12]}}</td>
-                                    {%if s[10]== 1 %}
-                                    <td><a href="#" class="status_btn pending_btn"
-                                            style="background-color: rgba(17, 206, 13, 0.5);" X>Open</a></td>
-                                    {%else%}
-                                    <td><a href="#" class="status_btn pending_btn"
-                                            style="background-color: rgba(203, 28, 28, 0.5);">Closed</a></td>
-                                    {%endif%}
-                                    <td style="text-align: center;"><a href="/update_event">update</a></td>
-                                </tr>
-                                {%endfor%}
-                                {%endif%}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+              <div class="QA_table mb-0">
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr style="background-color: rgba(0, 0, 0, 0.938);">
+                      <th scope="col" class="color: white;">Title</th>
+                      <th scope="col" class="color: white;">Category</th>
+                      <th scope="col" class="color: white;">Registration Date</th>
+                      <th scope="col" class="color: white;">Competition Date</th>
+                      <th scope="col" class="color: white;">Creted On</th>
+                      <th scope="col" class="color: white;">Status</th>
+                      <th scope="col" class="color: white;">Update</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {%if allevents%}
+                    {%for e in allevents%}
+                    <tr>
+                      <td scope="row">{{e[1]}}</td>
+                      <td>{{e[3]}}</td>
+                      <td>{{e[11]}}</td>
+                      <td>{{e[13]}}</td>
+                      <td>{{e[15]}}</td>
+                      <td>open</td>
+                      <td class="text-center "><button class="btn btn-success" id="updateEventButton" value="{{e[0]}}">Update</button>
+                      </td>
+                    </tr>
+                    {%endfor%}
+                    {%endif%}
+                  </tbody>
+                </table>
+              </div>
             </div>
-        </div>
+          </div>
     </div>
 </div>
 {%endblock body%}

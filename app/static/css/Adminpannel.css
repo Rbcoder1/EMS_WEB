@@ -465,7 +465,7 @@ img {
 }
 
 .QA_section .QA_table tbody tr:first-child td {
-    border-top: 20px solid #fff!important
+    border-top: 2px solid #222222;
 }
 
 .QA_section .QA_table tbody th {
@@ -503,9 +503,9 @@ img {
     font-size: 14px;
     font-weight: 400;
     border-bottom: 0;
-    background: #f9f9f9;
-    border-bottom: 10px solid #fff;
-    color: #6f7a92
+    background: #ffffff;
+    border-bottom: 1px solid #222222;
+    color: #000000
 }
 
 .QA_section .QA_table tbody th.pending,.QA_section .QA_table tbody td.pending {
@@ -525,7 +525,8 @@ img {
     -webkit-transition: .3s;
     -moz-transition: .3s;
     -o-transition: .3s;
-    transition: .3s
+    transition: .3s;
+    border: 1px solid black;
 }
 
 .QA_section .QA_table tbody tr:hover {
@@ -550,7 +551,7 @@ img {
     border: 0 solid transparent;
     font-size: 14px;
     font-weight: 400;
-    color: #6f7a92;
+    color: #ffffff;
     white-space: nowrap;
     text-transform: capitalize;
     font-family: merriweather sans,sans-serif;
@@ -684,4 +685,16 @@ img {
 
 .status_btn:hover {
     color: #fff
+}
+
+
+.header-bar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.sort-group{
+    padding: 5px 10px;
+    background-color: white;
+    border: none;
 }
