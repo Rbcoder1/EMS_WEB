@@ -1,0 +1,116 @@
+{%extends "Layout.html"%}
+{%block Title%} Event Registration{%endblock Title%}
+{%block body%}
+<div class="py-5 bg-primary hero-header mb-5"></div>
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" style="color: black; font-size: 20px; font-weight: bol;">Register</div>
+
+                    <div class="card-body">
+                        <form name="my-form" onsubmit="return validform()"
+                            action="/events/user_registration/{{eventid}}" method="post">
+                            <b>Individual Information</b>
+                            <hr>
+                            <div class="form-group row py-2">
+                                <label for="full_name" class="col-md-4 col-form-label text-md-right">Roll No</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="full_name" class="form-control" name="rno1">
+                                </div>
+                            </div>
+
+                            <div class="form-group row py-2">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Class</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="email_address" class="form-control" name="class1">
+                                </div>
+                            </div>
+
+                            <div class="form-group row py-2">
+                                <label for="user_name" class="col-md-4 col-form-label text-md-right">Mobile No</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="user_name" class="form-control" name="mob1">
+                                </div>
+                            </div>
+                            <hr>
+                            <hr>
+                            <b>Team Information : Member 1 <i>(optional)</i></b>
+                            <div class="form-group row py-2">
+                                <label for="phone_number" class="col-md-4 col-form-label text-md-right">First & Last Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="phone_number" class="form-control" name="member1_name">
+                                </div>
+                            </div>
+
+                            <div class="form-group row py-2">
+                                <label for="phone_number" class="col-md-4 col-form-label text-md-right">Roll No</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="phone_number" class="form-control" name="rno2">
+                                </div>
+                            </div>
+
+                            <div class="form-group row py-2">
+                                <label for="present_address" class="col-md-4 col-form-label text-md-right">Class
+                                    No</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="present_address" class="form-control" name="class2">
+                                </div>
+                            </div>
+
+                            <div class="form-group row py-2">
+                                <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Mobile
+                                    No</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="permanent_address" class="form-control" name="mob2">
+                                </div>
+                            </div>
+                            <hr>
+                            <hr>
+                            <b>Team Information : Member 2 <i>(optional)</i></b>
+                            <div class="form-group row py-2">
+                                <label for="phone_number" class="col-md-4 col-form-label text-md-right">First & Last Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="phone_number" class="form-control" name="member2_name">
+                                </div>
+                            </div>
+
+                            <div class="form-group row py-2">
+                                <label for="phone_number" class="col-md-4 col-form-label text-md-right">Roll No</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="phone_number" class="form-control" name="rno3">
+                                </div>
+                            </div>
+
+                            <div class="form-group row py-2">
+                                <label for="present_address" class="col-md-4 col-form-label text-md-right">Class
+                                    No</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="present_address" class="form-control" name="class3">
+                                </div>
+                            </div>
+
+                            <div class="form-group row py-2">
+                                <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Mobile
+                                    No</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="permanent_address" class="form-control" name="mob3">
+                                </div>
+                            </div>
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Register Now
+                                </button>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</main>
+
+{%endblock body%}

@@ -1,7 +1,9 @@
-from flask import Blueprint, render_template, session,request,redirect
+from flask import Blueprint, render_template, session,request,redirect,Response
 from app.db import mysql
 from werkzeug.utils import secure_filename
 import os
+import csv
+import io
 
 admin = Blueprint("Admin", __name__, url_prefix="/admin",
                   template_folder="./templates")
@@ -81,6 +83,16 @@ def hackethon():
         return render_template('Event_Regiter.html',edata=edata)
     return render_template('LoginAdmin.html')
 
+@admin.route('/management_event_registration')
+def management_event_registration():
+    if 'admin' in session:
+        cursor = mysql.connection.cursor()
+        cursor.execute('SELECT * FROM management_event_registrations')
+        data = cursor.fetchall()
+        
+        return render_template('Management_register.html',data=data)
+    return render_template('LoginAdmin.html')
+
 @admin.route('/user_activity')
 def filed_work():
     if 'admin' in session:
@@ -94,7 +106,7 @@ def filed_work():
 def fetchevents():
     if 'admin' in session:
         cursor = mysql.connection.cursor()
-        cursor.execute('SELECT * FROM internal_events')
+        cursor.execute('SELECT * FROM imrdcompetion')
         allevents = cursor.fetchall()
         return render_template('FetchAllEvents.html',allevents=allevents)
     return render_template('LoginAdmin.html')
@@ -149,7 +161,7 @@ def addevent():
             
             # storing in data base
             cursor = mysql.connection.cursor()
-            cursor.execute("INSERT INTO internal_events(title,description,category,logo_image,objective,rules,\
+            cursor.execute("INSERT INTO imrdcompetion(title,description,category,logo_image,objective,rules,\
                            mentors,phases,prices,dates,registration_start_on,registration_ends_on,event_start_on,event_ends_on)\
                            VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(ename,edesc,ecat,'',eobj,erules,ementor,ephase,eprices,\
                             edates,registration_start_date,registration_end_date,event_start_date,event_end_date))
@@ -280,3 +292,24 @@ def fetch_bootcamp(query):
             return render_template("Error.html", error=e)
     else:
         return render_template("Error.html", error="Inaccessible Without Login")
+
+
+@admin.route('/event_registration/report')
+def download_report():
+    cursor = mysql.connection.cursor()
+    cursor.execute('SELECT * FROM event_registration')
+    data = cursor.fetchall()
+
+    output = io.StringIO()
+    writer = csv.writer(output)
+
+    line = ['register_id','roll_no','topic','tech_used','team_name','leader_name','member1_name','member2_name','member3_name','member4_name','register_at','user_id','event_name']
+    writer.writerow(line)
+
+    for row in data:
+        line = [str(row[0]) + ',' + str(row[1]) + ',' + str(row[2])  + ',' +  str(row[3]) + ',' + str(row[4]) + ',' + str(row[5]) + ',' + str(row[6]) + ',' + str(row[7]) + ',' +  str(row[8]) + ',' + str(row[9]) + ',' + str(row[10]) + ',' + str(row[11]) + ',' + str(row[12])]
+        writer.writerow(line)
+    
+    output.seek(0)
+
+    return Response(output, mimetype="text/csv", headers={"Content-Disposition":"attachment;filename=employee_report.csv"})

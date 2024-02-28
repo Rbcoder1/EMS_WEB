@@ -1,17 +1,15 @@
 from flask import Blueprint, render_template
 from flask import render_template, request, session, redirect
 from app.db import mysql
-from data import loadH2SEvets, LoadGoogleEvent
-from data import loadH2SEvets, LoadGoogleEvent
+from data import loadH2SEvets
 
 # Creating a Blueprint for main pages
 main = Blueprint("Main", __name__, template_folder="templates")
 
 # Loading Json Files Of Events
-google = LoadGoogleEvent()
 Hack2Skill = loadH2SEvets()
 
-all_Events = google + Hack2Skill
+all_Events = Hack2Skill
 all_Events_length = len(all_Events)
 
 
@@ -55,19 +53,18 @@ def all_events():
 @main.route('/past_events')
 def outside_event():
     cursor = mysql.connection.cursor()
-    cursor.execute('SELECT * FROM internal_events WHERE is_open=0')
+    cursor.execute('SELECT * FROM imrdcompetion WHERE is_open=0')
     past_events = cursor.fetchall()
     return render_template('AllEvents.html', events=past_events, username=session['username'])
 
 
 @main.route('/inside_event')
 def inside_event():
-    if 'loggedin' in session:
-        cursor = mysql.connection.cursor()
-        cursor.execute('SELECT * FROM internal_events')
-        internal_events = cursor.fetchall()
-        return render_template('AllEvents.html', username=session['username'], events=list(internal_events))
-    return redirect('/login')
+    cursor = mysql.connection.cursor()
+    cursor.execute('SELECT * FROM imrdcompetion')
+    imrdcompetion = cursor.fetchall()
+    return render_template('AllEvents.html', events=list(imrdcompetion))
+
 
 
 # route for different events and category of events
@@ -76,7 +73,7 @@ def hackathon():
     if 'loggedin' in session:
         cursor = mysql.connection.cursor()
         cursor.execute(
-            'SELECT * FROM internal_events WHERE tags="hackathon" and is_open=1')
+            'SELECT * FROM imrdcompetion WHERE tags="hackathon" and is_open=1')
         hk = cursor.fetchall()
         print(hk)
         return render_template('hackathon.html', username=session['username'], event=hk)
@@ -170,90 +167,57 @@ def logout():
 
 
 # single pages for inside events and hackathon
-@main.route('/single_page/<name>', methods=['GET', 'POST'])
-def single_page(name):
-    if 'loggedin' in session:
-        try:
-            # fetching event from event table in database
-            cursor = mysql.connection.cursor()
-            cursor.execute(
-                'SELECT * FROM internal_events WHERE event_id= %s', (name))
-            hk = cursor.fetchone()
+@main.route('/single_page/<id>', methods=['GET', 'POST'])
+def single_page(id):
+    try:
+        # fetching event from event table in database
+        cursor = mysql.connection.cursor()
+        cursor.execute('SELECT * FROM imrdcompetion WHERE event_id= %s', [id])
+        event = cursor.fetchone()
 
-            # rendering template after successfully event is fetch
-            return render_template('single_page.html', hack=hk, username=session['username'])
+        cursor.execute('SELECT count(register_id) FROM management_event_registrations WHERE event_id=%s',[event[0]])
+        register_count = cursor.fetchall()
 
-        except Exception as e:
-            return render_template('single_page.html', err=e, username=session['username'])
-    else:
-        return redirect('/login')
+        print(register_count)
+        return render_template('single_page.html', hack=event, count=register_count)
+    except Exception as e:
+        return render_template('single_page.html', err=e)
 
-
-@main.route("/hackathon/user_registration/<name>", methods=['GET', 'POST'])
+# event Registration for management activity
+@main.route("/events/user_registration/<name>", methods=['GET', 'POST'])
 def user_register(name):
     if 'loggedin' in session:
         if request.method == 'POST':
-            if 'rno' in request.form:
-                rno = request.form['rno']
-            if 'topic' in request.form:
-                tname = request.form['topic']
-            else:
-                tname = 'None'
-            if 'tech' in request.form:
-                tech = request.form['tech']
-            else:
-                tech = 'None'
-            if 'teamname' in request.form:
-                teamname = request.form['teamname']
-            else:
-                teamname = 'None'
-            if 'leadname' in request.form:
-                leadname = request.form['leadname']
-            else:
-                leadname = 'None'
-            if 'm1name' in request.form:
-                m1name = request.form['m1name']
-            else:
-                m1name = 'None'
-            if 'm2name' in request.form:
-                m2name = request.form['m2name']
-            else:
-                m2name = 'None'
-            if 'm3name' in request.form:
-                m3name = request.form['m3name']
-            else:
-                m3name = 'None'
-            if 'm4name' in request.form:
-                m4name = request.form['m4name']
-            else:
-                m4name = 'None'
+            rno1 = request.form['rno1']
+            class1 = request.form['class1']
+            mob1 = request.form['mob1']
+            memeber1_name = request.form['member1_name']
+            rno2 = request.form['rno2']
+            class2 = request.form['class2']
+            mob2 = request.form['mob2']
+            memeber2_name = request.form['member2_name']
+            rno3 = request.form['rno3']
+            class3 = request.form['class3']
+            mob3 = request.form['mob3']
 
             try:
                 # inserting user data into database
                 cursor = mysql.connection.cursor()
-                cursor.execute(
-                    'SELECT event_name FROM internal_events WHERE event_id=%s', [name])
-                eventname = cursor.fetchone()
-
-                cursor.execute('INSERT INTO event_registration(user_id,event_name,roll_no,topic,tech_used,team_name,leader_name,member1_name,member2_name,member3_name,member4_name) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);', (
-                    int(session['id']), eventname, int(rno), tname, tech, teamname, leadname, m1name, m2name, m3name, m4name))
+                cursor.execute('INSERT INTO management_event_registrations(event_id,user_id,roll_no,class,mobile_no,member1_name,member1_rollno,member1_class,member1_mob,member2_name,member2_rollno,member2_class,member2_mob,fees_confirm) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);', (
+                    name,int(session['id']), int(rno1),class1,mob1,memeber1_name,rno2,class2,mob2,memeber2_name,rno3,class3,mob3,0))
                 mysql.connection.commit()
                 msg = "Event Registration Successfull"
-
-                # fetching event from database with event_id
-                cursor.execute(
-                    'SELECT * FROM internal_events WHERE event_id= %s', (name))
-                hk = cursor.fetchone()
-                cursor.close()
-
-                # rendering template after successfully register with message and event
-                return render_template('single_page.html', hack=hk,username=session['username'])
-
+                return redirect(f'/single_page/{name}')
+            
             except Exception as e:
                 error = "Please Check Value in Fields"
                 return render_template('single_page.html', error=error, err=e, username=session['username'])
+        else:
+            cursor = mysql.connection.cursor()
+            cursor.execute("SELECT category,event_id FROM imrdcompetion WHERE event_id=%s",[name])
+            category, event_id = cursor.fetchone()
 
-        return "please Post the request"
+            return render_template("eventRegistration.html", category=category, eventid = event_id ,username=session['username'])
     else:
         return redirect('/login')
 

@@ -3,13 +3,22 @@
 <div class="main">
     <div class="white_card mb_30">
         <div class="white_card_header">
-            <div class="box_header m-0">
+            <div class="box_header m-0 header-bar">
                 <div class="main-title">
-                    <h3 class="m-0">Hackathon Registration</h3>
+                    <h3 class="m-0">All Events Registrations</h3>
                 </div>
                 <div class="erning_btn d-flex">
-                    <a href="#" class="small_blue_btn radius_0 border-right-0">TechClub</a>
-                    <a href="#" class="small_blue_btn radius_0"></a>
+                    <form action="/admin/student" method="post">
+                        <select class="mx-2 sort-group" name="filtername">
+                            <option value="user_id">SID</option>
+                            <option value="first_name">First Name</option>
+                            <option value="last_name">Last Name</option>
+                            <option value="user_email">Email</option>
+                            <option value="created_at">Date</option>
+                            <option value="confirm_status">Confirm</option>
+                        </select>
+                        <button type="submit" class="btn btn-secondary">Sort</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -64,23 +73,23 @@
                             </thead>
                             <tbody>
                                 {%if edata%}
-                                    {%for s in edata%}
-                                        <tr role="row" class="odd">
-                                            <td scope="row" tabindex="0" class="sorting_1">{{s[0]}}</td>
-                                            <td>{{s[1]}}</td>
-                                            <td>{{s[2]}}</td>
-                                            <td>{{s[3]}}</td>
-                                            <td>{{s[4]}}</td>
-                                            <td>{{s[5]}}</td>
-                                            <td>{{s[6]}}</td>
-                                            <td>{{s[7]}}</td>
-                                            <td>{{s[8]}}</td>
-                                            <td>{{s[9]}}</td>
-                                            <td>{{s[10]}}</td>
-                                            <td>{{s[11]}}</td>
-                                            <td>{{s[12]}}</td>
-                                        </tr>
-                                    {%endfor%}
+                                {%for s in edata%}
+                                <tr role="row" class="odd">
+                                    <td scope="row" tabindex="0" class="sorting_1">{{s[0]}}</td>
+                                    <td>{{s[1]}}</td>
+                                    <td>{{s[2]}}</td>
+                                    <td>{{s[3]}}</td>
+                                    <td>{{s[4]}}</td>
+                                    <td>{{s[5]}}</td>
+                                    <td>{{s[6]}}</td>
+                                    <td>{{s[7]}}</td>
+                                    <td>{{s[8]}}</td>
+                                    <td>{{s[9]}}</td>
+                                    <td>{{s[10]}}</td>
+                                    <td>{{s[11]}}</td>
+                                    <td>{{s[12]}}</td>
+                                </tr>
+                                {%endfor%}
                                 {%endif%}
                             </tbody>
                         </table>

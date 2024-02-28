@@ -99,7 +99,7 @@ CREATE TABLE `feature_banners` (
 -- Table structure for table `internal_events`
 --
 
-CREATE TABLE `internal_events` (
+CREATE TABLE `imrdcompetion` (
   `event_id` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
   `description` varchar(400) NOT NULL,
