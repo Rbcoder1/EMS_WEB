@@ -145,26 +145,30 @@ def addevent():
         if request.method == 'POST':
             # fetching all values from form
             ename = request.form['ename']
+            emode = request.form['emode']
             edesc = request.form['edesc']
             ecat = request.form['ecategory']
             eobj = request.form['eobj']
-            erules = request.form['erules']
+            erules = request.form['erules'] 
             ementor = request.form['ementor']
             ephase = request.form['ephases']
             edates = request.form['edates']
+            ecriteria = request.form['ecriteria']
             eprices = request.form['eprice']
             registration_start_date = request.form['erdate']
             registration_end_date = request.form['eredate']
             event_start_date = request.form['ecdate']
             event_end_date = request.form['ecedate']
+            thumbimg = request.form['thumbimg']
             logoimg = request.form['logoimg']
             
+            print(thumbimg)
             # storing in data base
             cursor = mysql.connection.cursor()
-            cursor.execute("INSERT INTO imrdcompetion(title,description,category,logo_image,objective,rules,\
-                           mentors,phases,prices,dates,registration_start_on,registration_ends_on,event_start_on,event_ends_on)\
-                           VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(ename,edesc,ecat,'',eobj,erules,ementor,ephase,eprices,\
-                            edates,registration_start_date,registration_end_date,event_start_date,event_end_date))
+            cursor.execute("INSERT INTO imrdcompetion(title,description,category,logo_image,thumbnail,mode,objective,rules,\
+                           mentors,phases,prices,criteria,dates,registration_start_on,registration_ends_on,event_start_on,event_ends_on)\
+                           VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(ename,edesc,ecat,thumbimg,logoimg,emode,eobj,erules,ementor,ephase,eprices,\
+                            ecriteria,edates,registration_start_date,registration_end_date,event_start_date,event_end_date))
             cursor.connection.commit()
             return redirect('/admin')
         return "cancle"

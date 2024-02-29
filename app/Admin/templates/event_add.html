@@ -7,57 +7,84 @@
                 <label for="inputEmail4" class="form-label">Event Name</label>
                 <input type="text" class="form-control" id="inputEmail4" name="ename" required>
             </div>
-            <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Event Category</label>
-                <input type="text" class="form-control" id="inputPassword4" name="ecategory" placeholder="10 Character Only" required>
+            <div class="col-md-3 d-flex flex-column">
+                <label for="inputEmail4" class="form-label">Event Type</label>
+                <select class="mx-2 sort-group" name="ecategory" style="width: 15pc; height: 30px;">
+                    <option value="management">Management</option>
+                    <option value="submission">Submission</option>
+                    <option value="hackathon">Hackathon</option>
+                </select>
+            </div>
+            <div class="col-md-3 d-flex flex-column">
+                <label for="inputEmail4" class="form-label">Event Type</label>
+                <select class="mx-2 sort-group" name="emode" style="width: 15pc; height: 30px;">
+                    <option value="online">Online</option>
+                    <option value="offline">Offline</option>
+                </select>
             </div>
             <div class="col-12">
                 <label for="inputAddress2" class="form-label">Objective</label>
-                <input type="text" class="form-control" id="inputAddress2" name="eobj" placeholder="Must Be comma(,) seperated" required>
+                <input type="text" class="form-control" id="inputAddress2" name="eobj"
+                    placeholder="Must Be comma(,) seperated" required>
             </div>
             <div class="col-md-12">
-                <label for="inputCity" class="form-label">Mentors</label>
-                <input type="text" class="form-control" id="inputCity" name="ementor" placeholder="Must Be Comma Seperated">
+                <label for="inputCity" class="form-label">Oraginizer's</label>
+                <input type="text" class="form-control" id="inputCity" name="ementor"
+                    placeholder="Must Be Comma Seperated">
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="edesc" required></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="edesc"
+                    required></textarea>
             </div>
             <div class="col-12">
-                <label for="inputAddress" class="form-label">Phases</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated" rows="3" name="ephases"></textarea>
+                <label for="inputAddress" class="form-label">Rounds</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Seperated By |"
+                    rows="3" name="ephases"></textarea>
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Rules</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated" rows="3" name="erules"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated"
+                    rows="3" name="erules"></textarea>
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Dates</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated" rows="3" name="edates"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated"
+                    rows="3" name="edates"></textarea>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Criteria</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated"
+                    rows="3" name="ecriteria"></textarea>
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Prices</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated" rows="3" name="eprice"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Must Be Comma Seperated"
+                    rows="3" name="eprice"></textarea>
             </div>
             <div class="col-md-4">
                 <label for="inputState" class="form-label">Registration Date</label>
-               <input type="date" class="form-control" name="erdate">
+                <input type="date" class="form-control" name="erdate">
             </div>
             <div class="col-md-4">
                 <label for="inputState" class="form-label">Registration End Date</label>
-               <input type="date" class="form-control" name="eredate">
+                <input type="date" class="form-control" name="eredate">
             </div>
             <div class="col-md-4">
                 <label for="inputState" class="form-label">Competition Date</label>
-               <input type="date" class="form-control" name="ecdate">
+                <input type="date" class="form-control" name="ecdate">
             </div>
             <div class="col-md-4">
                 <label for="inputState" class="form-label">Competition End Date</label>
-               <input type="date" class="form-control" name="ecedate">
+                <input type="date" class="form-control" name="ecedate">
+            </div>
+            <div class="col-md-4">
+                <label for="inputState" class="form-label">Competition Thumbnail</label>
+                <input type="file" class="form-control" name="thumbimg">
             </div>
             <div class="col-md-4">
                 <label for="inputState" class="form-label">Competition Logo</label>
-               <input type="file" class="form-control" name="logoimg">
+                <input type="file" class="form-control" name="logoimg">
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Add Event </button>

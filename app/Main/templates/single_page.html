@@ -18,99 +18,142 @@
 
 {%if hack%}
 <section class="single-page">
-    <div class="bg-custom">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 mt-5">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="border border-grey rounded-lg p-2">
-                                        <img src="/static/img/asset_12.png" class="img-fluid rounded" alt="Logo">
+    <div class="container">
+        <div class="bg-custom">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 mt-2">
+                        <div class="card card-custom">
+                            <div class="card-body">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-md-4 d-flex align-items-center" style="width:124px; height:124px;">
+                                        <div class="border border-grey rounded-lg p-2">
+                                            <img src="/static/img/asset_12.png" class="img-fluid rounded" alt="Logo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3 class="event-card-title">{{hack[1]}}</h3>
+                                        <p class="card-subtitle"><i class="fas fa-building"></i> IMRD</p>
+                                        <p class="card-subtitle"><i class="fas fa-location-dot"></i> Offline
+                                            <span></span>
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <h3 class="card-title">{{hack[1]}}</h3>
-                                    <p class="card-subtitle"><i class="fas fa-building"></i> IMRD</p>
-                                    <p class="card-subtitle"><i class="fas fa-location-dot"></i> Offline <span><i
-                                                class="fas fa-globe"></i></span></p>
-                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Event Description Card -->
+                        <div class="card card-custom mt-4">
+                            <div class="card-body description-body">
+                                <h5 class="card-description-title">All You Need To Know About : {{hack[1]}}</h5>
+                                <p class="card-text">{{hack[2]}}</p>
+                            </div>
+                        </div>
+
+                        <!-- Objective Card -->
+                        <div class="card card-custom mt-4">
+                            <div class="card-body">
+                                <h5 class="card-rounds-title">Objective Behind : {{hack[1]}} </h5>
+                                <ul type="circle">
+                                    {%for i in hack[6].split(',')%}
+                                    <li aria-level="1" class="sub-round-info py-1 d-flex align-items-center">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <div class="px-4">{{i}}</div>
+                                    </li>
+                                    {%endfor%}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Phases Card -->
+                        <div class="card card-custom mt-4">
+                            <div class="card-body">
+                                <h5 class="card-rounds-title">Rounds : </h5>
+                                <ol class="list-group list-group-flush">
+                                    {%for i in hack[8].split('|')%}
+                                    <li class="list-group-item">{{i.split(':')[0]}}
+                                        <ul type="circle">
+                                            {%for t in i.split(':')[1].split(' - ')%}
+                                            <li aria-level="1" class="sub-round-info py-2 d-flex align-items-center">
+                                                <i class="fa-solid fa-circle-check"></i>
+                                                <div class="px-4">{{t}}</div>
+                                            </li>
+                                            {%endfor%}
+                                        </ul>
+                                    </li>
+                                    {%endfor%}
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Guidelines Card -->
+                        <div class="card card-custom mt-4">
+                            <div class="card-body">
+                                <h5 class="card-rounds-title">Competition Guidelines :</h5>
+                                <ul class="progress-bar">
+                                    {%for i in hack[6].split(',')%}
+                                    <li style="padding: 2px;"><span class="">{{i}}</span></li>
+                                    {%endfor%}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Prizes Card -->
+                        <div class="card card-custom mt-4 d-fixed">
+                            <div class="card-body">
+                                <h5 class="card-rounds-title">Price & Rewards</h5>
+                                <ul class="">
+                                    {%for i in hack[9].split(',')%}
+                                    <li aria-level="1" class="sub-round-info py-2 d-flex align-items-center">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <div class="px-4">{{i}}</div>
+                                    </li>
+                                    {%endfor%}
+                                </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Event Description Card -->
-                    <div class="card card-custom mt-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Event Description</h5>
-                            <p class="card-text">{{hack[2]}}</p>
-                        </div>
-                    </div>
-
-                    <!-- Rules Card -->
-                    <div class="card card-custom mt-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Rules</h5>
-                            <ul class="list-group list-group-flush">
-                                {%for i in hack[6].split(',')%}
-                                <li class="list-group-item">{{i}}</li>
-                                {%endfor%}
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Phases Card -->
-                    <div class="card card-custom mt-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Phases</h5>
-                            <ol class="list-group list-group-flush">
-                                {%for i in hack[8].split('|')%}
-                                <li class="list-group-item"><b>{{i.split(':')[0]}}</b>
-                                    <ul>
-                                        {%for t in i.split(':')[1].split(' - ')%}
-                                        <li>{{t}}</li>
-                                        {%endfor%}
-                                    </ul>
-                                </li>
-                                {%endfor%}
-                            </ol>
-                        </div>
-                    </div>
-
-                    <!-- Prizes Card -->
-                    <div class="card card-custom mt-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Prizes</h5>
-                            <ul class="list-group list-group-flush">
-                                {%for i in hack[9].split(',')%}
-                                <li>{{i}}</li>
-                                {%endfor%}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Side Div -->
-                <div class="col-lg-4 mt-5">
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <h3 class="card-title">Paid</h3>
-                            <a href="/events/user_registration/{{hack[0]}}">
-                                <button class="btn btn-primary btn-sm">Register</button>
-                            </a>
-                            <hr>
-                            <div class="row">
-                                <div class="col">
-                                    <p class="card-subtitle"><i class="fas fa-user py-3"></i> Registered: {{count[0][0]}}</p>
-                                    <p class="card-subtitle"><i class="far fa-clock"></i> Registration deadline: {{hack[12]}}</p>
+                    <!-- Side Div -->
+                    <div class="col-lg-4 mt-2">
+                        <div class="card card-custom">
+                            <div class="card-body">
+                                <a href="/events/user_registration/{{hack[0]}}">
+                                    <button class="btn btn-primary btn-sm px-4 py-2">Register</button>
+                                </a>
+                                <hr>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="card-subtitle"><i class="fa-solid fa-user-group" style="padding: 10px;"></i> <span>Registered:</span>
+                                            {{count[0][0]}}</p>
+                                        <p class="card-subtitle"><i class="far fa-clock" style="padding: 10px;"></i> Registration Deadline:
+                                            {{hack[12]}}</p>
+                                        <p class="card-subtitle"><i class="fa-solid fa-user" style="padding: 10px;"></i> Type :
+                                            Individual</p>
+                                            
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="card card-custom mt-3">
+                            <div class="card-body">
+                                <h5 class="card-eligible-title">Eligiblity Criteria </h5>
+                                <div class="criteria container">
+                                    {%for i in hack[9].split(',')%}
+                                    <span class="sub-creteria">{{i}} &nbsp;&nbsp;&nbsp;|</span>
+                                    {%endfor%}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-custom mt-3">
+                            <div class="card-body">
+                                <h5 class="card-eligible-title">Contact To Organizers </h5>
+                                <ul>
+                                    <li class="mb-1"><span class="sub-creteria">Yogesh Shethiya</span></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
-
-                    <!-- Other Side Content -->
                 </div>
             </div>
         </div>
