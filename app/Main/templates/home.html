@@ -2,51 +2,102 @@
 {% block Title%} Home Page {%endblock Title%}
 
 {% block body%}
-<!-- Hero Section Of landing page  -->
-<div class="py-5 bg-primary hero-header mb-2">
-    <div class="container-xxl pt-3 px-lg-5">
-        <div class="row g-5 py-5 align-items-center" style="width: 100%;">
-            <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="text-white mb-4 animated zoomIn main-heading">
-                    Learn Connect & <br> Participate <br> <span class="extra-heading">Increase Your Productivity 2X</span>
-                </h1>
-                <p class="text-white pb-3 animated zoomIn">Connect and Explore Various Events With Us. Organized
-                    Different Kinds of event with us. Increased Your Learning curve with our learning path and session.
-                    We Help You To Become A Best Version Of YourSelf.
-                </p>
-                {%if username%}
-                <h2 style="color: white;">Welcome {{username}} ,</h2>
-                {%else%}
-                <a href="/login" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInLeft">Join
-                    Now</a>
-                <a href="/contact"
-                    class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
-                    Us</a>
-                {%endif%}
+
+<!-- Hero Section -->
+<div class="carousel-header">
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="static/img/g-6.jpg" class="img-fluid" alt="Image">
+                <div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Learn & Connect</h4>
+                        <h1 class="display-2 text-capitalize text-white mb-4">Let's The World Together!</h1>
+                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-6 hero-img">
-                <img class="rounded img-fluid" src="{{ url_for('static', filename='img/logo_transparent.png' ) }}"
-                    alt="">
+            <div class="carousel-item">
+                <img src="static/img/g-1.jpg" class="img-fluid" alt="Image" style="background-color: rgba(0, 0, 0, 0.8);">
+                <div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The
+                            World</h4>
+                        <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Tour At Travel</h1>
+                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="static/img/g-9.jpg" class="img-fluid" alt="Image">
+                <div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Learn & Explore
+                        </h4>
+                        <h1 class="display-2 text-capitalize text-white mb-4">You Like To Go?</h1>
+                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        </p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </div>
 
 <!-- Trending Events-->
-<div class="container-xxl py-5 my-4">
-    <div class="container">
-        <div class="text-center wow fadeInUp my-2 my-3" data-wow-delay="0.1s">
-            <h5 class="section-title bg-white text-center text-primary my-3">Hackathons</h5>
+<div class="container-fluid packages py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Past Competition</h5>
         </div>
-        <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="packages-carousel owl-carousel">
             {%for item in allevents%}
-            <div class="col">
-                <div class="card" style="height: 100%;">
-                    <img src={{item.img}} class="card-img-top" alt="..." style="height: 13pc;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{item.title}}</h5>
-                        <p class="card-text"> {{item.desc[0:100]+'...'}} </p>
-                        <a href={{item.link}} class="btn btn-primary" target="_blank" rel="noopener noreferrer">more</a>
+            <div class="packages-item">
+                <div class="packages-img">
+                    <img src="{{item.img}}" class="img-fluid w-100 rounded-top" alt="Image">
+                    <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute"
+                        style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                        <small class="flex-fill text-center border-end py-2"><i
+                                class="fa fa-map-marker-alt me-2"></i>RCP IMRD</small>
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>3
+                            days</small>
+                        <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
+                    </div>
+                </div>
+                <div class="packages-content bg-light">
+                    <div class="p-4 pb-0">
+                        <h6 class="mb-0">{{item.title[:25]}}...</h6>
+                        <small class="text-uppercase">Hotel Deals</small>
                     </div>
                 </div>
             </div>
@@ -55,49 +106,8 @@
     </div>
 </div>
 
-<!-- banner slider and links  -->
-<section class="container-xxl my-4">
-    <div class="row m-0">
-        <div class="col-md-9">
-            <div class="slider-area mycontainer">
-                <div id="carouselExampleRide1" class="carousel slide" data-bs-ride="true">
-                    <div class="carousel-inner">
-                        {%for item in fe%}
-                        {%if item[0] == 1%}
-                        <div class="carousel-item active">
-                            <img src="{{item[1]}}" class="d-block w-100" alt="..."
-                                style="border: 0px; border-radius: 15px;">
-                        </div>
-                        {%else%}
-                        <div class="carousel-item">
-                            <img src="{{item[1]}}" class="d-block w-100" alt="..."
-                                style="border: 0px; border-radius: 15px;">
-                        </div>
-                        {%endif%}
-                        {%endfor%}
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide1"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide1"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3" style="display: flex; justify-content: center; align-items: center;" id="">
-            <img class="rounded img-fluid" style="height: 300px;"
-                src="{{ url_for('static', filename='img/logo-4.png' ) }}" alt="">
-        </div>
-    </div>
-</section>
-
 <!-- Service Start -->
-<div class="container-xxl py-4 my-4">
+<div class="container-xxl my-4">
     <div class="container">
         <div class="text-center wow fadeInUp my-3" data-wow-delay="0.1s">
             <h5 class="section-title bg-white text-center text-primary px-3 my-4">Our Services</h5>
@@ -251,9 +261,9 @@
             <p>Now If You Want To Register In IMRD TechClub Events. <br>
                 Just Go On <b>Home Page</b> Click on <b>IMRD Events</b> under <b>Events</b> Tab (In Navbar).
                 Choose Your Favorite Event And Click On <b>More</b> Button Bellow. <br>
-                You Will Redirected On Specific Page On That Event. Now Understand & Read The Event Details Carefully 
+                You Will Redirected On Specific Page On That Event. Now Understand & Read The Event Details Carefully
                 & Scroll Down, You See A <b>Registration Form</b> Fill Proper Information And Submit It. <br>
-                <h6>Congratultion ! You Successfully Register.</h6>
+            <h6>Congratultion ! You Successfully Register.</h6>
             </p>
         </div>
     </div>
@@ -263,7 +273,8 @@
         <div class="faq-body">
             <p>Don't Worry. We Are Here <br>
                 Extreamly Sorry Forget Password Functionality Is Not Currently Available On Our Platform. <br>
-                But , If You Want To Know Your Password Need To Mail Us On <b>imrdtechclub@gmail.com</b> or <b>codingwithrb@gmail.com</b>
+                But , If You Want To Know Your Password Need To Mail Us On <b>imrdtechclub@gmail.com</b> or
+                <b>codingwithrb@gmail.com</b>
                 <br>
                 Don't Forget To Write Your Full Name , Class, & Contact No In Mail Body.
             </p>

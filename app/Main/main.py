@@ -2,6 +2,8 @@ from flask import Blueprint, render_template
 from flask import render_template, request, session, redirect
 from app.db import mysql
 from data import loadH2SEvets
+import datetime
+
 
 # Creating a Blueprint for main pages
 main = Blueprint("Main", __name__, template_folder="templates")
@@ -23,7 +25,7 @@ def home():
     if 'loggedin' in session:
         return render_template('home.html', username=session['username'], fe=featureEvent, allevents=all_Events[0:4])
     else:
-        return render_template('home.html', fe=featureEvent, allevents=all_Events[0:4])
+        return render_template('home.html', fe=featureEvent, allevents=all_Events[0:9])
 
 
 @main.route('/about')
@@ -73,11 +75,11 @@ def hackathon():
     if 'loggedin' in session:
         cursor = mysql.connection.cursor()
         cursor.execute(
-            'SELECT * FROM imrdcompetion WHERE tags="hackathon" and is_open=1')
+            'SELECT * FROM imrdcompetion WHERE event_ends_on > %s',[datetime.date.today()])
         hk = cursor.fetchall()
         print(hk)
         return render_template('hackathon.html', username=session['username'], event=hk)
-    return render_template('login.html')
+    return render_template('Authentication.html')
 
 
 @main.route('/online_session')
@@ -169,19 +171,19 @@ def logout():
 # single pages for inside events and hackathon
 @main.route('/single_page/<id>', methods=['GET', 'POST'])
 def single_page(id):
-    try:
+    # try:
         # fetching event from event table in database
         cursor = mysql.connection.cursor()
         cursor.execute('SELECT * FROM imrdcompetion WHERE event_id= %s', [id])
         event = cursor.fetchone()
 
-        cursor.execute('SELECT count(register_id) FROM management_event_registrations WHERE event_id=%s',[event[0]])
+        cursor.execute('SELECT count(register_id) FROM management_event_registrations WHERE event_id=%s',[id])
         register_count = cursor.fetchall()
 
         print(register_count)
-        return render_template('single_page.html', hack=event, count=register_count)
-    except Exception as e:
-        return render_template('single_page.html', err=e)
+        return render_template('single_page.html', hack=event, count=register_count,username=session['username'])
+    # except Exception as e:
+    #     return render_template('single_page.html', err=e)
 
 # event Registration for management activity
 @main.route("/events/user_registration/<name>", methods=['GET', 'POST'])

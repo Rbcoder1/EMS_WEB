@@ -8,25 +8,69 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <!-- updates style links  -->
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }} ">
+
     <!-- custom css  -->
     {%block custmcss%}{%endblock custmcss%}
-    <!-- cdn bootstrap -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/maincss.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }} ">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_updated.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
     {%block authcss%}
     {%endblock authcss%}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
 <body>
     <!-- Navbar End -->
-    <div class="container-xxl">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+            <h1 class="m-0"><img src="static/img/logo_transparent.png" alt="Logo">TechClub</h1>
+
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="/about" class="nav-item nav-link">About</a>
+                <a href="/competitons" class="nav-item nav-link">Competition</a>
+                <a href="/roadmaps" class="nav-item nav-link">Roadmaps</a>
+                <a href="/bootcamps" class="nav-item nav-link">Bootcamps</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="destination.html" class="dropdown-item">Destination</a>
+                        <a href="tour.html" class="dropdown-item">Explore Tour</a>
+                        <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                        <a href="gallery.html" class="dropdown-item">Our Gallery</a>
+                        <a href="guides.html" class="dropdown-item">Travel Guides</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404 Page</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- <div class="container-xxl">
         <nav class="navbar navbar-expand-lg navbar-light  p-0 ">
             <a href="/" class="navbar-brand mx-4">
                 <h1 class="m-0">IMRD<span class="fs-5">TechClub</span></h1>
@@ -76,18 +120,25 @@
                 </div>
             </div>
         </nav>
-    </div>
+    </div> -->
     {% block body %}
 
     {% endblock body%}
 
+    {%block custmjs%}{%endblock custmjs%}
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/lightbox/js/lightbox.min.js') }}"></script>
+
     <!-- Manual JavaScript -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/Auth.js') }}"></script>
-    {%block custmjs%}{%endblock custmjs%}
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
 </html>
