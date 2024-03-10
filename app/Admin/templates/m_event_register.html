@@ -5,19 +5,15 @@
         <div class="white_card_header">
             <div class="box_header m-0 header-bar">
                 <div class="main-title">
-                    <h3 class="m-0">Management Event Registration</h3>
+                    <h3 class="m-0">Management Competitions Registration</h3>
                 </div>
                 <div class="erning_btn d-flex">
-                    <form action="/admin/student" method="post">
+                    <form action="#" method="post">
                         <select class="mx-2 sort-group" name="filtername">
-                            <option value="user_id">SID</option>
-                            <option value="first_name">First Name</option>
-                            <option value="last_name">Last Name</option>
-                            <option value="user_email">Email</option>
-                            <option value="created_at">Date</option>
-                            <option value="confirm_status">Confirm</option>
+                            <option value="user_id">EID</option>
+                            <option value="first_name">Event Name</option>
                         </select>
-                        <button type="submit" class="btn btn-secondary">Sort</button>
+                        <button type="submit" class="btn btn-secondary" disabled>Sort</button>
                     </form>
                 </div>
             </div>
@@ -32,19 +28,19 @@
                                 <tr role="row" style="background-color: black;">
                                     <th scope="col" class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0"
                                         rowspan="1" colspan="1" style="width: 35.2px;" aria-sort="ascending"
-                                        aria-label="NO: activate to sort column descending">Register id</th>
+                                        aria-label="NO: activate to sort column descending">ID</th>
                                     <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                         rowspan="1" colspan="1" style="width: 83px;"
-                                        aria-label="Currency: activate to sort column ascending">Roll No</th>
+                                        aria-label="Currency: activate to sort column ascending">Name</th>
                                     <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                         rowspan="1" colspan="1" style="width: 108px;"
-                                        aria-label="Plateform: activate to sort column ascending"> Class</th>
+                                        aria-label="Plateform: activate to sort column ascending">Total Registered</th>
                                     <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                         rowspan="1" colspan="1" style="width: 115px;"
-                                        aria-label="Email: activate to sort column ascending">Mobile No</th>
+                                        aria-label="Email: activate to sort column ascending">Deadline</th>
                                     <th scope="col" class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
                                         rowspan="1" colspan="1" style="width: 77px;"
-                                        aria-label="Amount: activate to sort column ascending">Register At</th>
+                                        aria-label="Amount: activate to sort column ascending">More</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,7 +51,7 @@
                                     <td>{{s[1]}}</td>
                                     <td>{{s[2]}}</td>
                                     <td>{{s[3]}}</td>
-                                    <td>{{s[4]}}</td>
+                                    <td><a href="management_event_registrations/{{s[0]}}" class="btn btn-warning w-100">view</a></td>
                                 </tr>
                                 {%endfor%}
                                 {%endif%}

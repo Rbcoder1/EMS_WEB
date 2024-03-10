@@ -96,8 +96,8 @@ def login():
         return redirect('/')
     else:
         if request.method == 'POST':
-            email = request.form['email']
-            password = request.form['password']
+            email = request.form['email'].strip()
+            password = request.form['password'].strip()
             cursor = mysql.connection.cursor()
             cursor.execute(
                 'SELECT * FROM user_register WHERE user_email = %s AND user_password = %s',

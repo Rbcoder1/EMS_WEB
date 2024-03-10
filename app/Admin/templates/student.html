@@ -23,6 +23,7 @@
               <option value="confirm_status">Confirm</option>
             </select>
             <button type="submit" class="btn btn-secondary">Sort</button>
+            <button class="btn btn-secondary"><a href="#" style="text-decoration: none; color: white;">Report</a></button>
           </form>
         </div>
       </div>
@@ -37,6 +38,7 @@
                 <th scope="col" class="color: white;">First</th>
                 <th scope="col" class="color: white;">Last</th>
                 <th scope="col" class="color: white;">Email</th>
+                <th scope="col" class="color: white;">Password</th>
                 <th scope="col" class="color: white;">Reg.At</th>
                 <th scope="col" class="color: white;">Update</th>
               </tr>
@@ -49,6 +51,7 @@
                 <td>{{s[1]}}</td>
                 <td>{{s[2]}}</td>
                 <td>{{s[3]}}</td>
+                <td>{{s[4]}}</td>
                 <td>{{s[6]}}</td>
                 {%if s[5] == "1"%}
                 <td class="text-center "><button class="btn btn-danger" id="unbanButton" value="{{s[0]}}">unban</button>

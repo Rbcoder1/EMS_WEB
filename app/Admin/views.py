@@ -39,6 +39,7 @@ def home():
     return render_template('LoginAdmin.html')
 
 
+# routes for student management 
 @admin.route('/student',methods=['GET','POST'])
 def student():
     if 'admin' in session:
@@ -74,6 +75,7 @@ def dash():
     return redirect('/auth/login')
 
 
+# routes for event management
 @admin.route('/event_registration')
 def hackethon():
     if 'admin' in session:
@@ -83,14 +85,47 @@ def hackethon():
         return render_template('Event_Regiter.html',edata=edata)
     return render_template('LoginAdmin.html')
 
-@admin.route('/management_event_registration')
+@admin.route('/management_event_registrations')
 def management_event_registration():
     if 'admin' in session:
         cursor = mysql.connection.cursor()
-        cursor.execute('SELECT * FROM management_event_registrations')
+        cursor.execute('SELECT management_event_registrations.event_id,imrdcompetion.title,count(register_id),imrdcompetion.event_ends_on FROM management_event_registrations JOIN imrdcompetion on management_event_registrations.event_id = imrdcompetion.event_id group by imrdcompetion.title')
         data = cursor.fetchall()
+        return render_template('m_event_register.html',data=data)
+    return render_template('LoginAdmin.html')
+
+@admin.route('/management_event_registrations/<eid>')
+def management_event_registration_list(eid):
+    if 'admin' in session:
+        cursor = mysql.connection.cursor()
+        cursor.execute('SELECT management_event_registrations.register_id,user_register.first_name,user_register.last_name,management_event_registrations.roll_no,management_event_registrations.class,management_event_registrations.mobile_no,management_event_registrations.member1_name,management_event_registrations.member1_rollno,management_event_registrations.member1_class,management_event_registrations.member1_mob,management_event_registrations.register_at FROM management_event_registrations JOIN user_register on management_event_registrations.user_id = user_register.user_id where event_id = %s',[eid])
+        data = cursor.fetchall()
+
+        return render_template('m_event_registration_list.html',data=data,event_id=eid)
+    return render_template('LoginAdmin.html')
+
+@admin.route('/management_event_regisration_report/<eid>')
+def management_event_regisration_report(eid):
+    if 'admin' in session:
+        cursor = mysql.connection.cursor()
+        cursor.execute('SELECT management_event_registrations.register_id,user_register.first_name,user_register.last_name,management_event_registrations.roll_no,management_event_registrations.class,management_event_registrations.mobile_no,management_event_registrations.member1_name,management_event_registrations.member1_rollno,management_event_registrations.member1_class,management_event_registrations.member1_mob,management_event_registrations.register_at FROM management_event_registrations JOIN user_register on management_event_registrations.user_id = user_register.user_id where event_id = %s',[eid])
+        data = cursor.fetchall()
+
+        # Build the CSV response
+        csv_output = io.StringIO()
+        writer = csv.writer(csv_output)
+
+        writer.writerow([row[0] for row in data])
+
+        # Write data rows
+        for row in data[:]:
+            writer.writerow(row)
         
-        return render_template('Management_register.html',data=data)
+        csv_output.seek(0)
+        response = Response(csv_output.read(), mimetype='text/csv')
+        response.headers['Content-Disposition'] = f'attachment; filename=report.csv'
+        return response
+
     return render_template('LoginAdmin.html')
 
 @admin.route('/user_activity')
