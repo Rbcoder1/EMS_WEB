@@ -16,7 +16,8 @@
                 <img src="static/img/g-6.jpg" class="img-fluid" alt="Image">
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Learn & Connect</h4>
+                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Learn & Connect
+                        </h4>
                         <h1 class="display-2 text-capitalize text-white mb-4">Let's The World Together!</h1>
                         <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -29,7 +30,8 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="static/img/g-1.jpg" class="img-fluid" alt="Image" style="background-color: rgba(0, 0, 0, 0.8);">
+                <img src="static/img/g-1.jpg" class="img-fluid" alt="Image"
+                    style="background-color: rgba(0, 0, 0, 0.8);">
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The
@@ -74,14 +76,48 @@
     </div>
 </div>
 
-<!-- Trending Events-->
-<div class="container-fluid packages py-5">
+<!-- Past Events Events-->
+<div class="container-fluid packages py-4">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
             <h5 class="section-title px-3">Past Competition</h5>
         </div>
         <div class="packages-carousel owl-carousel">
-            {%for item in allevents%}
+            {%for item in past_events%}
+            <div class="packages-item">
+                <div class="packages-img">
+                    <img src="static/img/{{item[]}}"
+                        class="img-fluid w-100 rounded-top" alt="Image">
+                    <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute"
+                        style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                        <small class="flex-fill text-center border-end py-2"><i
+                                class="fa fa-map-marker-alt me-2"></i>{{item[6]}}</small>
+                        <small class="flex-fill text-center border-end py-2"><i
+                                class="fa fa-calendar-alt me-2"></i>{{(item[16] - item[17]).days}} days
+                        </small>
+                        <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>{{item[3]}}</small>
+                    </div>
+                </div>
+                <div class="packages-content bg-light">
+                    <div class="p-4 pb-0">
+                        <h6 class="mb-0">{{item[1]}}...</h6>
+                        <small class="text-uppercase">{{item[17]}}</small>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+
+<!-- External Events-->
+<div class="container-fluid packages py-4">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">External Hackathons</h5>
+        </div>
+        <div class="packages-carousel owl-carousel">
+            {%for item in external_events%}
             <div class="packages-item">
                 <div class="packages-img">
                     <img src="{{item.img}}" class="img-fluid w-100 rounded-top" alt="Image">
@@ -107,54 +143,58 @@
 </div>
 
 <!-- Service Start -->
-<div class="container-xxl my-4">
-    <div class="container">
-        <div class="text-center wow fadeInUp my-3" data-wow-delay="0.1s">
-            <h5 class="section-title bg-white text-center text-primary px-3 my-4">Our Services</h5>
+<div class="container packages py-5">
+    <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+        <h5 class="section-title px-3">Our Services</h5>
+    </div>
+    <div class="row d-flex justify-content-between" style="color: black;">
+        <div class="col-md-4 col-sm-6 content-card">
+            <div class="card-big-shadow">
+                <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+                    <div class="content">
+
+                        <h4 class="title"><a href="#" style="color: #000;">Bootcamps</a></h4>
+                        <p class="description">Live deep into learning with our intensive bootcamp events. Whether you're
+                            looking to upskill in a specific industry or master a new technology, our bootcamps offer
+                            immersive learning experiences. </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <a href="#challenges">
-                    <div class="service-item si-1">
-                        <a class="p-4">
-                            <h5 class="mb-3"></h5>
-                        </a>
+
+        <div class="col-md-4 col-sm-6 content-card">
+            <div class="card-big-shadow">
+                <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+                    <div class="content">
+
+                        <h4 class="title"><a href="#" style="color: #000;">Project Development </a></h4>
+                        <p class="description">Bring your ideas to life with our project development workshops. Whether
+                            you're a startup founder, entrepreneur, or aspiring creator, our workshops provide the
+                            guidance and resources you need. </p>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <a href="/roadmaps">
-                    <div class="service-item si-2 text-center pt-3">
-                        <div class="p-4">
-                            <h5 class="mb-3" style="font-weight: bolder;">Roadmaps</h5>
-                        </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 content-card">
+            <div class="card-big-shadow">
+                <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+                    <div class="content">
+
+                        <h4 class="title"><a href="#" style="color: #000;">Hackathons</a></h4>
+                        <p class="description">Unleash your creativity and innovation at our hackathon events. Gather
+                            with like-minded enthusiasts to collaborate, ideate, and prototype solutions to challenges.
+                            Whether you're a seasoned developer or a first-time participant </p>
                     </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <a href="/learning-path">
-                    <div class="service-item si-3 text-center pt-3">
-                        <div class="p-4">
-                            <h5 class="mb-3" style="font-weight: bolder;">Learning</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <a href="/hackathons">
-                    <div class="service-item si-4 text-center pt-3">
-                        <div class="p-4">
-                            <h5 class="mb-3">Hackathons</h5>
-                        </div>
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+
 <!-- past event memories  -->
-<div class="container">
+<div class="container py-4">
     <div class="text-center wow fadeInUp my-3" data-wow-delay="0.1s">
         <h5 class="section-title bg-white text-center text-primary px-3 my-4">Past Event Snapshot's</h5>
     </div>
@@ -233,10 +273,6 @@
     </div>
 </div>
 
-<!-- Our Numbers Section  -->
-<!-- <section class="our-numbers">
-
-</section> -->
 
 <!-- Frequently Asked Question Section  -->
 <section class="container-xxl py-3" id="faq">
@@ -248,8 +284,10 @@
         <div class="faq-body">
             <p>Hey ! It's Easy To Register Or Participate in any outside event from here. <br>
                 You Need To Choose A Specific Event From <b>Events</b> Tab For That
-                Go On <b>Home</b> --> <b>Events</b> (In Navbar) --> <b>Choose A Event</b> --> <b>Click On More</b>
-                Now You Are Redirected On That Event Page Particular Organization. <br> You Can Simply Register There
+                Go On <b>Home</b> --> <b>Events</b> (In Navbar) --> <b>Choose A Event</b> --> <b>Click On
+                    More</b>
+                Now You Are Redirected On That Event Page Particular Organization. <br> You Can Simply Register
+                There
                 After Register They Mail You For Futher Discussion.
             </p>
         </div>
@@ -261,7 +299,8 @@
             <p>Now If You Want To Register In IMRD TechClub Events. <br>
                 Just Go On <b>Home Page</b> Click on <b>IMRD Events</b> under <b>Events</b> Tab (In Navbar).
                 Choose Your Favorite Event And Click On <b>More</b> Button Bellow. <br>
-                You Will Redirected On Specific Page On That Event. Now Understand & Read The Event Details Carefully
+                You Will Redirected On Specific Page On That Event. Now Understand & Read The Event Details
+                Carefully
                 & Scroll Down, You See A <b>Registration Form</b> Fill Proper Information And Submit It. <br>
             <h6>Congratultion ! You Successfully Register.</h6>
             </p>

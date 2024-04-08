@@ -8,11 +8,18 @@ load_dotenv()
 
 app = create_app()
 
-app.secret_key = os.environ.get("SECRET_KEY")
-app.config['MYSQL_HOST'] = os.environ.get("DATABASE_URI")
-app.config['MYSQL_USER'] = os.environ.get("DATABASE_USERNAME")
-app.config['MYSQL_PASSWORD'] = os.environ.get("DATABASE_PASSWORD")
-app.config['MYSQL_DB'] = os.environ.get("DATABASE_NAME")
+# app.config['MYSQL_HOST'] = "localhost"
+# app.config['MYSQL_USER'] = "imrdindd_imrdtechclub"
+# app.config['MYSQL_PASSWORD'] = "Rcpimrd@123"
+# app.config['MYSQL_DB'] = "imrdindd_imrdtechclub"
+
+
+app.secret_key = "dfdmdsfdzlfld"
+app.config['MYSQL_HOST'] = "localhost"
+app.config['MYSQL_USER'] = "root"
+app.config['MYSQL_PASSWORD'] = ""
+app.config['MYSQL_DB'] = "eventmanage"
+
 
 UPLOAD_FOLDER = "app/static/uploads"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER

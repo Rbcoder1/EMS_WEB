@@ -11,21 +11,23 @@ main = Blueprint("Main", __name__, template_folder="templates")
 # Loading Json Files Of Events
 Hack2Skill = loadH2SEvets()
 
-all_Events = Hack2Skill
-all_Events_length = len(all_Events)
+external_events = Hack2Skill
+all_Events_length = len(external_events)
 
 
 # routes for main pages like home,about,contact,etc
 @main.route('/')
 def home():
     cursor = mysql.connection.cursor()
-    # fetching banner
-    cursor.execute('SELECT * FROM feature_banners')
-    featureEvent = cursor.fetchall()
+    # fetching pastevents 
+    cursor.execute('SELECT * FROM imrdcompetion WHERE registration_ends_on < %s',[datetime.datetime.now()])
+    past_events = cursor.fetchall()
+    # fetching trending and upcomming events 
+    
     if 'loggedin' in session:
-        return render_template('home.html', username=session['username'], fe=featureEvent, allevents=all_Events[0:4])
+        return render_template('home.html', username=session['username'], past_events=past_events)
     else:
-        return render_template('home.html', fe=featureEvent, allevents=all_Events[0:9])
+        return render_template('home.html', past_events=past_events, external_events=external_events[0:9])
 
 
 @main.route('/about')
@@ -48,7 +50,7 @@ def all_events():
     if 'loggedin' in session:
         return render_template('all_events.html',
                                username=session['username'],
-                               event=all_Events)
+                               event=external_events)
     return redirect('/login')
 
 
@@ -171,7 +173,7 @@ def logout():
 # single pages for inside events and hackathon
 @main.route('/single_page/<id>', methods=['GET', 'POST'])
 def single_page(id):
-    # try:
+    try:
         # fetching event from event table in database
         cursor = mysql.connection.cursor()
         cursor.execute('SELECT * FROM imrdcompetion WHERE event_id= %s', [id])
@@ -181,10 +183,10 @@ def single_page(id):
         register_count = cursor.fetchall()
 
         print(register_count)
-        return render_template('single_page.html', hack=event, count=register_count,username=session['username'])
-    # except Exception as e:
-    #     return render_template('single_page.html', err=e)
-
+        return render_template('single_page.html', hack=event, count=register_count)
+    except Exception as e:
+        return render_template('single_page.html', err=e)
+    
 # event Registration for management activity
 @main.route("/events/user_registration/<name>", methods=['GET', 'POST'])
 def user_register(name):

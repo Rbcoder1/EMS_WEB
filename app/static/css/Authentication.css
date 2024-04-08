@@ -39,7 +39,7 @@ main {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     transition: 0.8s ease-in-out;
-    background-color: #2124B1;
+    background-color: #5b9ef5;
   }
   
   form {
